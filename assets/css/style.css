@@ -522,13 +522,12 @@ h2 em, h1 em {
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
 
-.showcase__frame iframe {
-  width: 1400px;
-  height: 1050px;
-  border: 0;
-  transform: scale(0.342857);   /* 480 / 1400 */
-  transform-origin: 0 0;
-  pointer-events: none;
+.showcase__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 .showcase__frame::before {
@@ -670,21 +669,14 @@ h2 em, h1 em {
   background: var(--bg-alt);
 }
 
-.why__media-frame img {
-  aspect-ratio: 4 / 3.4;
-  object-fit: cover;
-  width: 100%;
-}
-
-/* live project preview (scale set by JS from the frame width) */
-.why__frame {
+.why__media-frame img,
+.why__shot {
   position: absolute;
-  top: 0; left: 0;
-  width: 1400px;
-  height: 1190px;            /* 4:3.4 of 1400 */
-  border: 0;
-  transform-origin: 0 0;
-  pointer-events: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .why__media-hint {
@@ -1186,7 +1178,6 @@ h2 em, h1 em {
 
   .showcase__card { width: 300px; margin-right: 18px; }
   .showcase__frame { width: 300px; height: 225px; }
-  .showcase__frame iframe { transform: scale(0.214286); }  /* 300 / 1400 */
   .services__grid { grid-template-columns: 1fr; }
   .process__grid { grid-template-columns: 1fr; }
   .testimonials__grid { grid-template-columns: 1fr; }

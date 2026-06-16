@@ -28,17 +28,19 @@ Upload the folder as-is to any static host (Netlify, Vercel, Cloudflare Pages, G
 
 ## Contact / CTA
 
-The final section (`#contact`) is a simple call-to-action: a "Book your free call" button
-and an email link, both pointing to `mailto:hello@frontbits.com`. There is no contact form.
-Swap in your real address (or a Calendly/Cal.com booking link) where the buttons point.
+The final section (`#contact`) is a simple call-to-action. There is no contact form.
+All "Book a/your free call" CTAs (nav, pricing note, final CTA) open the booking link
+**https://cal.com/frontbits/call** in a new tab; the email links use `mailto:hello@frontbits.com`.
+The mid-page CTAs ("Get your free proposal", "Start your project", pricing tiers) scroll to
+`#contact`. To change these, update the `cal.com` / `mailto:` hrefs in `index.html`.
 
 > Asset links use `?v=N` cache-busting query strings (e.g. `style.css?v=7`). Bump the number
 > when you change `style.css` or `main.js` so browsers fetch the new version, not a cached copy.
 
 ## Things to customize
 
-- **Email / booking link** — the CTA button and footer point to `mailto:hello@frontbits.com`.
-  Swap in your real address or a booking link.
+- **Email / booking link** — booking CTAs → `https://cal.com/frontbits/call`; email/footer →
+  `mailto:hello@frontbits.com`. Update these in `index.html` if they change.
 - **Pricing** — placeholder "from" prices in the Pricing section ($990 / $2,490) and the FAQ.
 - **Stats & badge** — hero badge ("Now booking projects for July 2026") and the stats strip
   (projects shipped, satisfaction, delivery time, conversion lift).

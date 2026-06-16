@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1600 1200" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <clipPath id="round"><rect x="0" y="0" width="1600" height="1200" rx="26"/></clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <rect x="0" y="0" width="1600" height="1200" fill="#ffffff"/>
+    <rect x="0" y="92" width="1600" height="1108" fill="#ffffff"/>
+    
+  <defs><linearGradient id="grow" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#15315c"/><stop offset="1" stop-color="#2b5fa0"/></linearGradient></defs>
+  
+  <rect x="0" y="0" width="1600" height="92" fill="#f1f1f5"/>
+  <circle cx="46" cy="46" r="11" fill="#ff5f57"/>
+  <circle cx="84" cy="46" r="11" fill="#febc2e"/>
+  <circle cx="122" cy="46" r="11" fill="#28c840"/>
+  <rect x="190" y="26" width="1220" height="40" rx="20" fill="#ffffff"/>
+  <text x="800" y="52" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" fill="#9a9aa8" text-anchor="middle">atlaswealth.com</text>
+
+  <text x="70" y="150" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#11203a">ATLAS WEALTH</text>
+  <rect x="1380" y="122" width="150" height="52" rx="26" fill="#15315c"/>
+  <text x="1455" y="155" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#fff" text-anchor="middle">Get advice</text>
+  <text x="1330" y="154" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" fill="#5d6a80" text-anchor="end">Team</text>
+  <text x="1234" y="154" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" fill="#5d6a80" text-anchor="end">Insights</text>
+  <text x="1086" y="154" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" fill="#5d6a80" text-anchor="end">Approach</text>
+  <text x="938" y="154" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" fill="#5d6a80" text-anchor="end">Services</text>
+  <rect x="70" y="222" width="290" height="40" rx="20.0" fill="#eef2f8"/>
+  <text x="92" y="249" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" font-weight="600" fill="#15315c">Independent · Fee-only advisors</text>
+  <text x="68" y="352" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="78" font-weight="800" fill="#11203a" letter-spacing="-2">Wealth, managed</text>
+  <text x="68" y="440" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="78" font-weight="800" fill="#11203a" letter-spacing="-2">with <tspan fill="#c79a4b">clarity.</tspan></text>
+  <text x="70" y="505" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#5d6a80">Planning, investing, and guidance built around</text>
+  <text x="70" y="538" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#5d6a80">your goals — not the markets'.</text>
+  <rect x="70" y="578" width="260" height="62" rx="31.0" fill="#15315c"/>
+  <text x="200" y="617" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#fff" text-anchor="middle">Book a consultation</text>
+  <!-- chart card -->
+  <rect x="860" y="202" width="670" height="520" rx="22" fill="url(#grow)"/>
+  <text x="900" y="272" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" fill="#bcd0ec">Portfolio growth</text>
+  <text x="900" y="332" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="56" font-weight="800" fill="#fff">+18.4%</text>
+  <text x="900" y="367" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#9fc6a0">▲ outperforming benchmark</text>
+  <polyline points="900,652 990,622 1080,632 1170,572 1260,582 1350,512 1470,452" fill="none" stroke="#c79a4b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="900,682 990,672 1080,677 1170,652 1260,657 1350,632 1470,612" fill="none" stroke="#7fa8da" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>
+  <line x1="900" y1="702" x2="900" y2="712" stroke="#5f86bd" stroke-width="3"/><line x1="995" y1="702" x2="995" y2="712" stroke="#5f86bd" stroke-width="3"/><line x1="1090" y1="702" x2="1090" y2="712" stroke="#5f86bd" stroke-width="3"/><line x1="1185" y1="702" x2="1185" y2="712" stroke="#5f86bd" stroke-width="3"/><line x1="1280" y1="702" x2="1280" y2="712" stroke="#5f86bd" stroke-width="3"/><line x1="1375" y1="702" x2="1375" y2="712" stroke="#5f86bd" stroke-width="3"/><line x1="1470" y1="702" x2="1470" y2="712" stroke="#5f86bd" stroke-width="3"/>
+  <!-- stat row -->
+  <rect x="0" y="912" width="1600" height="2" fill="#eef0f4"/>
+  <text x="90" y="997" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#15315c">$2.4B</text><text x="90" y="1037" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#5d6a80">Assets advised</text><text x="470" y="997" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#15315c">1,200+</text><text x="470" y="1037" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#5d6a80">Households</text><text x="850" y="997" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#15315c">22 yrs</text><text x="850" y="1037" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#5d6a80">Average tenure</text><text x="1230" y="997" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#15315c">4.9★</text><text x="1230" y="1037" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#5d6a80">Client rating</text>
+
+  </g>
+  <rect x="1" y="1" width="1598" height="1198" rx="26" fill="none" stroke="#e6e6ee" stroke-width="2"/>
+</svg>

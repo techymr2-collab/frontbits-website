@@ -1,0 +1,25 @@
+# Netlify configuration for the Frontbits static site.
+# No build step — the repo root is published as-is.
+
+[build]
+  publish = "."
+  command = ""
+
+# Long-cache the fingerprinted/static assets (HTML stays revalidated).
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/projects/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Sensible security headers for a static marketing site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"

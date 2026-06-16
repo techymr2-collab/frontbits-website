@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / tooling
+.claude/
+.vscode/
+*.log
+
+# Local preview mirror (served copy, not part of the site)
+/Users/Shared/frontbits_site/

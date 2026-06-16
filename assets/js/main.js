@@ -48,23 +48,6 @@
     revealEls.forEach((el) => io.observe(el));
   }
 
-  // Scale live project previews — real pages render at 1400px wide, fit to container
-  const frames = document.querySelectorAll(".work-card__frame, .why__frame");
-  if (frames.length) {
-    const BASE = 1400;
-    const scaleFrames = () => {
-      frames.forEach((f) => {
-        const w = f.parentElement.clientWidth;
-        if (w) f.style.transform = "scale(" + w / BASE + ")";
-      });
-    };
-    scaleFrames();
-    window.addEventListener("resize", scaleFrames, { passive: true });
-    window.addEventListener("load", scaleFrames);
-    frames.forEach((f) => f.addEventListener("load", scaleFrames));
-    setTimeout(scaleFrames, 300);
-  }
-
   // Animated stat counters
   const stats = document.querySelectorAll(".stat__num[data-count]");
 

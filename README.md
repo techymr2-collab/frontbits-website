@@ -37,6 +37,26 @@ The mid-page CTAs ("Get your free proposal", "Start your project", pricing tiers
 > Asset links use `?v=N` cache-busting query strings (e.g. `style.css?v=7`). Bump the number
 > when you change `style.css` or `main.js` so browsers fetch the new version, not a cached copy.
 
+## SEO
+
+The page is tuned for search and social:
+- **Metadata** — keyword-focused `<title>` and meta description, `keywords`, `author`,
+  `robots`, `theme-color`, and a `<link rel="canonical">`.
+- **Open Graph + Twitter** — full tags with a 1200×630 share image at
+  `assets/img/og-image.png` (rendered from a branded card). This is what shows when the
+  link is shared on LinkedIn/Facebook/X/Slack.
+- **Structured data (JSON-LD)** near the end of `index.html`: `ProfessionalService`,
+  `WebSite`, and an `FAQPage` built from the on-page FAQ — the last can earn FAQ rich
+  results in Google. Test with the [Rich Results Test](https://search.google.com/test/rich-results).
+- **`robots.txt`** + **`sitemap.xml`** at the site root.
+- **Descriptive `alt`** text on the portfolio screenshots for image search.
+
+> ⚠️ **When you set a custom domain, update the URL in 4 spots** (currently the Netlify
+> subdomain `https://stellular-kulfi-e75c16.netlify.app`): the `canonical`, `og:url`,
+> `og:image`/`twitter:image`, and `apple-touch-icon` in `index.html`; the `Sitemap:` line in
+> `robots.txt`; and `<loc>` in `sitemap.xml`. Then submit the sitemap in
+> [Google Search Console](https://search.google.com/search-console) to get indexed faster.
+
 ## Things to customize
 
 - **Email / booking link** — booking CTAs → `https://cal.com/frontbits/call`; email/footer →

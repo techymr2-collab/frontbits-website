@@ -51,10 +51,10 @@ The page is tuned for search and social:
 - **`robots.txt`** + **`sitemap.xml`** at the site root.
 - **Descriptive `alt`** text on the portfolio screenshots for image search.
 
-> ⚠️ **When you set a custom domain, update the URL in 4 spots** (currently the Netlify
-> subdomain `https://stellular-kulfi-e75c16.netlify.app`): the `canonical`, `og:url`,
-> `og:image`/`twitter:image`, and `apple-touch-icon` in `index.html`; the `Sitemap:` line in
-> `robots.txt`; and `<loc>` in `sitemap.xml`. Then submit the sitemap in
+> The site's canonical domain is **`https://frontbits.com`**, hard-coded in: the `canonical`,
+> `og:url`, and `og:image`/`twitter:image` tags in `index.html`; the JSON-LD `@id`/`url`/`logo`
+> fields; the `Sitemap:` line in `robots.txt`; and `<loc>` in `sitemap.xml`. If the domain ever
+> changes, update those spots. Submit `sitemap.xml` in
 > [Google Search Console](https://search.google.com/search-console) to get indexed faster.
 
 ## Things to customize

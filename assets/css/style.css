@@ -482,25 +482,49 @@ h2 em, h1 em {
 .showcase {
   position: relative;
   margin-top: 56px;
-  overflow: hidden;
+}
+
+/* the scrolling viewport (auto-advances + manual arrows + native swipe) */
+.showcase__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* old Edge */
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
 }
+.showcase__viewport::-webkit-scrollbar { display: none; }   /* Chrome/Safari */
 
 .showcase__track {
   display: flex;
   width: max-content;
-  animation: showcase-scroll 55s linear infinite;
-  will-change: transform;
 }
 
-.showcase:hover .showcase__track,
-.showcase:focus-within .showcase__track { animation-play-state: paused; }
-
-@keyframes showcase-scroll {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(-50%, 0, 0); }
+/* prev / next arrows */
+.showcase__nav {
+  position: absolute;
+  top: 180px;                     /* vertically centered on the 360px card frame */
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-md);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s, opacity 0.2s;
 }
+.showcase__nav:hover { box-shadow: var(--shadow-lg); background: #fff; transform: translateY(-50%) scale(1.06); }
+.showcase__nav:active { transform: translateY(-50%) scale(0.96); }
+.showcase__nav:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.showcase__nav svg { width: 22px; height: 22px; }
+.showcase__nav--prev { left: 24px; }
+.showcase__nav--next { right: 24px; }
 
 .showcase__card {
   flex: 0 0 auto;
@@ -1178,6 +1202,9 @@ h2 em, h1 em {
 
   .showcase__card { width: 300px; margin-right: 18px; }
   .showcase__frame { width: 300px; height: 225px; }
+  .showcase__nav { top: 112px; width: 44px; height: 44px; }
+  .showcase__nav--prev { left: 12px; }
+  .showcase__nav--next { right: 12px; }
   .services__grid { grid-template-columns: 1fr; }
   .process__grid { grid-template-columns: 1fr; }
   .testimonials__grid { grid-template-columns: 1fr; }

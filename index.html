@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=8">
+  <link rel="stylesheet" href="assets/css/style.css?v=9">
 </head>
 <body>
 
@@ -138,7 +138,8 @@
 
       </div>
 
-      <div class="showcase reveal" aria-label="Auto-scrolling showcase of recent client websites">
+      <div class="showcase reveal" aria-label="Showcase of recent client websites">
+        <div class="showcase__viewport" id="showcaseViewport">
         <div class="showcase__track">
           <!-- set 1 -->
           <a class="showcase__card" href="projects/marina-key.html" target="_blank" rel="noopener" aria-label="Open the Marina Key Realty website in a new tab">
@@ -183,6 +184,13 @@
             <span class="showcase__cap"><strong>Veritas Legal</strong><em>Legal</em></span>
           </a>
         </div>
+        </div>
+        <button type="button" class="showcase__nav showcase__nav--prev" id="showcasePrev" aria-label="Previous projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="showcase__nav showcase__nav--next" id="showcaseNext" aria-label="Next projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
       </div>
 
       <div class="container">
@@ -686,6 +694,6 @@
 }
   </script>
 
-  <script src="assets/js/main.js?v=6"></script>
+  <script src="assets/js/main.js?v=7"></script>
 </body>
 </html>

@@ -27,13 +27,33 @@
     }
   });
 
-  // Scroll reveal
+  // Scroll reveal — powered by Motion (motion.dev) when available, with fallbacks
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealEls = document.querySelectorAll(".reveal");
 
   if (reduceMotion || !("IntersectionObserver" in window)) {
+    // no animation: just show everything
     revealEls.forEach((el) => el.classList.add("is-visible"));
+  } else if (window.Motion && typeof window.Motion.inView === "function") {
+    // Motion-powered: spring-eased fade/slide-up, once per element
+    const { inView, animate } = window.Motion;
+    revealEls.forEach((el) => {
+      inView(
+        el,
+        () => {
+          if (el.dataset.shown) return;
+          el.dataset.shown = "1";
+          animate(
+            el,
+            { opacity: [0, 1], transform: ["translateY(28px)", "translateY(0px)"] },
+            { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+          );
+        },
+        { amount: 0.15 }
+      );
+    });
   } else {
+    // fallback: CSS class via IntersectionObserver
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

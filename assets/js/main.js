@@ -35,21 +35,47 @@
     // no animation: just show everything
     revealEls.forEach((el) => el.classList.add("is-visible"));
   } else if (window.Motion && typeof window.Motion.inView === "function") {
-    // Motion-powered: spring-eased fade/slide-up, once per element
+    // Motion-powered: spring-eased fade/slide-up with per-group stagger
     const { inView, animate } = window.Motion;
+    const STUDIO_EASE = [0.22, 1, 0.36, 1];
+
+    // Stagger index = position among .reveal siblings sharing a parent,
+    // so cards in a grid cascade in instead of popping all at once.
+    const staggerIndex = (el) => {
+      const parent = el.parentElement;
+      if (!parent) return 0;
+      const siblings = Array.from(parent.children).filter((c) =>
+        c.classList.contains("reveal")
+      );
+      const i = siblings.indexOf(el);
+      return i < 0 ? 0 : i;
+    };
+
     revealEls.forEach((el) => {
       inView(
         el,
         () => {
           if (el.dataset.shown) return;
           el.dataset.shown = "1";
+          const delay = Math.min(staggerIndex(el), 7) * 0.08;
           animate(
             el,
-            { opacity: [0, 1], transform: ["translateY(28px)", "translateY(0px)"] },
-            { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+            { opacity: [0, 1], transform: ["translateY(36px)", "translateY(0px)"] },
+            { duration: 0.85, delay, ease: STUDIO_EASE }
           );
         },
-        { amount: 0.15 }
+        { amount: 0.12 }
+      );
+    });
+
+    // Hero entrance: cascade the hero blocks immediately on load
+    const heroReveals = document.querySelectorAll(".hero__inner .reveal");
+    heroReveals.forEach((el, i) => {
+      el.dataset.shown = "1";
+      animate(
+        el,
+        { opacity: [0, 1], transform: ["translateY(28px)", "translateY(0px)"] },
+        { duration: 0.8, delay: 0.08 + i * 0.1, ease: STUDIO_EASE }
       );
     });
   } else {
@@ -182,4 +208,36 @@
     };
     requestAnimationFrame(tick);
   }
+})();
+
+// ---- Services slider: manual prev/next only, no auto-scroll ----
+(function () {
+  "use strict";
+  const vp = document.getElementById("servicesViewport");
+  if (!vp) return;
+  const track = vp.querySelector(".services__track");
+  const prevBtn = document.getElementById("servicesPrev");
+  const nextBtn = document.getElementById("servicesNext");
+
+  let step = 320;
+  const measure = () => {
+    const card = track.querySelector(".service-card");
+    if (card) step = card.offsetWidth + parseFloat(getComputedStyle(card).marginRight || 0);
+  };
+
+  const updateNav = () => {
+    const max = track.scrollWidth - vp.clientWidth;
+    const tolerance = 30; // accounts for the track's snap-rest padding
+    prevBtn.disabled = vp.scrollLeft <= tolerance;
+    nextBtn.disabled = vp.scrollLeft >= max - tolerance;
+  };
+
+  measure();
+  updateNav();
+  window.addEventListener("load", () => { measure(); updateNav(); });
+  window.addEventListener("resize", () => { measure(); updateNav(); });
+  vp.addEventListener("scroll", updateNav, { passive: true });
+
+  prevBtn.addEventListener("click", () => vp.scrollBy({ left: -step, behavior: "smooth" }));
+  nextBtn.addEventListener("click", () => vp.scrollBy({ left: step, behavior: "smooth" }));
 })();

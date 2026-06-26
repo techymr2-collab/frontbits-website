@@ -332,6 +332,31 @@ main { counter-reset: none; }
   color: #d2d2d7;
 }
 
+/* ---------- Tech stack ---------- */
+
+#stack .trustedby__logo { cursor: default; }
+#stack .trustedby__logo:hover { color: var(--ink-3); opacity: 0.65; }
+
+/* ---------- Contact form ---------- */
+
+#contact-form.section--alt { background: var(--bg-alt); }
+.contact-form__field label { font-family: var(--font-sf); font-size: 13px; font-weight: 400; letter-spacing: 0.02em; }
+.contact-form__field input,
+.contact-form__field select,
+.contact-form__field textarea {
+  font-family: var(--font-sf);
+  font-size: 17px;
+  border-radius: var(--radius-sm);
+  border-color: var(--line);
+  background: var(--bg);
+}
+.contact-form__field input:focus,
+.contact-form__field select:focus,
+.contact-form__field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
 /* ---------- Testimonials ---------- */
 
 .testimonial { border: none; border-radius: var(--radius-lg); background: var(--bg-alt); padding: 40px; }

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinic OS — Scheduling &amp; patient management for multi-location clinics</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --ink: #161b2e;
+    --ink-2: #4d5370;
+    --ink-3: #8d92ab;
+    --line: #e7e8f2;
+    --bg: #f6f6fb;
+    --accent: #2563eb;
+    --accent-soft: #e8eefd;
+    --green: #16a34a;
+    --green-soft: #e7f7ed;
+    --rose: #be185d;
+    --rose-soft: #fce8f0;
+    --amber: #b45309;
+    --amber-soft: #fdf1de;
+    --white: #ffffff;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 1px 2px rgba(22,27,46,0.04), 0 8px 24px rgba(22,27,46,0.04);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+  .app { display: flex; min-height: 100vh; }
+
+  .sidebar { width: 240px; flex: 0 0 240px; background: var(--white); border-right: 1px solid var(--line); padding: 28px 20px; display: flex; flex-direction: column; }
+  .sidebar__logo { display: flex; align-items: center; gap: 10px; margin-bottom: 36px; padding-left: 4px; }
+  .sidebar__logo-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 15px; }
+  .sidebar__logo-text { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .nav-group { margin-bottom: 28px; }
+  .nav-group__label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); padding: 0 12px; margin-bottom: 10px; }
+  .nav-link { display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 14.5px; font-weight: 500; color: var(--ink-2); margin-bottom: 2px; }
+  .nav-link svg { width: 18px; height: 18px; flex: none; opacity: 0.75; }
+  .nav-link.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .nav-link.active svg { opacity: 1; }
+  .sidebar__user { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-top: 1px solid var(--line); padding-top: 18px; }
+  .avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg,#5b8def,#2563eb); display:grid; place-items:center; color:#fff; font-size:13px; font-weight:700; flex: none; }
+  .sidebar__user-name { font-size: 13.5px; font-weight: 600; }
+  .sidebar__user-role { font-size: 12px; color: var(--ink-3); }
+
+  .main { flex: 1; min-width: 0; }
+  .topbar { height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 36px; border-bottom: 1px solid var(--line); background: var(--white); }
+  .topbar__greeting { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .topbar__sub { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 600; padding: 10px 18px; border-radius: var(--radius-sm); border: none; }
+  .icon-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line); background: var(--white); display: grid; place-items: center; color: var(--ink-2); }
+  .topbar__actions { display: flex; align-items: center; gap: 14px; }
+
+  .content { padding: 28px 36px 60px; max-width: 1180px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: start; }
+  .panel { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .panel__head { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+  .panel__title { font-size: 15.5px; font-weight: 700; }
+  .panel__link { font-size: 13px; color: var(--accent); font-weight: 600; }
+  .date-nav { display: flex; align-items: center; gap: 14px; }
+  .date-nav__btn { width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink-2); }
+
+  /* calendar */
+  .cal { display: grid; grid-template-columns: 64px repeat(5, 1fr); }
+  .cal__day-head { padding: 12px 8px; text-align: center; border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .cal__day-head:first-child { border-left: none; }
+  .cal__day-head .d { font-size: 12px; color: var(--ink-3); font-weight: 600; }
+  .cal__day-head .n { font-size: 15px; font-weight: 700; margin-top: 2px; }
+  .cal__day-head.today .n { color: var(--accent); }
+  .cal__time { padding: 14px 8px; font-size: 11.5px; color: var(--ink-3); text-align: right; border-top: 1px solid var(--line); }
+  .cal__cell { border-top: 1px solid var(--line); border-left: 1px solid var(--line); min-height: 56px; position: relative; padding: 3px; }
+  .appt { border-radius: 8px; padding: 6px 8px; font-size: 11.5px; font-weight: 600; line-height: 1.25; height: 100%; }
+  .appt .t { font-weight: 700; display: block; }
+  .appt.blue { background: var(--accent-soft); color: var(--accent); }
+  .appt.green { background: var(--green-soft); color: var(--green); }
+  .appt.rose { background: var(--rose-soft); color: var(--rose); }
+  .appt.amber { background: var(--amber-soft); color: var(--amber); }
+
+  /* queue */
+  .queue { padding: 8px 14px 14px; }
+  .queue-item { display: flex; align-items: center; gap: 11px; padding: 11px 8px; border-bottom: 1px solid var(--line); }
+  .queue-item:last-child { border-bottom: none; }
+  .queue-item__avatar { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 11.5px; flex: none; }
+  .queue-item__name { font-size: 13.5px; font-weight: 600; }
+  .queue-item__sub { font-size: 11.5px; color: var(--ink-3); }
+  .queue-item__time { margin-left: auto; font-size: 12px; font-weight: 700; color: var(--ink-2); }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  .stat-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); }
+  .stat-card__label { font-size: 13px; color: var(--ink-3); margin-bottom: 8px; }
+  .stat-card__value { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <div class="sidebar__logo-mark">C</div>
+        <div class="sidebar__logo-text">Clinic OS</div>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">Front desk</div>
+        <a class="nav-link active" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Schedule</a>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>Patients</a>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Providers</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group__label">Operations</div>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11H4z"/><path d="M9 13h6M9 17h6"/></svg>Billing</a>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 13l4-4 3 3 5-6"/></svg>Reports</a>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87M4.6 9a1.7 1.7 0 0 0-.34-1.87"/></svg>Settings</a>
+      </div>
+      <div class="sidebar__user">
+        <div class="avatar">RB</div>
+        <div>
+          <div class="sidebar__user-name">Rosa Bianchi</div>
+          <div class="sidebar__user-role">Front desk · Downtown</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <div class="topbar__greeting">Today's schedule</div>
+          <div class="topbar__sub">Downtown location · 18 appointments booked</div>
+        </div>
+        <div class="topbar__actions">
+          <div class="icon-btn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+          <button class="btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>New appointment</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel__head">
+              <div class="panel__title">Week of June 22</div>
+              <div class="date-nav">
+                <div class="date-nav__btn">‹</div>
+                <span class="panel__link">Today</span>
+                <div class="date-nav__btn">›</div>
+              </div>
+            </div>
+            <div class="cal">
+              <div class="cal__day-head"></div>
+              <div class="cal__day-head"><div class="d">MON</div><div class="n">22</div></div>
+              <div class="cal__day-head today"><div class="d">TUE</div><div class="n">23</div></div>
+              <div class="cal__day-head"><div class="d">WED</div><div class="n">24</div></div>
+              <div class="cal__day-head"><div class="d">THU</div><div class="n">25</div></div>
+              <div class="cal__day-head"><div class="d">FRI</div><div class="n">26</div></div>
+
+              <div class="cal__time">9 AM</div>
+              <div class="cal__cell"><div class="appt blue"><span class="t">9:00</span>L. Hart — Checkup</div></div>
+              <div class="cal__cell"></div>
+              <div class="cal__cell"><div class="appt green"><span class="t">9:15</span>D. Kim — Follow-up</div></div>
+              <div class="cal__cell"></div>
+              <div class="cal__cell"><div class="appt blue"><span class="t">9:00</span>R. Singh — New patient</div></div>
+
+              <div class="cal__time">10 AM</div>
+              <div class="cal__cell"></div>
+              <div class="cal__cell"><div class="appt rose"><span class="t">10:30</span>M. Reyes — Consult</div></div>
+              <div class="cal__cell"><div class="appt blue"><span class="t">10:00</span>T. Adams — Checkup</div></div>
+              <div class="cal__cell"></div>
+              <div class="cal__cell"></div>
+
+              <div class="cal__time">11 AM</div>
+              <div class="cal__cell"><div class="appt amber"><span class="t">11:00</span>J. Park — Procedure</div></div>
+              <div class="cal__cell"></div>
+              <div class="cal__cell"></div>
+              <div class="cal__cell"><div class="appt green"><span class="t">11:15</span>S. Brooks — Follow-up</div></div>
+              <div class="cal__cell"><div class="appt blue"><span class="t">11:00</span>E. Wu — Checkup</div></div>
+
+              <div class="cal__time">1 PM</div>
+              <div class="cal__cell"></div>
+              <div class="cal__cell"><div class="appt blue"><span class="t">1:00</span>K. Diallo — Checkup</div></div>
+              <div class="cal__cell"></div>
+              <div class="cal__cell"><div class="appt rose"><span class="t">1:30</span>A. Novak — Consult</div></div>
+              <div class="cal__cell"></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><div class="panel__title">Waiting room</div></div>
+            <div class="queue">
+              <div class="queue-item"><div class="queue-item__avatar" style="background:#2563eb">LH</div><div><div class="queue-item__name">Lena Hart</div><div class="queue-item__sub">Dr. Olsen · Room 2</div></div><span class="queue-item__time">9:00</span></div>
+              <div class="queue-item"><div class="queue-item__avatar" style="background:#16a34a">RS</div><div><div class="queue-item__name">Raj Singh</div><div class="queue-item__sub">Dr. Patel · Room 4</div></div><span class="queue-item__time">9:00</span></div>
+              <div class="queue-item"><div class="queue-item__avatar" style="background:#be185d">JP</div><div><div class="queue-item__name">Jin Park</div><div class="queue-item__sub">Dr. Olsen · Room 1</div></div><span class="queue-item__time">11:00</span></div>
+              <div class="queue-item"><div class="queue-item__avatar" style="background:#b45309">TA</div><div><div class="queue-item__name">Tom Adams</div><div class="queue-item__sub">Dr. Reyes · Room 3</div></div><span class="queue-item__time">10:00</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-card"><div class="stat-card__label">No-show rate</div><div class="stat-card__value">3.1%</div></div>
+          <div class="stat-card"><div class="stat-card__label">Avg wait time</div><div class="stat-card__value">9 min</div></div>
+          <div class="stat-card"><div class="stat-card__label">Chair utilization</div><div class="stat-card__value">88%</div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

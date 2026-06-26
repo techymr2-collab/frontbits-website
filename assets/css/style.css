@@ -412,9 +412,7 @@ h2 em, h1 em {
   object-position: center;
 }
 
-/* ---------- Trusted by ---------- */
-
-.trustedby { padding: 48px 0; background: var(--bg); }
+/* ---------- Trusted by / Tech stack logo strip ---------- */
 
 .trustedby__label {
   text-align: center;
@@ -903,6 +901,56 @@ h2 em, h1 em {
 }
 .why__media-label { font-size: 0.84rem; color: var(--ink-3); line-height: 1.45; display: block; }
 
+/* ---------- Contact form ---------- */
+
+.contact-form { max-width: 100%; margin-top: 8px; }
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.contact-form__field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+.contact-form__field input,
+.contact-form__field select,
+.contact-form__field textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm, 12px);
+  background: var(--white);
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form__field input:focus,
+.contact-form__field select:focus,
+.contact-form__field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.contact-form__field textarea { resize: vertical; min-height: 120px; }
+
+.contact-form__submit { width: 100%; margin-top: 4px; }
+
 /* ---------- Process ---------- */
 
 .process__grid {
@@ -1355,8 +1403,10 @@ h2 em, h1 em {
 
   .stats__inner { grid-template-columns: repeat(2, 1fr); }
   .stat { border-left: none; border-top: 1px solid var(--line); padding: 30px 12px; }
-  .stat:nth-child(-n + 2) { border-top: none; }
-  .stat:nth-child(even) { border-left: 1px solid var(--line); }
+  .stats__inner .stat:nth-child(-n + 2) { border-top: none; }
+  .stats__inner .stat:nth-child(even) { border-left: 1px solid var(--line); }
+
+  .contact-form__row { grid-template-columns: 1fr; gap: 0; }
 
   .showcase__card { width: 300px; margin-right: 18px; }
   .showcase__frame { width: 300px; height: 225px; }

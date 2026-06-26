@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pace — Time tracking &amp; invoicing for service businesses</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --ink: #14141f;
+    --ink-2: #4b4b63;
+    --ink-3: #8888a0;
+    --line: #e7e7f1;
+    --bg: #f6f6fb;
+    --accent: #4f46e5;
+    --accent-soft: #eeecfd;
+    --green: #16a34a;
+    --green-soft: #e7f7ed;
+    --amber: #b45309;
+    --amber-soft: #fdf1de;
+    --red: #c0362c;
+    --red-soft: #fbeae8;
+    --white: #ffffff;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 1px 2px rgba(20,20,31,0.04), 0 8px 24px rgba(20,20,31,0.04);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  a { color: inherit; text-decoration: none; }
+
+  .app { display: flex; min-height: 100vh; }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar {
+    width: 248px;
+    flex: 0 0 248px;
+    background: var(--white);
+    border-right: 1px solid var(--line);
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar__logo { display: flex; align-items: center; gap: 10px; margin-bottom: 36px; padding-left: 4px; }
+  .sidebar__logo-mark {
+    width: 30px; height: 30px; border-radius: 9px;
+    background: var(--accent);
+    display: grid; place-items: center;
+    color: #fff; font-weight: 700; font-size: 15px;
+  }
+  .sidebar__logo-text { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+
+  .nav-group { margin-bottom: 28px; }
+  .nav-group__label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); padding: 0 12px; margin-bottom: 10px; }
+  .nav-link {
+    display: flex; align-items: center; gap: 11px;
+    padding: 10px 12px; border-radius: var(--radius-sm);
+    font-size: 14.5px; font-weight: 500; color: var(--ink-2);
+    margin-bottom: 2px;
+  }
+  .nav-link svg { width: 18px; height: 18px; flex: none; opacity: 0.75; }
+  .nav-link.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .nav-link.active svg { opacity: 1; }
+
+  .sidebar__user {
+    margin-top: auto;
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px; border-top: 1px solid var(--line); padding-top: 18px;
+  }
+  .avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg,#7c72ff,#4f46e5); display:grid; place-items:center; color:#fff; font-size:13px; font-weight:700; flex: none; }
+  .sidebar__user-name { font-size: 13.5px; font-weight: 600; }
+  .sidebar__user-role { font-size: 12px; color: var(--ink-3); }
+
+  /* ---------- Main ---------- */
+  .main { flex: 1; min-width: 0; }
+  .topbar {
+    height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 36px;
+    border-bottom: 1px solid var(--line);
+    background: var(--white);
+  }
+  .topbar__greeting { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .topbar__sub { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+  .topbar__actions { display: flex; align-items: center; gap: 14px; }
+  .icon-btn {
+    width: 38px; height: 38px; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--white);
+    display: grid; place-items: center; color: var(--ink-2);
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #fff;
+    font-size: 14px; font-weight: 600;
+    padding: 10px 18px; border-radius: var(--radius-sm);
+    border: none;
+  }
+
+  .content { padding: 32px 36px 60px; max-width: 1180px; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 28px; }
+  .stat-card {
+    background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 20px 22px; box-shadow: var(--shadow);
+  }
+  .stat-card__label { font-size: 13px; color: var(--ink-3); margin-bottom: 10px; }
+  .stat-card__value { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  .stat-card__delta { font-size: 12.5px; margin-top: 6px; font-weight: 600; }
+  .stat-card__delta.up { color: var(--green); }
+  .stat-card__delta.down { color: var(--red); }
+
+  .grid-2 { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; margin-bottom: 28px; align-items: start; }
+
+  .panel { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+  .panel__head { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid var(--line); }
+  .panel__title { font-size: 15.5px; font-weight: 700; }
+  .panel__link { font-size: 13px; color: var(--accent); font-weight: 600; }
+  .panel__body { padding: 24px; }
+
+  /* chart */
+  .chart { display: flex; align-items: flex-end; gap: 14px; height: 160px; }
+  .chart__col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
+  .chart__bar { width: 100%; border-radius: 8px 8px 4px 4px; background: var(--accent-soft); position: relative; }
+  .chart__bar.is-today { background: var(--accent); }
+  .chart__label { font-size: 12px; color: var(--ink-3); }
+
+  /* timer widget */
+  .timer { padding: 24px; }
+  .timer__client { font-size: 13px; color: var(--ink-3); margin-bottom: 4px; }
+  .timer__task { font-size: 15px; font-weight: 600; margin-bottom: 18px; }
+  .timer__clock { font-size: 38px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; margin-bottom: 18px; }
+  .timer__row { display: flex; gap: 10px; }
+  .btn--stop { background: var(--red); flex: 1; justify-content: center; }
+  .btn--ghost { background: var(--white); color: var(--ink-2); border: 1px solid var(--line); flex: none; }
+
+  /* table */
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-3); font-weight: 600; padding: 0 24px 12px; }
+  td { padding: 14px 24px; font-size: 14px; border-top: 1px solid var(--line); }
+  tr td:first-child, th:first-child { padding-left: 24px; }
+  .client-cell { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+  .client-dot { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 700; color: #fff; flex: none; }
+  .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 4px 11px; border-radius: 999px; }
+  .pill.paid { background: var(--green-soft); color: var(--green); }
+  .pill.pending { background: var(--amber-soft); color: var(--amber); }
+  .pill.overdue { background: var(--red-soft); color: var(--red); }
+  .amount { font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <div class="sidebar__logo-mark">P</div>
+        <div class="sidebar__logo-text">Pace</div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group__label">Workspace</div>
+        <a class="nav-link active" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Time tracking</a>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>Projects</a>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h11l5 5v11H4z"/><path d="M9 13h6M9 17h6"/></svg>Invoices</a>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group__label">Manage</div>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clients</a>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 13l4-4 3 3 5-6"/></svg>Reports</a>
+        <a class="nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg>Settings</a>
+      </div>
+
+      <div class="sidebar__user">
+        <div class="avatar">AM</div>
+        <div>
+          <div class="sidebar__user-name">Alex Morgan</div>
+          <div class="sidebar__user-role">Studio Nine LLC</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <div class="topbar__greeting">Good morning, Alex</div>
+          <div class="topbar__sub">Here's how your week is shaping up</div>
+        </div>
+        <div class="topbar__actions">
+          <div class="icon-btn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+          <button class="btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>New invoice</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-card__label">Hours this week</div>
+            <div class="stat-card__value">32.5h</div>
+            <div class="stat-card__delta up">▲ 6% vs last week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__label">Revenue this month</div>
+            <div class="stat-card__value">$18,420</div>
+            <div class="stat-card__delta up">▲ 12% vs last month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__label">Active projects</div>
+            <div class="stat-card__value">6</div>
+            <div class="stat-card__delta up">2 starting this week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__label">Unpaid invoices</div>
+            <div class="stat-card__value">3</div>
+            <div class="stat-card__delta down">$6,200 outstanding</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel__head">
+              <div class="panel__title">Hours logged this week</div>
+              <a class="panel__link" href="#">View report</a>
+            </div>
+            <div class="panel__body">
+              <div class="chart">
+                <div class="chart__col"><div class="chart__bar" style="height:46%"></div><div class="chart__label">Mon</div></div>
+                <div class="chart__col"><div class="chart__bar" style="height:68%"></div><div class="chart__label">Tue</div></div>
+                <div class="chart__col"><div class="chart__bar" style="height:54%"></div><div class="chart__label">Wed</div></div>
+                <div class="chart__col"><div class="chart__bar" style="height:88%"></div><div class="chart__label">Thu</div></div>
+                <div class="chart__col"><div class="chart__bar is-today" style="height:74%"></div><div class="chart__label">Fri</div></div>
+                <div class="chart__col"><div class="chart__bar" style="height:18%"></div><div class="chart__label">Sat</div></div>
+                <div class="chart__col"><div class="chart__bar" style="height:8%"></div><div class="chart__label">Sun</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head">
+              <div class="panel__title">Active timer</div>
+            </div>
+            <div class="timer">
+              <div class="timer__client">Acme Co. — Brand refresh</div>
+              <div class="timer__task">Client strategy call</div>
+              <div class="timer__clock">00:42:18</div>
+              <div class="timer__row">
+                <button class="btn btn--stop"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>Stop timer</button>
+                <button class="btn btn--ghost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head">
+            <div class="panel__title">Recent invoices</div>
+            <a class="panel__link" href="#">View all</a>
+          </div>
+          <table>
+            <thead>
+              <tr><th>Client</th><th>Project</th><th>Amount</th><th>Due date</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="client-cell"><div class="client-dot" style="background:#4f46e5">AC</div>Acme Co.</div></td>
+                <td>Brand refresh</td>
+                <td class="amount">$3,200</td>
+                <td>Jun 28, 2026</td>
+                <td><span class="pill paid">Paid</span></td>
+              </tr>
+              <tr>
+                <td><div class="client-cell"><div class="client-dot" style="background:#16a34a">NV</div>Novara Health</div></td>
+                <td>Onboarding flow</td>
+                <td class="amount">$1,850</td>
+                <td>Jul 02, 2026</td>
+                <td><span class="pill pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td><div class="client-cell"><div class="client-dot" style="background:#b45309">PK</div>Parkside Goods</div></td>
+                <td>Q2 retainer</td>
+                <td class="amount">$2,400</td>
+                <td>Jun 18, 2026</td>
+                <td><span class="pill overdue">Overdue</span></td>
+              </tr>
+              <tr>
+                <td><div class="client-cell"><div class="client-dot" style="background:#c0362c">RL</div>Redline Studio</div></td>
+                <td>Landing page</td>
+                <td class="amount">$950</td>
+                <td>Jul 10, 2026</td>
+                <td><span class="pill pending">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

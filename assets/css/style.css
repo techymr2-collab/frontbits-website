@@ -514,7 +514,7 @@ h2 em, h1 em {
 }
 
 .work-card__media::after {
-  content: "View website ↗";
+  content: "View website \2197";
   position: absolute;
   left: 50%; top: 50%;
   transform: translate(-50%, -50%) translateY(8px);
@@ -662,7 +662,7 @@ h2 em, h1 em {
 }
 
 .showcase__frame::after {
-  content: "View website ↗";
+  content: "View website \2197";
   position: absolute;
   left: 50%; top: 50%;
   transform: translate(-50%, -50%) translateY(8px);
@@ -1254,7 +1254,7 @@ h2 em, h1 em {
 }
 
 .cta__assurance li::before {
-  content: "✓";
+  content: "\2713";
   color: #a9a3ff;
   font-weight: 700;
 }

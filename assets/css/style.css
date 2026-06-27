@@ -901,6 +901,61 @@ h2 em, h1 em {
 }
 .why__media-label { font-size: 0.84rem; color: var(--ink-3); line-height: 1.45; display: block; }
 
+/* ---------- Booking confirmation ---------- */
+
+.confirm__inner { text-align: center; }
+
+.confirm__icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 28px;
+}
+.confirm__icon svg { width: 30px; height: 30px; }
+
+.confirm__lead { color: var(--ink-3); font-size: 1.08rem; margin: 18px auto 44px; max-width: 520px; }
+
+.confirm__steps {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  text-align: left;
+  margin-bottom: 44px;
+}
+.confirm__steps li {
+  display: flex;
+  gap: 18px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+.confirm__steps li:first-child { border-top: none; padding-top: 0; }
+
+.confirm__step-num {
+  flex: none;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: grid;
+  place-items: center;
+}
+
+.confirm__steps strong { display: block; margin-bottom: 5px; color: var(--ink); font-size: 1.05rem; }
+.confirm__steps p { color: var(--ink-3); font-size: 0.95rem; }
+
+.confirm__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
 /* ---------- Contact form ---------- */
 
 .contact-form { max-width: 100%; margin-top: 8px; }

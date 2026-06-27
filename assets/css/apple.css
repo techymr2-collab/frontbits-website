@@ -337,6 +337,12 @@ main { counter-reset: none; }
 #stack .trustedby__logo { cursor: default; }
 #stack .trustedby__logo:hover { color: var(--ink-3); opacity: 0.65; }
 
+/* ---------- Booking confirmation ---------- */
+
+.confirm__lead { font-size: 19px; line-height: 1.42; }
+.confirm__steps strong { font-size: 19px; font-weight: 600; letter-spacing: -0.012em; }
+.confirm__steps p { font-size: 17px; line-height: 1.47; }
+
 /* ---------- Contact form ---------- */
 
 #contact-form.section--alt { background: var(--bg-alt); }

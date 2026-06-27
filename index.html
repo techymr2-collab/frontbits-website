@@ -22,6 +22,22 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) && p(cal, [L, api]) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", "call", { origin: "https://cal.com" });
+
+  // Fire Meta Lead event ONLY on confirmed booking
+  Cal.ns.call("on", {
+    action: "bookingSuccessful",
+    callback: function(e) {
+      fbq('track', 'Lead');
+    }
+  });
+  </script>
+  <!-- End Cal.com embed -->
+
   <!-- Primary SEO -->
   <title>Web Design, Development &amp; Custom Software Studio | Frontbits</title>
   <meta name="description" content="Frontbits is a design, development &amp; custom software studio that builds high-converting websites, online stores, web apps, and bespoke software for businesses. Fast delivery. Book a free call.">
@@ -58,8 +74,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=33">
-  <link rel="stylesheet" href="assets/css/apple.css?v=20">
+  <link rel="stylesheet" href="assets/css/style.css?v=34">
+  <link rel="stylesheet" href="assets/css/apple.css?v=21">
 </head>
 <body>
 
@@ -74,10 +90,10 @@
         <a href="#services">Services</a>
         <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
-        <a href="https://cal.com/frontbits/call" target="_blank" rel="noopener" class="btn btn--primary btn--sm nav__cta-mobile">Book a free call</a>
+        <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--sm nav__cta-mobile">Book a free call</button>
       </nav>
       <div class="nav__actions">
-        <a href="https://cal.com/frontbits/call" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Book a free call</a>
+        <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--sm">Book a free call</button>
         <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -100,7 +116,7 @@
           Websites &amp; custom software for ambitious businesses.
         </p>
         <div class="hero__cta reveal">
-          <a href="https://cal.com/frontbits/call" target="_blank" rel="noopener" class="btn btn--white btn--lg">Book a free call</a>
+          <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--white btn--lg">Book a free call</button>
           <a href="#work" class="btn btn--outline-light btn--lg">See our work</a>
         </div>
       </div>
@@ -585,7 +601,7 @@
           price proposal within 48 hours, whether you hire us or not.
         </p>
         <div class="cta__actions">
-          <a href="https://cal.com/frontbits/call" target="_blank" rel="noopener" class="btn btn--white btn--lg">Book your free call</a>
+          <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--white btn--lg">Book your free call</button>
           <a href="mailto:hello@frontbits.com" class="cta__email">or email hello@frontbits.com</a>
         </div>
         <ul class="cta__assurance">

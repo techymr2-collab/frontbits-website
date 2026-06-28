@@ -9,3 +9,8 @@ Thumbs.db
 
 # Local preview mirror (served copy, not part of the site)
 /Users/Shared/frontbits_site/
+
+# Built output of admin-src/ (Netlify rebuilds this on every deploy from
+# source -- see netlify.toml). admin-src/node_modules, dist, and .env are
+# already covered by admin-src/.gitignore.
+/admin/

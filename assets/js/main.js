@@ -29,9 +29,11 @@
 
   // Scroll reveal — powered by Motion (motion.dev) when available, with fallbacks
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const skipMotion = reduceMotion || isMobile;
   const revealEls = document.querySelectorAll(".reveal");
 
-  if (reduceMotion || !("IntersectionObserver" in window)) {
+  if (skipMotion || !("IntersectionObserver" in window)) {
     // no animation: just show everything
     revealEls.forEach((el) => el.classList.add("is-visible"));
   } else if (window.Motion && typeof window.Motion.inView === "function") {
@@ -112,7 +114,7 @@
     requestAnimationFrame(tick);
   };
 
-  if (reduceMotion || !("IntersectionObserver" in window)) {
+  if (skipMotion || !("IntersectionObserver" in window)) {
     stats.forEach((el) => {
       el.textContent = el.dataset.count + (el.dataset.suffix || "");
     });
@@ -152,7 +154,8 @@
   const track = vp.querySelector(".showcase__track");
   const prevBtn = document.getElementById("showcasePrev");
   const nextBtn = document.getElementById("showcaseNext");
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    window.matchMedia("(max-width: 768px)").matches;
 
   // The track holds two identical sets; one set's width is the seamless loop point.
   let oneSet = 0, step = 320;

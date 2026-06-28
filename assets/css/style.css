@@ -113,7 +113,7 @@ h2 em, h1 em {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.95rem;
   padding: 14px 28px;
   border-radius: 999px;
@@ -1395,6 +1395,61 @@ h2 em, h1 em {
   * { animation: none !important; }
 }
 
+@media (max-width: 768px) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation: none !important; }
+}
+
+/* ---------- About page ---------- */
+
+.about-hero__inner { text-align: center; }
+
+.about-hero__lead {
+  color: var(--ink-3);
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 18px auto 0;
+}
+
+.about-story {
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+
+.about-story p { color: var(--ink-2); font-size: 1.05rem; }
+
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.value-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+.value-card__icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+.value-card__icon svg { width: 24px; height: 24px; }
+
+.value-card h3 { font-size: 1.08rem; margin-bottom: 10px; }
+.value-card p { font-size: 0.92rem; color: var(--ink-3); }
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1024px) {
@@ -1408,6 +1463,7 @@ h2 em, h1 em {
   .why__media { max-width: 560px; }
   .why__media-card { left: -10px; }
 
+  .values__grid { grid-template-columns: repeat(2, 1fr); }
 
   .footer__inner { grid-template-columns: 1fr 1fr; }
 }
@@ -1476,6 +1532,7 @@ h2 em, h1 em {
   .services__nav--next { right: 12px; }
   .process__grid { grid-template-columns: 1fr; }
   .testimonials__grid { grid-template-columns: 1fr; }
+  .values__grid { grid-template-columns: 1fr; }
 
   .why__media-card {
     position: static;

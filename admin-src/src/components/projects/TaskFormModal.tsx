@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { Modal } from '@/components/ui/Modal'
-import { Button, Field, Input, Select } from '@/components/ui'
+import { Button, DatePicker, Field, Input, Select } from '@/components/ui'
 import { taskSchema, type TaskFormValues } from '@/lib/schemas/task'
 import { TASK_STATUSES } from '@/lib/constants'
 import { toDateInputValue } from '@/lib/format'
@@ -87,8 +87,7 @@ export function TaskFormModal({
             </Select>
           </Field>
           <Field label="Due date">
-            <Input
-              type="date"
+            <DatePicker
               value={values.due_date}
               onChange={(e) => setValues((v) => ({ ...v, due_date: e.target.value }))}
             />

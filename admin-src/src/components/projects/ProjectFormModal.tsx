@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { Modal } from '@/components/ui/Modal'
-import { Button, Field, Input, Select, Textarea } from '@/components/ui'
+import { Button, DatePicker, Field, Input, Select, Textarea } from '@/components/ui'
 import { projectSchema, type ProjectFormValues } from '@/lib/schemas/project'
 import { CURRENCIES, PRICING_TIER_AMOUNTS, PRICING_TIERS, PROJECT_STATUSES } from '@/lib/constants'
 import { toDateInputValue } from '@/lib/format'
@@ -159,15 +159,13 @@ export function ProjectFormModal({
             </Select>
           </Field>
           <Field label="Start date">
-            <Input
-              type="date"
+            <DatePicker
               value={values.start_date}
               onChange={(e) => setValues((v) => ({ ...v, start_date: e.target.value }))}
             />
           </Field>
           <Field label="Target delivery">
-            <Input
-              type="date"
+            <DatePicker
               value={values.target_delivery_date}
               onChange={(e) => setValues((v) => ({ ...v, target_delivery_date: e.target.value }))}
             />

@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { Modal } from '@/components/ui/Modal'
-import { Button, Field, Input, Select, Textarea } from '@/components/ui'
+import { Button, DatePicker, Field, Input, Select, Textarea } from '@/components/ui'
 import { leadSchema, type LeadFormValues } from '@/lib/schemas/lead'
 import { CURRENCIES, LEAD_SOURCES, LEAD_STATUSES } from '@/lib/constants'
 import { toDateInputValue } from '@/lib/format'
@@ -159,8 +159,7 @@ export function LeadFormModal({
             </Select>
           </Field>
           <Field label="Next follow up">
-            <Input
-              type="date"
+            <DatePicker
               value={values.next_follow_up_date}
               onChange={(e) => setValues((v) => ({ ...v, next_follow_up_date: e.target.value }))}
             />

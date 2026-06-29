@@ -1,48 +1,51 @@
 @import 'tailwindcss';
 
-/* Plus Jakarta Sans (self hosted via @fontsource) */
-@import '@fontsource/plus-jakarta-sans/400.css';
-@import '@fontsource/plus-jakarta-sans/500.css';
-@import '@fontsource/plus-jakarta-sans/600.css';
-@import '@fontsource/plus-jakarta-sans/700.css';
-@import '@fontsource/plus-jakarta-sans/800.css';
+/* Inter (self hosted via @fontsource) -- same web font the marketing site
+   uses as its SF Pro fallback, for visual consistency across both apps. */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
 
-/* Design tokens. Light mode only, Apple style dashboard. */
+/* Design tokens, matched to the marketing site's Apple-style design system
+   (assets/css/apple.css there) so the CRM and the public site read as one
+   product. */
 @theme {
   --font-sans:
-    'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto,
-    sans-serif;
+    -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
 
-  /* Brand accent */
+  /* Brand accent -- Apple's exact link/button blue */
   --color-brand-50: #eef6ff;
   --color-brand-100: #d9ebff;
   --color-brand-200: #bcdcff;
   --color-brand-300: #8ec5ff;
   --color-brand-400: #59a4ff;
   --color-brand-500: #0071e3;
-  --color-brand-600: #0064cc;
+  --color-brand-600: #0077ed;
   --color-brand-700: #0052a8;
   --color-brand-800: #064587;
   --color-brand-900: #0a3a6f;
 
   /* Neutral surfaces */
-  --color-canvas: #f5f6f8;
+  --color-canvas: #f5f5f7;
   --color-surface: #ffffff;
-  --color-muted: #f7f8fa;
+  --color-muted: #f5f5f7;
 
-  --color-line: #e8eaed;
-  --color-line-strong: #d7dbe0;
+  --color-line: #d2d2d7;
+  --color-line-strong: #c4c4c9;
 
-  --color-ink: #0b0d12;
-  --color-ink-soft: #3c4350;
-  --color-ink-mute: #6b7280;
+  --color-ink: #1d1d1f;
+  --color-ink-soft: #6e6e73;
+  --color-ink-mute: #86868b;
 
-  --radius-card: 12px;
+  --radius-card: 14px;
 
-  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04),
-    0 1px 3px rgba(16, 24, 40, 0.06);
-  --shadow-pop: 0 4px 12px rgba(16, 24, 40, 0.08),
-    0 12px 32px rgba(16, 24, 40, 0.1);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-pop: 0 4px 12px rgba(0, 0, 0, 0.08),
+    0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
 @layer base {

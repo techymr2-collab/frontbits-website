@@ -180,20 +180,20 @@ export default function Dashboard() {
             ) : (
               <ResponsiveContainer width="100%" height={260}>
                 <BarChart data={projectsByStatus} margin={{ left: -16 }}>
-                  <CartesianGrid vertical={false} stroke="#e8eaed" />
+                  <CartesianGrid vertical={false} stroke="#d2d2d7" />
                   <XAxis
                     dataKey="status"
                     tickLine={false}
                     axisLine={false}
-                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    tick={{ fill: '#86868b', fontSize: 12 }}
                   />
                   <YAxis
                     allowDecimals={false}
                     tickLine={false}
                     axisLine={false}
-                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    tick={{ fill: '#86868b', fontSize: 12 }}
                   />
-                  <Tooltip cursor={{ fill: '#f7f8fa' }} />
+                  <Tooltip cursor={{ fill: '#f5f5f7' }} />
                   <Bar dataKey="count" radius={[6, 6, 0, 0]} maxBarSize={48}>
                     {projectsByStatus.map((entry) => (
                       <Cell key={entry.status} fill={PROJECT_STATUS_COLORS[entry.status]} />
@@ -226,11 +226,11 @@ export default function Dashboard() {
                     tickLine={false}
                     axisLine={false}
                     width={80}
-                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    tick={{ fill: '#86868b', fontSize: 12 }}
                   />
                   <Tooltip
                     formatter={(value) => formatMoney(Number(value), baseCurrency)}
-                    cursor={{ fill: '#f7f8fa' }}
+                    cursor={{ fill: '#f5f5f7' }}
                   />
                   <Bar dataKey="value" radius={[0, 6, 6, 0]} maxBarSize={24}>
                     {pipelineByStage.map((entry) => (

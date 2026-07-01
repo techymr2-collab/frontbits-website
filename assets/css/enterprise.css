@@ -327,7 +327,6 @@ h1 em, h2 em {
   overflow: hidden;
   background: var(--bg-alt);
   box-shadow: var(--shadow-md);
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
 .case__media img {
   width: 100%;
@@ -335,7 +334,6 @@ h1 em, h2 em {
   object-fit: cover;
   object-position: top center;
 }
-.case__media:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
 .case__num {
   font-family: var(--font-mono);

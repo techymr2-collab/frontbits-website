@@ -2,7 +2,8 @@
    Frontbits — enterprise light design system
    Loaded after style.css, replacing the previous apple.css skin.
    Stripe-inspired: white + ice-gray canvas, deep navy ink (#0A2540),
-   electric blue accent (#2563EB), visible hairline rules and grid,
+   brand blue accent (#0071E3, matching the logo mark), visible
+   hairline rules and grid,
    sharp small radii, Space Mono for labels/annotations, Instrument
    Serif italic reserved for the single accent word in headings.
    ========================================================================== */
@@ -19,18 +20,18 @@
   --bg-alt: #f6f9fc;
   --dark: #0a2540;
   --dark-2: #0d2c50;
-  --accent: #2563eb;
-  --accent-dark: #1d4ed8;
-  --accent-soft: #edf3ff;
+  --accent: #0071e3;
+  --accent-dark: #0060c0;
+  --accent-soft: #e8f2fd;
   --cyan: #06b6d4;
-  --sky: #7cb2ff;
+  --sky: #2997ff;
   --radius: 8px;
   --radius-lg: 10px;
   --radius-sm: 6px;
   /* redefine brand vars so base style.css rules follow the new accent */
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-soft: #edf3ff;
+  --primary: #0071e3;
+  --primary-dark: #0060c0;
+  --primary-soft: #e8f2fd;
   --font-mono: "Space Mono", "SFMono-Regular", Menlo, monospace;
   --shadow-md: 0 6px 24px rgba(10, 37, 64, 0.07);
   --shadow-lg: 0 20px 48px rgba(10, 37, 64, 0.12);
@@ -42,7 +43,7 @@ body {
   letter-spacing: -0.011em;
 }
 
-::selection { background: rgba(37, 99, 235, 0.18); }
+::selection { background: rgba(0, 113, 227, 0.18); }
 
 /* ---------- Typography ---------- */
 
@@ -127,7 +128,7 @@ h1 em, h2 em {
 .btn--primary:hover {
   background: var(--accent-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.32);
+  box-shadow: 0 6px 16px rgba(0, 113, 227, 0.32);
 }
 
 .btn--ghost {
@@ -191,7 +192,7 @@ h1 em, h2 em {
   position: relative;
   padding: 196px 0 120px;
   background:
-    radial-gradient(640px 420px at 88% -12%, rgba(37, 99, 235, 0.075), transparent 70%),
+    radial-gradient(640px 420px at 88% -12%, rgba(0, 113, 227, 0.075), transparent 70%),
     radial-gradient(520px 380px at -6% 108%, rgba(6, 182, 212, 0.06), transparent 70%),
     var(--bg);
   overflow: hidden;
@@ -420,7 +421,7 @@ h1 em, h2 em {
 }
 .service-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(37, 99, 235, 0.45);
+  border-color: rgba(0, 113, 227, 0.45);
   box-shadow: var(--shadow-lg);
 }
 .service-card__icon {
@@ -428,7 +429,7 @@ h1 em, h2 em {
   height: 46px;
   border-radius: var(--radius-sm);
   background: var(--accent-soft);
-  border: 1px solid rgba(37, 99, 235, 0.18);
+  border: 1px solid rgba(0, 113, 227, 0.18);
   color: var(--accent);
   margin-bottom: 26px;
 }
@@ -440,7 +441,7 @@ h1 em, h2 em {
   grid-column: span 2;
   padding: 44px 42px;
   background:
-    radial-gradient(420px 260px at 96% -20%, rgba(37, 99, 235, 0.06), transparent 70%),
+    radial-gradient(420px 260px at 96% -20%, rgba(0, 113, 227, 0.06), transparent 70%),
     #fff;
 }
 .service-card--featured h3 { font-size: 1.5rem; letter-spacing: -0.024em; }
@@ -460,7 +461,7 @@ h1 em, h2 em {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-  border: 1px solid rgba(37, 99, 235, 0.25);
+  border: 1px solid rgba(0, 113, 227, 0.25);
   border-radius: 3px;
   padding: 5px 10px;
 }
@@ -520,7 +521,7 @@ h1 em, h2 em {
 }
 .process-step:hover {
   transform: translateY(-4px);
-  border-color: rgba(124, 178, 255, 0.55);
+  border-color: rgba(41, 151, 255, 0.55);
   background: rgba(255, 255, 255, 0.05);
 }
 .process-step__num {
@@ -541,8 +542,8 @@ h1 em, h2 em {
   font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  background: rgba(124, 178, 255, 0.12);
-  border: 1px solid rgba(124, 178, 255, 0.28);
+  background: rgba(41, 151, 255, 0.12);
+  border: 1px solid rgba(41, 151, 255, 0.28);
   border-radius: 3px;
   color: var(--sky);
   padding: 5px 10px;
@@ -577,7 +578,7 @@ h1 em, h2 em {
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
 }
-.faq-item[open] { border-color: rgba(37, 99, 235, 0.5); }
+.faq-item[open] { border-color: rgba(0, 113, 227, 0.5); }
 .faq-item summary { font-size: 1rem; font-weight: 600; color: var(--navy); letter-spacing: -0.012em; }
 .faq-item__icon::before, .faq-item__icon::after { background: var(--accent); }
 .faq-item p { color: var(--ink-3); font-size: 0.95rem; }
@@ -605,13 +606,13 @@ h1 em, h2 em {
 .contact-form__field select:focus,
 .contact-form__field textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.14);
 }
 
 /* ---------- CTA: electric gradient band ---------- */
 
 .cta {
-  background: linear-gradient(108deg, #071f3b 0%, #0d3468 42%, #1d4ed8 82%, #2563eb 100%);
+  background: linear-gradient(108deg, #071f3b 0%, #0d3468 42%, #0060c0 82%, #0071e3 100%);
   padding: 130px 0;
 }
 .cta__glow {
@@ -653,7 +654,7 @@ h1 em, h2 em {
 .confirm__icon {
   border-radius: var(--radius);
   background: var(--accent-soft);
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  border: 1px solid rgba(0, 113, 227, 0.2);
   color: var(--accent);
 }
 .confirm__lead { color: var(--ink-3); }
@@ -681,7 +682,7 @@ h1 em, h2 em {
 }
 .value-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(37, 99, 235, 0.45);
+  border-color: rgba(0, 113, 227, 0.45);
   box-shadow: var(--shadow-lg);
 }
 .value-card__icon {
@@ -689,7 +690,7 @@ h1 em, h2 em {
   height: 46px;
   border-radius: var(--radius-sm);
   background: var(--accent-soft);
-  border: 1px solid rgba(37, 99, 235, 0.18);
+  border: 1px solid rgba(0, 113, 227, 0.18);
   color: var(--accent);
 }
 .value-card h3 { font-size: 1.1rem; letter-spacing: -0.016em; }

@@ -75,7 +75,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=37">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=3">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=4">
 </head>
 <body>
 
@@ -108,17 +108,94 @@
     <section class="hero hero--enterprise">
       <div class="hero__grid" aria-hidden="true"></div>
       <div class="container hero__inner">
-        <p class="hero__eyebrow reveal">Custom Software Studio</p>
-        <h1 class="hero__title reveal">
-          Live in weeks,<br>not <em>months.</em>
-        </h1>
-        <p class="hero__sub reveal">
-          Bespoke internal tools, SaaS products, and web apps for ambitious businesses. Scoped, designed, and shipped end to end.
-        </p>
-        <div class="hero__cta reveal">
-          <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--lg">Book a free call</button>
-          <a href="#work" class="btn btn--ghost btn--lg">See our work</a>
+        <div class="hero__col">
+          <p class="hero__eyebrow reveal">Custom Software Studio</p>
+          <h1 class="hero__title reveal">
+            Live in weeks,<br>not <em>months.</em>
+          </h1>
+          <p class="hero__sub reveal">
+            Bespoke internal tools, SaaS products, and web apps for ambitious businesses. Scoped, designed, and shipped end to end.
+          </p>
+          <div class="hero__cta reveal">
+            <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--lg">Book a free call</button>
+            <a href="#work" class="btn btn--ghost btn--lg">See our work</a>
+          </div>
         </div>
+
+        <!-- Illustrative dashboard mockup -- not a real client product, purely
+             decorative to signal "software," so it's aria-hidden and carries
+             no meaningful text for assistive tech. -->
+        <div class="hero__mockup reveal" aria-hidden="true">
+          <div class="mockup-float">
+            <div class="mockup">
+              <div class="mockup__chrome">
+                <span class="mockup__dot"></span>
+                <span class="mockup__dot"></span>
+                <span class="mockup__dot"></span>
+                <span class="mockup__url">app.workspace.io</span>
+              </div>
+              <div class="mockup__body">
+                <aside class="mockup__sidebar">
+                  <span class="mockup__logo"></span>
+                  <nav class="mockup__nav">
+                    <span class="mockup__nav-item mockup__nav-item--active"><span class="mockup__nav-dot"></span>Dashboard</span>
+                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Analytics</span>
+                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Projects</span>
+                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Team</span>
+                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Settings</span>
+                  </nav>
+                </aside>
+                <div class="mockup__main">
+                  <div class="mockup__topbar">
+                    <span class="mockup__title">Overview</span>
+                    <span class="mockup__btn">+ New</span>
+                  </div>
+                  <div class="mockup__stats">
+                    <div class="mockup__stat">
+                      <span class="mockup__stat-label">Revenue</span>
+                      <span class="mockup__stat-value">$8,420</span>
+                    </div>
+                    <div class="mockup__stat">
+                      <span class="mockup__stat-label">Active</span>
+                      <span class="mockup__stat-value">32.5h</span>
+                    </div>
+                    <div class="mockup__stat">
+                      <span class="mockup__stat-label">Uptime</span>
+                      <span class="mockup__stat-value">96%</span>
+                    </div>
+                  </div>
+                  <div class="mockup__chart">
+                    <span class="mockup__bar" style="--h: 42%"></span>
+                    <span class="mockup__bar" style="--h: 66%"></span>
+                    <span class="mockup__bar" style="--h: 48%"></span>
+                    <span class="mockup__bar" style="--h: 82%"></span>
+                    <span class="mockup__bar" style="--h: 58%"></span>
+                    <span class="mockup__bar" style="--h: 72%"></span>
+                    <span class="mockup__bar" style="--h: 52%"></span>
+                  </div>
+                  <div class="mockup__rows">
+                    <div class="mockup__row">
+                      <span class="mockup__row-dot"></span>
+                      <span class="mockup__row-line"></span>
+                      <span class="mockup__row-tag">Active</span>
+                    </div>
+                    <div class="mockup__row">
+                      <span class="mockup__row-dot mockup__row-dot--muted"></span>
+                      <span class="mockup__row-line"></span>
+                      <span class="mockup__row-tag mockup__row-tag--muted">Pending</span>
+                    </div>
+                    <div class="mockup__row">
+                      <span class="mockup__row-dot"></span>
+                      <span class="mockup__row-line"></span>
+                      <span class="mockup__row-tag">Active</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="hero__meta reveal">
           <span>Fixed price proposals</span>
           <span>4 to 8 week delivery</span>

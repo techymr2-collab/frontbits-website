@@ -75,7 +75,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=37">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=5">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=8">
 </head>
 <body>
 
@@ -371,13 +371,45 @@
           <a href="#contact" class="btn btn--primary">Get a free project audit</a>
         </div>
         <div class="why__media reveal">
-          <a class="why__media-frame" href="projects/pace.html" target="_blank" rel="noopener" aria-label="Open the Pace web app in a new tab">
-            <img class="why__shot" src="assets/img/shots/pace.jpg" alt="Pace, time tracking and invoicing SaaS dashboard built by Frontbits" loading="lazy">
-            <span class="why__media-hint">View project ↗</span>
-          </a>
+          <!-- Illustrative performance-report mockup -- not a real client
+               product, purely decorative, so it's aria-hidden with no
+               meaningful text for assistive tech. -->
+          <div class="why__media-frame">
+            <div class="why-mockup" aria-hidden="true">
+              <div class="why-mockup__chrome">
+                <span class="why-mockup__dot"></span>
+                <span class="why-mockup__dot"></span>
+                <span class="why-mockup__dot"></span>
+                <span class="why-mockup__url">reports.workspace.io</span>
+              </div>
+              <div class="why-mockup__body">
+                <div class="why-mockup__ring" style="--pct: 94">
+                  <span class="why-mockup__score-num">94</span>
+                  <span class="why-mockup__score-label">Performance</span>
+                </div>
+                <div class="why-mockup__checks">
+                  <div class="why-mockup__check">
+                    <span class="why-mockup__check-icon">&#10003;</span>
+                    <span class="why-mockup__check-label">Core Web Vitals</span>
+                    <span class="why-mockup__check-tag">Pass</span>
+                  </div>
+                  <div class="why-mockup__check">
+                    <span class="why-mockup__check-icon">&#10003;</span>
+                    <span class="why-mockup__check-label">Mobile friendly</span>
+                    <span class="why-mockup__check-tag">Pass</span>
+                  </div>
+                  <div class="why-mockup__check">
+                    <span class="why-mockup__check-icon">&#10003;</span>
+                    <span class="why-mockup__check-label">Fast TTFB</span>
+                    <span class="why-mockup__check-tag">Pass</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="why__media-card">
-            <span class="why__media-num">-40%</span>
-            <span class="why__media-label">less time spent on manual invoicing, post launch</span>
+            <span class="why__media-num">-52%</span>
+            <span class="why__media-label">faster page loads, on average across projects</span>
           </div>
         </div>
       </div>

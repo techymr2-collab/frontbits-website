@@ -686,11 +686,17 @@ h1 em, h2 em,
 .why__list li { color: var(--ink-3); border-top-color: var(--line); }
 .why__list li strong { color: var(--navy); letter-spacing: -0.014em; }
 .why__media-frame {
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
+  background: #fff;
 }
-.why__media-hint { background: var(--navy); border-radius: var(--radius-sm); }
+/* no longer a link (illustrative mockup, not a real project) -- neutralize
+   the base stylesheet's hover-darken + "View project" hint affordance */
+.why__media-frame::before { content: none; }
+.why__media-hint { display: none; }
 .why__media-card {
   border-radius: var(--radius);
   border: 1px solid var(--line);
@@ -698,6 +704,136 @@ h1 em, h2 em,
 }
 .why__media-num { color: var(--accent); font-variant-numeric: tabular-nums; }
 .why__media-label { color: var(--ink-3); }
+
+/* ---------- Why mockup: illustrative performance report, not a real product ---------- */
+
+.why-mockup {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.why-mockup__chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--line);
+  flex: none;
+}
+.why-mockup__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+.why-mockup__url {
+  margin-left: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.why-mockup__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 28px 30px;
+}
+
+.why-mockup__ring {
+  position: relative;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent) calc(var(--pct) * 1%), var(--line) 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.why-mockup__ring::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border-radius: 50%;
+  background: #fff;
+}
+.why-mockup__score-num {
+  position: relative;
+  z-index: 1;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.why-mockup__score-label {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.why-mockup__checks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 260px;
+}
+.why-mockup__check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+}
+.why-mockup__check:first-child { border-top: none; padding-top: 0; }
+.why-mockup__check-icon {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.why-mockup__check-label {
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.why-mockup__check-tag {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 3px;
+  padding: 3px 8px;
+}
 
 /* ---------- Tech stack: mono spec row ---------- */
 
@@ -949,6 +1085,15 @@ h1 em, h2 em,
   .case { gap: 22px; }
   .case__body h3 { font-size: 1.4rem; }
   .work__cta { flex-direction: column; align-items: flex-start; }
+
+  /* fixed aspect-ratio frame is too short for 3 checklist rows at
+     mobile widths (content overflow was getting clipped); give it
+     more headroom and tighten spacing to match */
+  .why__media-frame { aspect-ratio: 4 / 4.3; }
+  .why-mockup__body { padding: 22px 24px; gap: 20px; }
+  .why-mockup__ring { width: 92px; height: 92px; }
+  .why-mockup__score-num { font-size: 1.4rem; }
+  .why-mockup__score-label { font-size: 0.5rem; letter-spacing: 0.05em; }
 
   .services-bento { grid-template-columns: 1fr; }
   .services-bento .service-card--featured { grid-column: auto; padding: 34px 30px 36px; }

@@ -939,7 +939,7 @@ h1 em, h2 em,
   .hero__meta { gap: 12px 22px; margin-top: 0; }
   .hero__grid { background-size: 50% 100%; }
 
-  .hero__mockup { max-width: 100%; }
+  .hero__mockup { max-width: 100%; justify-self: stretch; }
   .mockup__sidebar { display: none; }
   .mockup__stats { flex-wrap: wrap; }
   .mockup__stat { flex: 1 1 calc(50% - 4px); }

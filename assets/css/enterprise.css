@@ -57,7 +57,8 @@ h1, h2, h3 {
 h2 { font-size: clamp(2.1rem, 4.4vw, 3.2rem); }
 
 /* single accent word: italic serif in electric blue */
-h1 em, h2 em {
+h1 em, h2 em,
+.hero__title em {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;

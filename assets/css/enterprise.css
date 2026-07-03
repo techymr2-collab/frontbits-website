@@ -664,9 +664,15 @@ h1 em, h2 em,
    spots with a literal old-purple #635BFF baked in (not a variable,
    so it never picked up the enterprise blue automatically) ---------- */
 
-/* left-aligned to match .section__head above it, not centered on the
-   page -- was using margin: 0 auto, which put the card in the middle
-   of the container while the heading stayed flush left */
+/* horizontal layout: heading left, pricing card right */
+.offer__inner {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 56px;
+  align-items: center;
+}
+.offer__inner .section__head { margin-bottom: 0; max-width: none; }
+
 .offer-card-wrap { max-width: 460px; margin: 0; }
 .offer-card-wrap .pricing__note { text-align: left; }
 
@@ -869,6 +875,9 @@ h1 em, h2 em,
   .case:nth-child(even) { grid-template-columns: 1fr; gap: 32px; }
   .case:nth-child(even) .case__media { order: 0; }
   .cases { gap: 72px; }
+
+  .offer__inner { grid-template-columns: 1fr; gap: 44px; }
+  .offer-card-wrap { max-width: 460px; justify-self: start; }
 }
 
 @media (max-width: 768px) {

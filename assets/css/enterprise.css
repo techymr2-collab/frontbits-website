@@ -504,17 +504,80 @@ h1 em, h2 em,
 }
 .mockup__row-tag--muted { color: var(--ink-3); background: var(--bg-alt); border: 1px solid var(--line); }
 
-/* ---------- Problem / Solution: stacked narrative ---------- */
+/* ---------- Problem / Solution: two-column rows with visuals ---------- */
 
 .problem-solution { padding-bottom: 76px; }
-.problem-solution .section__head:last-child { margin-bottom: 0; }
+.problem-solution .section__head { margin-bottom: 0; }
+
+.problem-solution__row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+.problem-solution__row--reverse { grid-template-columns: 0.9fr 1.1fr; margin-top: 76px; }
 
 .problem-solution__arrow {
   display: flex;
-  margin: 4px 0 44px;
+  margin: 44px 0 0;
   color: var(--accent);
 }
 .problem-solution__arrow svg { width: 22px; height: 22px; }
+
+.problem-solution__visual { position: relative; min-height: 300px; }
+
+/* "chaos" visual: scattered, overlapping, tilted cards standing in for
+   disconnected spreadsheets/tools -- deliberately messy to contrast
+   with the single aligned mockup on the solution side */
+.chaos-card {
+  position: absolute;
+  width: 46%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow-md);
+  padding: 12px 14px;
+}
+.chaos-card--1 { top: 2%; left: 0; transform: rotate(-7deg); z-index: 3; }
+.chaos-card--2 { top: 24%; left: 48%; width: 44%; transform: rotate(6deg); z-index: 2; }
+.chaos-card--3 { top: 58%; left: 8%; width: 48%; transform: rotate(-3deg); z-index: 4; }
+
+.chaos-card__dots { display: flex; gap: 4px; margin-bottom: 10px; }
+.chaos-card__dots span { width: 5px; height: 5px; border-radius: 50%; background: var(--line-strong); }
+
+.chaos-card__rows { display: grid; gap: 6px; }
+.chaos-card__rows span { height: 6px; border-radius: 2px; background: var(--line); }
+.chaos-card__rows span:nth-child(even) { width: 70%; }
+
+.chaos-card--chat { display: flex; align-items: flex-start; gap: 10px; }
+.chaos-card__avatar { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--accent-soft); }
+.chaos-card__lines { display: grid; gap: 6px; flex: 1; padding-top: 3px; }
+.chaos-card__lines span { height: 6px; border-radius: 2px; background: var(--line); }
+.chaos-card__lines span:last-child { width: 60%; }
+
+.chaos-badge {
+  position: absolute;
+  top: 44%;
+  left: 42%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 5;
+}
+.chaos-badge svg { width: 14px; height: 14px; }
+
+/* solution visual: reuses the hero's .mockup component verbatim (same
+   illustrative product), kept perfectly straight/centered -- aligned
+   and calm, the deliberate visual opposite of the tilted chaos cards */
+.problem-solution__visual .mockup {
+  max-width: 420px;
+  margin: 0 auto;
+}
 
 .problem-solution__points {
   list-style: none;
@@ -878,6 +941,15 @@ h1 em, h2 em,
 
   .offer__inner { grid-template-columns: 1fr; gap: 44px; }
   .offer-card-wrap { max-width: 460px; justify-self: start; }
+
+  .problem-solution__row,
+  .problem-solution__row--reverse { grid-template-columns: 1fr; gap: 40px; }
+  .problem-solution__row--reverse { margin-top: 56px; }
+  /* text always reads before the decorative visual once stacked,
+     regardless of which row it's the first or second DOM child of */
+  .problem-solution__row .section__head,
+  .problem-solution__row--reverse .section__head { order: 1; }
+  .problem-solution__visual { order: 2; min-height: 260px; }
 }
 
 @media (max-width: 768px) {

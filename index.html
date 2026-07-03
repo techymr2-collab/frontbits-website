@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=40">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=15">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=16">
 </head>
 <body>
 
@@ -181,7 +181,7 @@
 
     <!-- ======= Problem / Solution ======= -->
     <section class="section problem-solution">
-      <div class="container container--narrow">
+      <div class="container problem-solution__row">
         <div class="section__head reveal">
           <span class="eyebrow">The problem</span>
           <h2>Most businesses are running on <em>duct tape.</em></h2>
@@ -202,8 +202,93 @@
           </ul>
         </div>
 
+        <!-- Illustrative "chaos" visual -- scattered, overlapping, tilted
+             cards standing in for disconnected spreadsheets/tools. Not a
+             real product, purely decorative, so it's aria-hidden. -->
+        <div class="problem-solution__visual reveal" aria-hidden="true">
+          <div class="chaos-card chaos-card--1">
+            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
+            <div class="chaos-card__rows"><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="chaos-card chaos-card--2">
+            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
+            <div class="chaos-card__rows"><span></span><span></span><span></span></div>
+          </div>
+          <div class="chaos-card chaos-card--3 chaos-card--chat">
+            <span class="chaos-card__avatar"></span>
+            <div class="chaos-card__lines"><span></span><span></span></div>
+          </div>
+          <span class="chaos-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="container">
         <div class="problem-solution__arrow reveal" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
+        </div>
+      </div>
+
+      <div class="container problem-solution__row problem-solution__row--reverse">
+        <!-- Illustrative dashboard mockup -- the same "clean, single tool"
+             visual used in the hero, reused here to say "this is what
+             The Build gives you." Not a real client product. -->
+        <div class="problem-solution__visual reveal" aria-hidden="true">
+          <div class="mockup">
+            <div class="mockup__chrome">
+              <span class="mockup__dot"></span>
+              <span class="mockup__dot"></span>
+              <span class="mockup__dot"></span>
+              <span class="mockup__url">app.workspace.io</span>
+            </div>
+            <div class="mockup__body">
+              <aside class="mockup__sidebar">
+                <span class="mockup__logo"></span>
+                <nav class="mockup__nav">
+                  <span class="mockup__nav-item mockup__nav-item--active"><span class="mockup__nav-dot"></span>Dashboard</span>
+                  <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Analytics</span>
+                  <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Projects</span>
+                  <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Team</span>
+                </nav>
+              </aside>
+              <div class="mockup__main">
+                <div class="mockup__topbar">
+                  <span class="mockup__title">Overview</span>
+                  <span class="mockup__btn">+ New</span>
+                </div>
+                <div class="mockup__stats">
+                  <div class="mockup__stat">
+                    <span class="mockup__stat-label">Revenue</span>
+                    <span class="mockup__stat-value">$8,420</span>
+                  </div>
+                  <div class="mockup__stat">
+                    <span class="mockup__stat-label">Active</span>
+                    <span class="mockup__stat-value">32.5h</span>
+                  </div>
+                </div>
+                <div class="mockup__chart">
+                  <span class="mockup__bar" style="--h: 42%"></span>
+                  <span class="mockup__bar" style="--h: 66%"></span>
+                  <span class="mockup__bar" style="--h: 48%"></span>
+                  <span class="mockup__bar" style="--h: 82%"></span>
+                  <span class="mockup__bar" style="--h: 58%"></span>
+                </div>
+                <div class="mockup__rows">
+                  <div class="mockup__row">
+                    <span class="mockup__row-dot"></span>
+                    <span class="mockup__row-line"></span>
+                    <span class="mockup__row-tag">Active</span>
+                  </div>
+                  <div class="mockup__row">
+                    <span class="mockup__row-dot"></span>
+                    <span class="mockup__row-line"></span>
+                    <span class="mockup__row-tag">Active</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="section__head reveal">

@@ -516,6 +516,34 @@ h1 em, h2 em,
 }
 .problem-solution__arrow svg { width: 22px; height: 22px; }
 
+.problem-solution__points {
+  list-style: none;
+  margin-top: 28px;
+}
+.problem-solution__points li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-2);
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+.problem-solution__points li:first-child { border-top: none; padding-top: 0; }
+
+.problem-solution__point-icon {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+}
+.problem-solution__point-icon svg { width: 17px; height: 17px; }
+
 /* ---------- Stats: ruled strip, tabular numbers ---------- */
 
 .stats { border-block: 1px solid var(--line); background: var(--bg); }

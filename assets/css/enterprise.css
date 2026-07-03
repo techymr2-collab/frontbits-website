@@ -504,6 +504,18 @@ h1 em, h2 em,
 }
 .mockup__row-tag--muted { color: var(--ink-3); background: var(--bg-alt); border: 1px solid var(--line); }
 
+/* ---------- Problem / Solution: stacked narrative ---------- */
+
+.problem-solution { padding-bottom: 76px; }
+.problem-solution .section__head:last-child { margin-bottom: 0; }
+
+.problem-solution__arrow {
+  display: flex;
+  margin: 4px 0 44px;
+  color: var(--accent);
+}
+.problem-solution__arrow svg { width: 22px; height: 22px; }
+
 /* ---------- Stats: ruled strip, tabular numbers ---------- */
 
 .stats { border-block: 1px solid var(--line); background: var(--bg); }

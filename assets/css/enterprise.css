@@ -54,6 +54,11 @@ h1, h2, h3 {
   line-height: 1.08;
 }
 
+/* bare <h1> (About hero, booking-confirmed) never had a font-size
+   rule of its own, so it fell back to the browser default (2em,
+   non-responsive) instead of the design system's scale. Page-level
+   heroes with their own class (.hero__title) already override this. */
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
 h2 { font-size: clamp(2.1rem, 4.4vw, 3.2rem); }
 
 /* single accent word: italic serif in electric blue */

@@ -664,7 +664,11 @@ h1 em, h2 em,
    spots with a literal old-purple #635BFF baked in (not a variable,
    so it never picked up the enterprise blue automatically) ---------- */
 
-.offer-card-wrap { max-width: 460px; margin: 0 auto; }
+/* left-aligned to match .section__head above it, not centered on the
+   page -- was using margin: 0 auto, which put the card in the middle
+   of the container while the heading stayed flush left */
+.offer-card-wrap { max-width: 460px; margin: 0; }
+.offer-card-wrap .pricing__note { text-align: left; }
 
 .price-card { border-radius: var(--radius); box-shadow: var(--shadow-md); }
 .price-card:hover { box-shadow: var(--shadow-lg); }

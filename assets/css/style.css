@@ -234,7 +234,7 @@ h2 em, h1 em {
 .nav__burger.is-open span:nth-child(2) { opacity: 0; }
 .nav__burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.nav__cta-mobile { display: none; }
+.nav__mobile-actions { display: none; }
 
 /* ---------- Hero ---------- */
 
@@ -1499,6 +1499,30 @@ h2 em, h1 em {
     letter-spacing: -0.015em;
     color: rgba(255, 255, 255, 0.94);
   }
+
+  /* CTA block pinned to the bottom of the open menu -- was entirely
+     unreachable on mobile before (button had display:none with no
+     override anywhere, and the header's own CTA is hidden below) */
+  .nav__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  /* higher specificity than .nav__links a:not(.btn) above, which would
+     otherwise win and force this back to the big bold nav-link style */
+  #navLinks .nav__email-mobile {
+    padding: 0;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    color: var(--ink-3);
+  }
+  #navLinks .nav__email-mobile:hover { color: var(--ink); }
 
   .nav__actions .btn { display: none; }
   .nav__burger { display: flex; }

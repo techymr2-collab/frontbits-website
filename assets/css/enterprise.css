@@ -1109,14 +1109,18 @@ h1 em, h2 em,
     height: calc(100vh - 64px);
     background: #fff;
     border-top: 1px solid var(--line);
+    /* the unconditional desktop .nav__links { gap: 32px } above loads
+       after style.css's mobile gap:0 with equal specificity, so it was
+       winning even at mobile widths -- re-close the gap here, where
+       this stylesheet's own cascade position guarantees it wins */
+    gap: 0;
   }
   .nav__links a:not(.btn) {
     color: var(--navy);
     font-size: 1.7rem;
     font-weight: 700;
     letter-spacing: -0.025em;
-    padding: 10px 0;
+    padding: 8px 0;
   }
   .nav__links a:not(.btn):hover { color: var(--accent); }
-  .nav__cta-mobile { margin-top: 18px; }
 }

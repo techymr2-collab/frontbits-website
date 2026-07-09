@@ -11,6 +11,7 @@ export type ProfileRole = 'admin' | 'member'
 export type ClientStatus = 'Active' | 'Inactive'
 export type LeadSource = 'referral' | 'inbound' | 'outbound' | 'event' | 'website' | 'other'
 export type LeadStatus = 'New' | 'Contacted' | 'Qualified' | 'Proposal' | 'Won' | 'Lost'
+export type LeadType = 'waitlist' | 'the_build'
 export type ProjectStatus = 'Discovery' | 'In Progress' | 'Review' | 'Delivered' | 'On Hold'
 export type PricingTier = 'Starter' | 'Growth' | 'Scale' | 'Custom'
 export type TaskStatus = 'To Do' | 'Doing' | 'Done'
@@ -137,6 +138,7 @@ export interface Database {
           lost_reason: string | null
           project_type: string | null
           budget_range: string | null
+          lead_type: LeadType
           created_at: string
           updated_at: string
           deleted_at: string | null
@@ -158,6 +160,7 @@ export interface Database {
           lost_reason?: string | null
           project_type?: string | null
           budget_range?: string | null
+          lead_type?: LeadType
         }
         Update: Partial<Database['public']['Tables']['leads']['Insert']> & {
           deleted_at?: string | null

@@ -152,6 +152,9 @@ export default function LeadDetail() {
             <CardBody className="divide-y divide-line">
               <DetailRow label="Status" value={<Badge tone={LEAD_STATUS_TONE[lead.status]}>{lead.status}</Badge>} />
               <DetailRow label="Source" value={lead.source.charAt(0).toUpperCase() + lead.source.slice(1)} />
+              {lead.source === 'website' && (
+                <DetailRow label="Inquiry" value={lead.lead_type === 'waitlist' ? 'Waitlist signup' : 'The Build'} />
+              )}
               <DetailRow label="Email" value={lead.email || 'Not set'} />
               <DetailRow label="Phone" value={lead.phone || 'Not set'} />
               {lead.project_type && <DetailRow label="Project type" value={lead.project_type} />}

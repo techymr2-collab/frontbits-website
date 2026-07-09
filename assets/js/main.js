@@ -253,35 +253,38 @@
 // Formspree is completely unaffected.
 (function () {
   "use strict";
-  const form = document.querySelector(".contact-form");
-  if (!form) return;
+  const forms = document.querySelectorAll(".contact-form");
+  if (!forms.length) return;
 
   const SUPABASE_URL = "https://hivwiqmoqqlupbsrikzg.supabase.co";
   const SUPABASE_ANON_KEY =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpdndpcW1vcXFsdXBic3Jpa3pnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzOTc4ODUsImV4cCI6MjA5Nzk3Mzg4NX0.v4LSD2HkmwWhAFnS5U4mCAws7oZe9RhOFxTxeI0I9Bk";
 
-  form.addEventListener("submit", () => {
-    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return;
-    const data = new FormData(form);
-    fetch(SUPABASE_URL.replace(/\/$/, "") + "/rest/v1/leads", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: SUPABASE_ANON_KEY,
-        Authorization: "Bearer " + SUPABASE_ANON_KEY,
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify({
-        name: data.get("name"),
-        email: data.get("email"),
-        project_type: data.get("project_type") || null,
-        budget_range: data.get("budget") || null,
-        notes: data.get("message"),
-        source: "website",
-        status: "New",
-      }),
-    }).catch((err) => {
-      console.error("CRM lead sync failed (Formspree submission is unaffected):", err);
+  forms.forEach((form) => {
+    form.addEventListener("submit", () => {
+      if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return;
+      const data = new FormData(form);
+      fetch(SUPABASE_URL.replace(/\/$/, "") + "/rest/v1/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: "Bearer " + SUPABASE_ANON_KEY,
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          project_type: data.get("project_type") || null,
+          budget_range: data.get("budget") || null,
+          notes: data.get("message"),
+          source: "website",
+          status: "New",
+          lead_type: data.get("lead_type") || "the_build",
+        }),
+      }).catch((err) => {
+        console.error("CRM lead sync failed (Formspree submission is unaffected):", err);
+      });
     });
   });
 })();

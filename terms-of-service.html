@@ -4,14 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Cal.com embed -->
-  <script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) && p(cal, [L, api]) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-
-  Cal("init", "call", { origin: "https://cal.com" });
-  </script>
-  <!-- End Cal.com embed -->
-
   <title>Terms of Service | Frontbits</title>
   <meta name="description" content="The terms that apply when you book The Build or use frontbits.com.">
   <meta name="robots" content="index, follow">
@@ -28,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=40">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=17">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=18">
 </head>
 <body>
 
@@ -39,16 +31,17 @@
         <img src="assets/img/logo.svg?v=3" alt="Frontbits" width="100" height="22">
       </a>
       <nav class="nav__links" id="navLinks" aria-label="Primary">
-        <a href="index.html#process">How it works</a>
-        <a href="index.html#work">Work</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="the-build.html">The Build</a>
         <a href="index.html#faq">FAQ</a>
         <div class="nav__mobile-actions">
-          <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--lg nav__cta-mobile">Get started</button>
+          <a href="index.html#waitlist" class="btn btn--primary btn--lg nav__cta-mobile">Join waitlist</a>
           <a href="mailto:hello@frontbits.com" class="nav__email-mobile">or email hello@frontbits.com</a>
         </div>
       </nav>
       <div class="nav__actions">
-        <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--sm">Get started</button>
+        <a href="index.html#waitlist" class="btn btn--primary btn--sm">Join waitlist</a>
         <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -131,12 +124,13 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <img src="assets/img/logo-white.svg?v=3" alt="Frontbits" width="148" height="33">
-        <p>A fixed-price software package for businesses that need one tool built right.</p>
+        <p>An all-in-one business operations platform for startups and small teams.</p>
       </div>
       <nav class="footer__col" aria-label="Explore">
         <h4>Explore</h4>
-        <a href="index.html#work">Work</a>
-        <a href="index.html#process">How it works</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="the-build.html">The Build</a>
         <a href="index.html#faq">FAQ</a>
       </nav>
       <div class="footer__col">
@@ -158,6 +152,6 @@
   </footer>
 
   <script src="assets/js/motion.min.js?v=1"></script>
-  <script src="assets/js/main.js?v=14"></script>
+  <script src="assets/js/main.js?v=15"></script>
 </body>
 </html>

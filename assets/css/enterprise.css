@@ -273,6 +273,11 @@ h1 em, h2 em,
   margin-bottom: 0;
 }
 
+.hero__waitlist-form { max-width: 480px; margin-bottom: 18px; }
+.hero__waitlist-form .contact-form__submit { width: auto; padding-inline: 32px; }
+.hero__waitlist-note { font-size: 0.9rem; color: var(--ink-3); max-width: 480px; }
+.hero__waitlist-note a { color: var(--accent); }
+
 /* mono meta row under the hero CTAs, spans both grid columns */
 .hero__meta {
   grid-column: 1 / -1;
@@ -764,6 +769,36 @@ h1 em, h2 em,
 
 .pricing__note a { color: var(--accent); }
 
+/* ---------- Features grid ---------- */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.feature-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.feature-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.feature-card__icon svg { width: 22px; height: 22px; }
+.feature-card h3 { color: var(--navy); font-size: 1.08rem; margin-bottom: 10px; letter-spacing: -0.01em; }
+.feature-card p { color: var(--ink-3); font-size: 0.92rem; line-height: 1.6; }
+
 /* ---------- Process: navy panel ---------- */
 
 .section--dark { background: var(--navy); color: #a5b9cf; }
@@ -850,6 +885,7 @@ h1 em, h2 em,
   letter-spacing: 0.14em;
   color: var(--ink-3);
 }
+.contact-form__optional { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--ink-3); }
 .contact-form__field input,
 .contact-form__field select,
 .contact-form__field textarea {
@@ -979,6 +1015,8 @@ h1 em, h2 em,
   .problem-solution__row .section__head,
   .problem-solution__row--reverse .section__head { order: 1; }
   .problem-solution__visual { order: 2; min-height: 260px; }
+
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -996,6 +1034,8 @@ h1 em, h2 em,
   .mockup__stats { flex-wrap: wrap; }
   .mockup__stat { flex: 1 1 calc(50% - 4px); }
   .mockup__bar:nth-child(n + 6) { display: none; }
+
+  .feature-grid { grid-template-columns: 1fr; }
 
   .cases { gap: 56px; }
   .case { gap: 22px; }

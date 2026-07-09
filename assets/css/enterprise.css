@@ -1,40 +1,42 @@
 /* ==========================================================================
-   Frontbits — enterprise light design system
-   Loaded after style.css, replacing the previous apple.css skin.
-   Stripe-inspired: white + ice-gray canvas, deep navy ink (#0A2540),
-   brand blue accent (#0071E3, matching the logo mark), visible
-   hairline rules and grid,
-   sharp small radii, Space Mono for labels/annotations, Instrument
-   Serif italic reserved for the single accent word in headings.
+   Frontbits — Bonsai-inspired design system
+   Loaded after style.css, replacing the previous Stripe-inspired enterprise
+   skin. Pure sans-serif (Inter everywhere, no serif/mono accents), neutral
+   charcoal ink and hairlines, moderate rounded corners, soft floating-card
+   shadows, airy spacing. Frontbits blue (#0071E3, matching the logo mark)
+   is the only brand color — used purely as an accent, never as a base ink
+   or background tone.
    ========================================================================== */
 
 :root {
-  --navy: #0a2540;
-  --navy-2: #0d2c50;
-  --ink: #0a2540;
-  --ink-2: #3f5470;
-  --ink-3: #64748b;
-  --line: #e3e8ef;
-  --line-strong: #cbd5e1;
+  --navy: #1a1a1a;
+  --navy-2: #262626;
+  --ink: #1a1a1a;
+  --ink-2: #52525b;
+  --ink-3: #71717a;
+  --line: #e4e4e7;
+  --line-strong: #d4d4d8;
   --bg: #ffffff;
-  --bg-alt: #f6f9fc;
-  --dark: #0a2540;
-  --dark-2: #0d2c50;
+  --bg-alt: #f7f7f8;
+  --dark: #1a1a1a;
+  --dark-2: #262626;
   --accent: #0071e3;
   --accent-dark: #0060c0;
   --accent-soft: #e8f2fd;
   --cyan: #06b6d4;
   --sky: #2997ff;
-  --radius: 8px;
-  --radius-lg: 10px;
-  --radius-sm: 6px;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --radius-sm: 10px;
+  --radius-btn: 12px;
   /* redefine brand vars so base style.css rules follow the new accent */
   --primary: #0071e3;
   --primary-dark: #0060c0;
   --primary-soft: #e8f2fd;
-  --font-mono: "Space Mono", "SFMono-Regular", Menlo, monospace;
-  --shadow-md: 0 6px 24px rgba(10, 37, 64, 0.07);
-  --shadow-lg: 0 20px 48px rgba(10, 37, 64, 0.12);
+  --font-mono: var(--font-sans);
+  --font-serif: var(--font-sans);
+  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 24px 56px rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -61,12 +63,12 @@ h1, h2, h3 {
 h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
 h2 { font-size: clamp(2.1rem, 4.4vw, 3.2rem); }
 
-/* single accent word: italic serif in electric blue */
+/* single accent word: bold sans in electric blue */
 h1 em, h2 em,
 .hero__title em {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: inherit;
   color: var(--accent);
   -webkit-text-fill-color: var(--accent);
   background: none;
@@ -78,24 +80,14 @@ h1 em, h2 em,
 }
 
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-mono);
+  display: inline-block;
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 20px;
-}
-.eyebrow::before,
-.eyebrow::after {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.55;
 }
 .eyebrow--light { color: var(--sky); }
 
@@ -113,10 +105,10 @@ h1 em, h2 em,
   text-align: left;
 }
 
-/* ---------- Buttons: rectangular, engineered ---------- */
+/* ---------- Buttons: rounded, friendly ---------- */
 
 .btn {
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-btn);
   font-weight: 600;
   font-size: 0.94rem;
   letter-spacing: -0.006em;
@@ -129,7 +121,7 @@ h1 em, h2 em,
 .btn--primary {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 1px 2px rgba(10, 37, 64, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.28);
 }
 .btn--primary:hover {
   background: var(--accent-dark);
@@ -154,9 +146,9 @@ h1 em, h2 em,
 .btn--white {
   background: #fff;
   color: var(--navy);
-  box-shadow: 0 10px 28px rgba(4, 18, 36, 0.28);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
 }
-.btn--white:hover { transform: translateY(-1px); box-shadow: 0 14px 34px rgba(4, 18, 36, 0.34); }
+.btn--white:hover { transform: translateY(-1px); box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2); }
 
 /* blue arrow text link (used on booking page + inline links) */
 .applelink {
@@ -179,7 +171,7 @@ h1 em, h2 em,
   backdrop-filter: saturate(180%) blur(16px);
   border-bottom: 1px solid var(--line);
 }
-.nav.is-scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 0 rgba(10, 37, 64, 0.02); }
+.nav.is-scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03); }
 .nav__inner { height: 64px; }
 .nav__logo img { height: 22px; }
 .nav__links { gap: 32px; }
@@ -192,7 +184,7 @@ h1 em, h2 em,
 .nav__burger { border-color: var(--line); border-radius: var(--radius-sm); }
 .nav__burger span { background: var(--navy); }
 
-/* ---------- Hero: light, ruled grid, left-aligned ---------- */
+/* ---------- Hero: light, soft blob, left-aligned ---------- */
 
 .hero--enterprise {
   position: relative;
@@ -204,16 +196,16 @@ h1 em, h2 em,
   overflow: hidden;
 }
 
-/* vertical hairline rules aligned to the container grid */
+/* soft blurred blue blob, the hero's one decorative flourish */
 .hero__grid {
   position: absolute;
-  inset: 0;
-  width: min(1400px, calc(100% - 48px));
-  margin-inline: auto;
-  border-inline: 1px solid var(--line);
-  background: linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 25% 100%;
-  opacity: 0.6;
+  top: -12%;
+  right: -8%;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.16), transparent 70%);
+  filter: blur(50px);
   pointer-events: none;
 }
 
@@ -231,23 +223,14 @@ h1 em, h2 em,
 .hero__col { min-width: 0; }
 
 .hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-mono);
+  display: inline-block;
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 30px;
-}
-.hero__eyebrow::after {
-  content: "";
-  width: 64px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.55;
 }
 
 .hero--enterprise .hero__title {
@@ -278,7 +261,7 @@ h1 em, h2 em,
 .hero__waitlist-note { font-size: 0.9rem; color: var(--ink-3); max-width: 480px; }
 .hero__waitlist-note a { color: var(--accent); }
 
-/* mono meta row under the hero CTAs, spans both grid columns */
+/* small uppercase meta row under the hero CTAs, spans both grid columns */
 .hero__meta {
   grid-column: 1 / -1;
   display: flex;
@@ -801,8 +784,8 @@ h1 em, h2 em,
 
 /* ---------- Process: navy panel ---------- */
 
-.section--dark { background: var(--navy); color: #a5b9cf; }
-.section--dark .section__head p { color: #a5b9cf; }
+.section--dark { background: var(--navy); color: #a3a3a3; }
+.section--dark .section__head p { color: #a3a3a3; }
 .process__grid { gap: 20px; }
 .process-step {
   background: rgba(255, 255, 255, 0.03);
@@ -827,7 +810,7 @@ h1 em, h2 em,
 }
 .process-step__num::before { content: "/ "; opacity: 0.5; }
 .process-step h3 { color: #fff; font-size: 1.22rem; letter-spacing: -0.02em; }
-.process-step p { color: #a5b9cf; font-size: 0.93rem; }
+.process-step p { color: #a3a3a3; font-size: 0.93rem; }
 .process-step__time {
   font-family: var(--font-mono);
   font-size: 0.66rem;
@@ -923,9 +906,9 @@ h1 em, h2 em,
 
 /* ---------- Footer: navy ---------- */
 
-.footer { background: var(--navy); color: #a5b9cf; padding-top: 84px; }
+.footer { background: var(--navy); color: #a3a3a3; padding-top: 84px; }
 .footer__inner { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-.footer__brand p { color: #a5b9cf; font-size: 0.92rem; }
+.footer__brand p { color: #a3a3a3; font-size: 0.92rem; }
 .footer__col h4 {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -934,9 +917,9 @@ h1 em, h2 em,
   text-transform: uppercase;
   color: var(--sky);
 }
-.footer__col a { color: #a5b9cf; font-size: 0.92rem; }
+.footer__col a { color: #a3a3a3; font-size: 0.92rem; }
 .footer__col a:hover { color: #fff; }
-.footer__socials a { border: 1px solid rgba(255, 255, 255, 0.16); border-radius: var(--radius-sm); color: #a5b9cf; }
+.footer__socials a { border: 1px solid rgba(255, 255, 255, 0.16); border-radius: var(--radius-sm); color: #a3a3a3; }
 .footer__socials a:hover { color: #fff; border-color: var(--sky); transform: none; }
 .footer__bottom { border-top: none; font-size: 0.8rem; color: #7d94ad; }
 
@@ -1027,7 +1010,7 @@ h1 em, h2 em,
   .hero--enterprise .hero__title { font-size: clamp(2.5rem, 11vw, 3.4rem); }
   .hero--enterprise .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__meta { gap: 12px 22px; margin-top: 0; }
-  .hero__grid { background-size: 50% 100%; }
+  .hero__grid { width: 380px; height: 380px; top: -8%; right: -20%; }
 
   .hero__mockup { max-width: 100%; justify-self: stretch; }
   .mockup__sidebar { display: none; }

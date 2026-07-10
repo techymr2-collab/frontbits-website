@@ -231,7 +231,6 @@ h1 em, h2 em,
   text-align: center;
 }
 .hero--centered .hero__col { max-width: 680px; margin: 0 auto; }
-.hero--centered .hero__sub { margin: 0 auto 38px; }
 .hero--centered .hero__waitlist-note { margin-left: auto; margin-right: auto; margin-top: 20px; }
 .hero--centered .hero__mockup { max-width: 980px; width: 100%; margin: 32px auto 0; align-self: stretch; }
 
@@ -261,6 +260,9 @@ h1 em, h2 em,
   line-height: 1.6;
   max-width: 480px;
   margin: 0 0 38px;
+}
+.hero--enterprise.hero--centered .hero__sub {
+  margin: 0 auto 38px;
 }
 
 .hero--enterprise .hero__cta {

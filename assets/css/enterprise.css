@@ -487,6 +487,192 @@ h1 em, h2 em,
 }
 .mockup__row-tag--muted { color: var(--ink-3); background: var(--bg-alt); border: 1px solid var(--line); }
 
+/* ---------- Hero mockup: richer chrome, sidebar, topbar, rows (hero only --
+   the smaller mockups reused in Problem/Solution keep the plainer markup
+   above and simply don't render the elements styled below) ---------- */
+
+.mockup__dot--red { background: #ff8a80; }
+.mockup__dot--amber { background: #ffcc80; }
+.mockup__dot--green { background: #a5e8bd; }
+
+.mockup__url svg { width: 11px; height: 11px; flex: none; margin-right: 2px; vertical-align: -1px; }
+.mockup__url { display: inline-flex; align-items: center; gap: 3px; }
+
+.mockup__chrome-menu {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+  flex: none;
+}
+.mockup__chrome-menu span { width: 3px; height: 3px; border-radius: 50%; background: var(--line-strong); }
+
+.mockup__workspace {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.mockup__workspace .mockup__logo { margin-bottom: 0; }
+.mockup__workspace-name { font-size: 0.66rem; font-weight: 700; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.mockup__nav-item svg { width: 13px; height: 13px; flex: none; }
+
+.mockup__sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.mockup__sidebar-user { font-size: 0.62rem; font-weight: 600; color: var(--ink-3); }
+
+.mockup__avatar {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--navy);
+}
+.mockup__avatar--sm { width: 20px; height: 20px; }
+
+.mockup__topbar-actions { display: flex; align-items: center; gap: 8px; }
+
+.mockup__icon-btn {
+  position: relative;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-3);
+}
+.mockup__icon-btn svg { width: 12px; height: 12px; }
+.mockup__icon-dot {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sky);
+  border: 1.5px solid #fff;
+}
+
+.mockup__stat { position: relative; }
+.mockup__stat-trend {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 700;
+}
+.mockup__stat-trend--up { color: #16a34a; }
+.mockup__stat-trend--down { color: #dc4c4c; }
+
+.mockup__chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+.mockup__chart-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.mockup__legend-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.mockup__legend-dot--muted { background: var(--sky); opacity: 0.55; }
+
+.mockup__row-avatar {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--c, var(--accent));
+}
+.mockup__row-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mockup__row-name {
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--navy);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mockup__row-sub {
+  font-size: 0.58rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mockup__row-amount {
+  flex: none;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* floating notification card, overlaps the mockup's edge for depth --
+   static (no separate animation), just rides along with the parent's
+   existing idle float */
+.mockup__float-card {
+  position: absolute;
+  left: -26px;
+  bottom: 32px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  transform: rotate(-2deg);
+}
+.mockup__float-icon {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #e6f7ec;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mockup__float-icon svg { width: 13px; height: 13px; }
+.mockup__float-title { display: block; font-size: 0.6rem; color: var(--ink-3); font-weight: 600; }
+.mockup__float-amount { display: block; font-size: 0.76rem; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
+
 /* ---------- Problem / Solution: two-column rows with visuals ---------- */
 
 .problem-solution { padding-bottom: 76px; }
@@ -980,6 +1166,9 @@ h1 em, h2 em,
   .mockup__stats { flex-wrap: wrap; }
   .mockup__stat { flex: 1 1 calc(50% - 4px); }
   .mockup__bar:nth-child(n + 6) { display: none; }
+  .mockup__icon-btn:first-child { display: none; }
+  .mockup__row-sub { display: none; }
+  .mockup__float-card { display: none; }
 
   .cases { gap: 56px; }
   .case { gap: 22px; }

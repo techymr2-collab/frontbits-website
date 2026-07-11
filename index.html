@@ -4,10 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) && p(cal, [L, api]) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", "call", { origin: "https://cal.com" });
+  </script>
+  <!-- End Cal.com embed -->
+
   <!-- Primary SEO -->
-  <title>Frontbits — All-in-One Business Ops Platform for Startups | Start Free</title>
-  <meta name="description" content="Frontbits is an all-in-one business operations platform for startups and small teams: proposals, contracts, invoicing, payments, time tracking, and client CRM in one place. Start for free.">
-  <meta name="keywords" content="business operations software, all in one business platform, startup CRM, invoicing software for startups, proposals and contracts software, business management platform">
+  <title>Frontbits — Custom Software, $1,999 Flat, 4 Weeks</title>
+  <meta name="description" content="Frontbits builds one fixed-scope software tool for your business, live in 4 weeks, $1,999 flat. No hourly billing, no scope surprises.">
+  <meta name="keywords" content="productized software service, fixed price software development, custom software package, fixed scope software project, small business software tool">
   <meta name="author" content="Frontbits">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#1A1A1A">
@@ -24,17 +32,17 @@
   <meta property="og:site_name" content="Frontbits">
   <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://frontbits.com/">
-  <meta property="og:title" content="Frontbits — All-in-One Business Ops Platform for Startups">
-  <meta property="og:description" content="Proposals, contracts, invoicing, payments, time tracking, and client CRM in one place. Start for free.">
+  <meta property="og:title" content="Frontbits — Custom Software, $1,999 Flat, 4 Weeks">
+  <meta property="og:description" content="One fixed-scope software tool, built and deployed in 4 weeks, $1,999 flat. No hourly billing, no scope surprises.">
   <meta property="og:image" content="https://frontbits.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Frontbits, an all-in-one business operations platform">
+  <meta property="og:image:alt" content="Frontbits, custom software that runs your business">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Frontbits — All-in-One Business Ops Platform for Startups">
-  <meta name="twitter:description" content="Proposals, contracts, invoicing, payments, time tracking, and client CRM in one place. Start for free.">
+  <meta name="twitter:title" content="Frontbits — Custom Software, $1,999 Flat, 4 Weeks">
+  <meta name="twitter:description" content="One fixed-scope software tool, built and deployed in 4 weeks, $1,999 flat. No hourly billing, no scope surprises.">
   <meta name="twitter:image" content="https://frontbits.com/assets/img/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,17 +60,16 @@
         <img src="assets/img/logo.svg?v=3" alt="Frontbits" width="100" height="22">
       </a>
       <nav class="nav__links" id="navLinks" aria-label="Primary">
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="the-build.html">The Build</a>
+        <a href="#process">How it works</a>
+        <a href="#work">Work</a>
         <a href="#faq">FAQ</a>
         <div class="nav__mobile-actions">
-          <a href="#start" class="btn btn--primary btn--lg nav__cta-mobile">Start for free</a>
+          <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--lg nav__cta-mobile">Get started</button>
           <a href="mailto:hello@frontbits.com" class="nav__email-mobile">or email hello@frontbits.com</a>
         </div>
       </nav>
       <div class="nav__actions">
-        <a href="#start" class="btn btn--primary btn--sm">Start for free</a>
+        <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--sm">Get started</button>
         <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -73,33 +80,26 @@
   <main id="top">
 
     <!-- ======= Hero ======= -->
-    <section class="hero hero--enterprise hero--centered">
+    <section class="hero hero--enterprise">
       <div class="hero__grid" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__col">
-          <p class="hero__eyebrow reveal">All-in-one business ops platform</p>
+          <p class="hero__eyebrow reveal">One Fixed Package</p>
           <h1 class="hero__title reveal">
-            Run your business<br><em>from one place.</em>
+            Software that finally<br><em>fits your business.</em>
           </h1>
           <p class="hero__sub reveal">
-            Frontbits is an all-in-one business operations platform for startups and small teams — proposals, contracts, invoicing, payments, time tracking, and client CRM, without duct-taping together five different tools.
+            The Build is one fixed-scope software package: a core tool for your business, designed, built, deployed, and fully handed over in four weeks. No hourly billing, no scope creep, no surprises.
           </p>
-
           <div class="hero__cta reveal">
-            <a href="#start" class="btn btn--primary btn--lg">Start for free</a>
-          </div>
-          <p class="hero__waitlist-note reveal">Need something custom right now? <a href="the-build.html">Check out The Build</a>, our fixed-price custom software service.</p>
-
-          <div class="hero__meta reveal">
-            <span>Free to get started</span>
-            <span>One platform, not five tools</span>
-            <span>Built for startups &amp; small teams</span>
+            <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--lg">Get started</button>
+            <a href="#offer" class="btn btn--ghost btn--lg">See what's included</a>
           </div>
         </div>
 
-        <!-- Illustrative product mockup -- not a real screenshot, purely
-             decorative to signal "business ops platform," so it's
-             aria-hidden and carries no meaningful text for assistive tech. -->
+        <!-- Illustrative dashboard mockup -- not a real client product, purely
+             decorative to signal "software," so it's aria-hidden and carries
+             no meaningful text for assistive tech. -->
         <div class="hero__mockup reveal" aria-hidden="true">
           <div class="mockup-float">
             <div class="mockup">
@@ -107,17 +107,17 @@
                 <span class="mockup__dot"></span>
                 <span class="mockup__dot"></span>
                 <span class="mockup__dot"></span>
-                <span class="mockup__url">app.frontbits.com</span>
+                <span class="mockup__url">app.workspace.io</span>
               </div>
               <div class="mockup__body">
                 <aside class="mockup__sidebar">
                   <span class="mockup__logo"></span>
                   <nav class="mockup__nav">
-                    <span class="mockup__nav-item mockup__nav-item--active"><span class="mockup__nav-dot"></span>Clients</span>
-                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Invoices</span>
-                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Contracts</span>
-                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Time Tracking</span>
-                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Payments</span>
+                    <span class="mockup__nav-item mockup__nav-item--active"><span class="mockup__nav-dot"></span>Dashboard</span>
+                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Analytics</span>
+                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Projects</span>
+                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Team</span>
+                    <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Settings</span>
                   </nav>
                 </aside>
                 <div class="mockup__main">
@@ -127,16 +127,16 @@
                   </div>
                   <div class="mockup__stats">
                     <div class="mockup__stat">
-                      <span class="mockup__stat-label">Outstanding</span>
-                      <span class="mockup__stat-value">$4,280</span>
+                      <span class="mockup__stat-label">Revenue</span>
+                      <span class="mockup__stat-value">$8,420</span>
                     </div>
                     <div class="mockup__stat">
-                      <span class="mockup__stat-label">Clients</span>
-                      <span class="mockup__stat-value">18</span>
+                      <span class="mockup__stat-label">Active</span>
+                      <span class="mockup__stat-value">32.5h</span>
                     </div>
                     <div class="mockup__stat">
-                      <span class="mockup__stat-label">Hours logged</span>
-                      <span class="mockup__stat-value">126h</span>
+                      <span class="mockup__stat-label">Uptime</span>
+                      <span class="mockup__stat-value">96%</span>
                     </div>
                   </div>
                   <div class="mockup__chart">
@@ -152,7 +152,7 @@
                     <div class="mockup__row">
                       <span class="mockup__row-dot"></span>
                       <span class="mockup__row-line"></span>
-                      <span class="mockup__row-tag">Paid</span>
+                      <span class="mockup__row-tag">Active</span>
                     </div>
                     <div class="mockup__row">
                       <span class="mockup__row-dot mockup__row-dot--muted"></span>
@@ -162,7 +162,7 @@
                     <div class="mockup__row">
                       <span class="mockup__row-dot"></span>
                       <span class="mockup__row-line"></span>
-                      <span class="mockup__row-tag">Paid</span>
+                      <span class="mockup__row-tag">Active</span>
                     </div>
                   </div>
                 </div>
@@ -170,145 +170,372 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ======= Features ======= -->
-    <section class="section" id="features">
-      <div class="container">
-        <div class="section__head reveal">
-          <span class="eyebrow">What's included</span>
-          <h2>Everything your business ops need, <em>in one place.</em></h2>
-          <p>Stop stitching together five different tools. Frontbits brings the whole client-to-cash workflow into one system.</p>
-        </div>
-
-        <div class="feature-grid">
-          <div class="feature-card reveal">
-            <span class="feature-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="m9 15 2 2 4-4"/></svg>
-            </span>
-            <h3>Proposals &amp; Contracts</h3>
-            <p>Send polished proposals and get contracts signed, without leaving the platform or chasing paperwork.</p>
-          </div>
-          <div class="feature-card reveal">
-            <span class="feature-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
-            </span>
-            <h3>Invoicing &amp; Payments</h3>
-            <p>Bill clients and collect payment in the same place you scoped the work, with a clear paid/pending status at a glance.</p>
-          </div>
-          <div class="feature-card reveal">
-            <span class="feature-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-            </span>
-            <h3>Time Tracking</h3>
-            <p>Log hours against clients and projects automatically, so billing and reporting are always backed by real data.</p>
-          </div>
-          <div class="feature-card reveal">
-            <span class="feature-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6.2 6.5-6.2s6.5 2.6 6.5 6.2"/><circle cx="17.5" cy="8.5" r="2.4"/><path d="M16 13.8c2.6.4 4.5 2.4 4.5 5"/></svg>
-            </span>
-            <h3>Client CRM</h3>
-            <p>Every client, conversation, and project in one record, so nothing lives in a separate spreadsheet or inbox.</p>
-          </div>
-          <div class="feature-card reveal">
-            <span class="feature-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 17V11M12 17V7M16 17v-5"/></svg>
-            </span>
-            <h3>Dashboard &amp; Reporting</h3>
-            <p>See revenue, outstanding invoices, and team hours in one dashboard, without exporting anything to a spreadsheet.</p>
-          </div>
+        <div class="hero__meta reveal">
+          <span>$1,999 flat</span>
+          <span>4 weeks, start to launch</span>
+          <span>One core tool, fully yours</span>
         </div>
       </div>
     </section>
 
-    <!-- ======= Pricing ======= -->
-    <section class="section section--alt" id="pricing">
-      <div class="container container--narrow">
+    <!-- ======= Problem / Solution ======= -->
+    <section class="section problem-solution">
+      <div class="container problem-solution__row">
         <div class="section__head reveal">
-          <span class="eyebrow">Pricing</span>
-          <h2>Simple tiers, <em>built to grow with you.</em></h2>
-          <p>Exact pricing is being finalized ahead of launch. Start for free today and you'll be the first to know when it's live.</p>
+          <span class="eyebrow">The problem</span>
+          <h2>Most businesses are running on <em>duct tape.</em></h2>
+          <p>Spreadsheets that don't scale, Slack threads standing in for a real system, three tools that don't talk to each other — and someone loses hours every week just holding it together.</p>
+          <ul class="problem-solution__points">
+            <li>
+              <span class="problem-solution__point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+              Spreadsheets breaking down as you grow
+            </li>
+            <li>
+              <span class="problem-solution__point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="7" r="2.2"/><circle cx="19" cy="7" r="2.2"/><circle cx="12" cy="18" r="2.2"/></svg></span>
+              Tools that don't talk to each other
+            </li>
+            <li>
+              <span class="problem-solution__point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+              Hours lost to manual busywork every week
+            </li>
+          </ul>
+        </div>
+
+        <!-- Illustrative "chaos" visual -- scattered, overlapping, tilted
+             cards standing in for disconnected spreadsheets/tools. Not a
+             real product, purely decorative, so it's aria-hidden. -->
+        <div class="problem-solution__visual reveal" aria-hidden="true">
+          <div class="chaos-card chaos-card--1">
+            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
+            <div class="chaos-card__rows"><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="chaos-card chaos-card--2">
+            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
+            <div class="chaos-card__rows"><span></span><span></span><span></span></div>
+          </div>
+          <div class="chaos-card chaos-card--3 chaos-card--chat">
+            <span class="chaos-card__avatar"></span>
+            <div class="chaos-card__lines"><span></span><span></span></div>
+          </div>
+          <span class="chaos-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </span>
         </div>
       </div>
 
       <div class="container">
-        <div class="pricing__grid">
-          <div class="price-card reveal">
-            <h3>Starter</h3>
-            <p class="price-card__desc">For solo founders getting organized.</p>
-            <p class="price-card__price"><span>per month</span>Coming soon</p>
-            <ul>
-              <li>Client CRM &amp; contact management</li>
-              <li>Invoicing &amp; online payments</li>
-              <li>Simple proposals</li>
-              <li>Email support</li>
-            </ul>
-            <a href="#start" class="btn btn--ghost btn--lg btn--block">Start for free</a>
-          </div>
-          <div class="price-card price-card--featured reveal">
-            <span class="price-card__badge">Most requested</span>
-            <h3>Growth</h3>
-            <p class="price-card__desc">For small teams ready to scale their ops.</p>
-            <p class="price-card__price"><span>per month</span>Coming soon</p>
-            <ul>
-              <li>Everything in Starter</li>
-              <li>Contracts &amp; e-signatures</li>
-              <li>Time tracking</li>
-              <li>Up to 5 team members</li>
-              <li>Priority support</li>
-            </ul>
-            <a href="#start" class="btn btn--primary btn--lg btn--block">Start for free</a>
-          </div>
-          <div class="price-card reveal">
-            <h3>Scale</h3>
-            <p class="price-card__desc">For growing businesses running lean.</p>
-            <p class="price-card__price"><span>per month</span>Coming soon</p>
-            <ul>
-              <li>Everything in Growth</li>
-              <li>Unlimited team members</li>
-              <li>Custom dashboards &amp; reporting</li>
-              <li>Dedicated onboarding</li>
-            </ul>
-            <a href="#start" class="btn btn--ghost btn--lg btn--block">Start for free</a>
+        <div class="problem-solution__arrow reveal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
+        </div>
+      </div>
+
+      <div class="container problem-solution__row problem-solution__row--reverse">
+        <!-- Illustrative dashboard mockup -- the same "clean, single tool"
+             visual used in the hero, reused here to say "this is what
+             The Build gives you." Not a real client product. -->
+        <div class="problem-solution__visual reveal" aria-hidden="true">
+          <div class="mockup">
+            <div class="mockup__chrome">
+              <span class="mockup__dot"></span>
+              <span class="mockup__dot"></span>
+              <span class="mockup__dot"></span>
+              <span class="mockup__url">app.workspace.io</span>
+            </div>
+            <div class="mockup__body">
+              <aside class="mockup__sidebar">
+                <span class="mockup__logo"></span>
+                <nav class="mockup__nav">
+                  <span class="mockup__nav-item mockup__nav-item--active"><span class="mockup__nav-dot"></span>Dashboard</span>
+                  <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Analytics</span>
+                  <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Projects</span>
+                  <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Team</span>
+                </nav>
+              </aside>
+              <div class="mockup__main">
+                <div class="mockup__topbar">
+                  <span class="mockup__title">Overview</span>
+                  <span class="mockup__btn">+ New</span>
+                </div>
+                <div class="mockup__stats">
+                  <div class="mockup__stat">
+                    <span class="mockup__stat-label">Revenue</span>
+                    <span class="mockup__stat-value">$8,420</span>
+                  </div>
+                  <div class="mockup__stat">
+                    <span class="mockup__stat-label">Active</span>
+                    <span class="mockup__stat-value">32.5h</span>
+                  </div>
+                </div>
+                <div class="mockup__chart">
+                  <span class="mockup__bar" style="--h: 42%"></span>
+                  <span class="mockup__bar" style="--h: 66%"></span>
+                  <span class="mockup__bar" style="--h: 48%"></span>
+                  <span class="mockup__bar" style="--h: 82%"></span>
+                  <span class="mockup__bar" style="--h: 58%"></span>
+                </div>
+                <div class="mockup__rows">
+                  <div class="mockup__row">
+                    <span class="mockup__row-dot"></span>
+                    <span class="mockup__row-line"></span>
+                    <span class="mockup__row-tag">Active</span>
+                  </div>
+                  <div class="mockup__row">
+                    <span class="mockup__row-dot"></span>
+                    <span class="mockup__row-line"></span>
+                    <span class="mockup__row-tag">Active</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <p class="pricing__note">Have a need that's completely custom? Check out <a href="the-build.html">The Build</a>, our fixed-price, fixed-scope software service — $1,999 flat, live in 4 weeks.</p>
+
+        <div class="section__head reveal">
+          <span class="eyebrow">The solution</span>
+          <h2>One tool, built for <em>how you work.</em></h2>
+          <p>The Build replaces the duct tape with a single purpose-built tool: fixed price, fixed 4-week timeline, made to fit your workflow instead of forcing you to work around someone else's.</p>
+          <ul class="problem-solution__points">
+            <li>
+              <span class="problem-solution__point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg></span>
+              Built around your exact workflow
+            </li>
+            <li>
+              <span class="problem-solution__point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              One fixed price, no surprises
+            </li>
+            <li>
+              <span class="problem-solution__point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+              Live in 4 weeks, guaranteed
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- ======= Start for free ======= -->
-    <section class="section" id="start">
-      <div class="container container--narrow">
+    <!-- ======= Stats strip ======= -->
+    <section class="stats">
+      <div class="container stats__inner">
+        <div class="stat reveal">
+          <span class="stat__num" data-count="50" data-suffix="+">0</span>
+          <span class="stat__label">Projects shipped</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="98" data-suffix="%">0</span>
+          <span class="stat__label">Client satisfaction</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="4" data-suffix=" wks">0</span>
+          <span class="stat__label">Delivery time</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count="3" data-suffix="×">0</span>
+          <span class="stat__label">Avg. efficiency gain</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= The Build (offer) ======= -->
+    <section class="section section--alt" id="offer">
+      <div class="container offer__inner">
         <div class="section__head reveal">
-          <span class="eyebrow">Get started</span>
-          <h2>Start running your business <em>from one place.</em></h2>
-          <p>Tell us a bit about your business and we'll get you set up — no cost to get started.</p>
+          <span class="eyebrow">The offer</span>
+          <h2>One fixed package. <em>No surprises.</em></h2>
+          <p>Everything you need to go from idea to a working tool, at one price, on one timeline.</p>
         </div>
 
-        <form class="contact-form reveal" action="https://formspree.io/f/xjgqwojl" method="POST">
-          <input type="hidden" name="_subject" value="New signup from frontbits.com">
-          <div class="contact-form__row">
-            <div class="contact-form__field">
-              <label for="wl-name">Name</label>
-              <input type="text" id="wl-name" name="name" autocomplete="name" required>
-            </div>
-            <div class="contact-form__field">
-              <label for="wl-email">Email</label>
-              <input type="email" id="wl-email" name="email" autocomplete="email" required>
-            </div>
+        <div class="offer-card-wrap reveal">
+          <div class="price-card price-card--featured">
+            <span class="price-card__badge">4 week delivery</span>
+            <h3>The Build</h3>
+            <p class="price-card__desc">A fixed-scope software package for businesses that need one core tool built right, deployed, and handed over completely.</p>
+            <p class="price-card__price"><span>one-time, flat</span>$1,999</p>
+            <ul>
+              <li>One core workflow or tool, scoped together on a kickoff call</li>
+              <li>Up to 6 screens, so the scope stays fixed start to finish</li>
+              <li>One structured round of revisions before handoff</li>
+              <li>Hosting and deployment included — it's live, not just handed over</li>
+              <li>Full source code and documentation, yours to keep</li>
+            </ul>
+            <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--lg btn--block">Get started</button>
           </div>
-          <div class="contact-form__field">
-            <label for="wl-company">Company <span class="contact-form__optional">(optional)</span></label>
-            <input type="text" id="wl-company" name="message" autocomplete="organization">
+          <p class="pricing__note">Need something bigger than one tool? <a href="#contact-form">Tell us what you're building</a> and we'll scope a custom project instead.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Process ======= -->
+    <section class="section section--dark" id="process">
+      <div class="container">
+        <div class="section__head section__head--light reveal">
+          <span class="eyebrow eyebrow--light">How it works</span>
+          <h2>From kickoff to launch<br>in <em>four clear steps</em></h2>
+          <p>No proposal wait, no scope creep. You'll know exactly what's happening, and when, at every stage.</p>
+        </div>
+
+        <div class="process__grid">
+          <div class="process-step reveal">
+            <span class="process-step__num">01</span>
+            <h3>Discover</h3>
+            <p>A focused kickoff call to scope your one core tool and lock the plan. We confirm fit and get started the same week.</p>
+            <span class="process-step__time">Day 1 to 2</span>
           </div>
-          <button type="submit" class="btn btn--primary btn--lg contact-form__submit">Start for free</button>
-        </form>
+          <div class="process-step reveal">
+            <span class="process-step__num">02</span>
+            <h3>Design</h3>
+            <p>Wireframes and UI for your tool, within the fixed scope we agreed on. You see every screen before we build it.</p>
+            <span class="process-step__time">Week 1 to 2</span>
+          </div>
+          <div class="process-step reveal">
+            <span class="process-step__num">03</span>
+            <h3>Develop</h3>
+            <p>We build it clean and fast, then walk you through it for one structured round of revisions before we call it done.</p>
+            <span class="process-step__time">Week 2 to 4</span>
+          </div>
+          <div class="process-step reveal">
+            <span class="process-step__num">04</span>
+            <h3>Launch</h3>
+            <p>We deploy it live and hand over the source code and documentation. You own everything from day one.</p>
+            <span class="process-step__time">Week 4</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Work ======= -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Selected work</span>
+          <h2>Real products. Real businesses. <em>Real results.</em></h2>
+          <p>A few examples of the caliber of software we build. The Build is our fixed-scope, fixed-price way to get started with us.</p>
+        </div>
+
+      </div>
+
+      <div class="container cases">
+        <article class="case reveal">
+          <div class="case__media">
+            <img src="assets/img/shots/pace.jpg" alt="Pace, time tracking and invoicing SaaS dashboard designed and built by Frontbits" loading="lazy">
+          </div>
+          <div class="case__body">
+            <p class="case__num">/ 01 &middot; Pace</p>
+            <h3>Time tracking and invoicing for agencies</h3>
+            <p class="case__desc">A rough idea for a SaaS dashboard, shipped as a product customers compliment. Time tracking, invoicing, and reporting in one clean workspace.</p>
+            <p class="case__metric">Idea to paying customers in 6 weeks</p>
+            <a href="projects/pace.html" target="_blank" rel="noopener" class="applelink">View project</a>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case__media">
+            <img src="assets/img/shots/routeflow.jpg" alt="Routeflow, fleet dispatch and delivery management software designed and built by Frontbits" loading="lazy">
+          </div>
+          <div class="case__body">
+            <p class="case__num">/ 02 &middot; Routeflow</p>
+            <h3>Fleet dispatch and delivery management</h3>
+            <p class="case__desc">Live dispatch, route maps, and driver tracking that replaced three spreadsheets and a wall of sticky notes.</p>
+            <p class="case__metric">96.2% on time delivery rate</p>
+            <a href="projects/routeflow.html" target="_blank" rel="noopener" class="applelink">View project</a>
+          </div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case__media">
+            <img src="assets/img/shots/clinic-os.jpg" alt="Clinic OS, scheduling and patient management software designed and built by Frontbits" loading="lazy">
+          </div>
+          <div class="case__body">
+            <p class="case__num">/ 03 &middot; Clinic OS</p>
+            <h3>Scheduling and patient management</h3>
+            <p class="case__desc">Front desk scheduling, waiting room flow, and billing for a multi provider clinic, built around how staff actually work.</p>
+            <p class="case__metric">9 minute average patient wait</p>
+            <a href="projects/clinic-os.html" target="_blank" rel="noopener" class="applelink">View project</a>
+          </div>
+        </article>
+
+        <div class="work__cta reveal">
+          <p>Want a fixed-price way to get there?</p>
+          <a href="#offer" class="btn btn--primary">See The Build</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Testimonials ======= -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Client love</span>
+          <h2>Don't take <em>our word</em> for it</h2>
+          <p>Here's what founders and business owners say about working with Frontbits.</p>
+        </div>
+
+        <div class="testimonials__grid">
+          <figure class="testimonial reveal">
+            <div class="testimonial__stars">★★★★★</div>
+            <blockquote>
+              “Frontbits built our internal tool in three weeks and it replaced a spreadsheet that
+              was costing us hours every week. They asked better questions about our business than
+              agencies charging five times more.”
+            </blockquote>
+            <figcaption>
+              <img src="assets/img/avatar-emily.png" alt="">
+              <div>
+                <strong>Emily Carter</strong>
+                <span>Founder, boutique consultancy</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal">
+            <div class="testimonial__stars">★★★★★</div>
+            <blockquote>
+              “We came with a rough idea for a SaaS dashboard and they turned it into a product our
+              customers actually compliment. Design and dev in one team made everything faster.”
+            </blockquote>
+            <figcaption>
+              <img src="assets/img/avatar-michael.png" alt="">
+              <div>
+                <strong>Michael Reeves</strong>
+                <span>CEO, property tech startup</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal">
+            <div class="testimonial__stars">★★★★★</div>
+            <blockquote>
+              “Fast, honest, and genuinely invested in the result. They flagged edge cases in our
+              workflow we hadn't thought of, and it paid off immediately once the team started using it.”
+            </blockquote>
+            <figcaption>
+              <img src="assets/img/avatar-peter.png" alt="">
+              <div>
+                <strong>Peter Cardoz</strong>
+                <span>Owner, logistics company</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal">
+            <div class="testimonial__stars">★★★★★</div>
+            <blockquote>
+              “The process was the smoothest I've experienced with any vendor. Clear milestones,
+              zero surprises on price, and the final product performs flawlessly. Highly recommend.”
+            </blockquote>
+            <figcaption>
+              <img src="assets/img/avatar-david.png" alt="">
+              <div>
+                <strong>David Kim</strong>
+                <span>Director, professional services firm</span>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
     <!-- ======= FAQ ======= -->
-    <section class="section section--alt" id="faq">
+    <section class="section" id="faq">
       <div class="container container--narrow">
         <div class="section__head reveal">
           <span class="eyebrow">FAQ</span>
@@ -317,38 +544,100 @@
 
         <div class="faq__list reveal">
           <details class="faq-item">
-            <summary>What is Frontbits?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-            <p>Frontbits is an all-in-one business operations platform for startups and small teams: proposals, contracts, invoicing, payments, time tracking, and client CRM, all in one place instead of five disconnected tools.</p>
+            <summary>What exactly do I get for $1,999?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+            <p>One core workflow or tool, scoped together on a kickoff call, up to 6 screens, one structured round of revisions, hosting and deployment, and full source code plus documentation at handover. That's the entire scope, fixed up front.</p>
           </details>
           <details class="faq-item">
-            <summary>Is Frontbits ready to use today?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-            <p>We're in active development. Start for free now and we'll bring your account online as soon as it's ready, at no cost to get started.</p>
+            <summary>What if my project needs more than one tool or more than 6 screens?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+            <p>That's outside The Build's fixed scope. Tell us what you're building and we'll scope a custom project instead, still fixed price, just sized to what you actually need.</p>
           </details>
           <details class="faq-item">
-            <summary>When will I get access?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-            <p>We're rolling out access over the coming months. Start for free now and we'll email you as soon as your account is ready.</p>
+            <summary>How fast can we start?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+            <p>As soon as we scope the tool together on a kickoff call, usually within a few days of reaching out. From kickoff to launch is a flat 4 weeks, no proposal wait in between.</p>
           </details>
           <details class="faq-item">
-            <summary>How will pricing work?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-            <p>Frontbits will launch with three subscription tiers — Starter, Growth, and Scale — priced monthly. Exact pricing is being finalized, and you'll hear about it, and get access, before it's public.</p>
+            <summary>What's included in the one round of revisions?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+            <p>After we build your tool, you get one structured round of feedback to fine-tune anything that's off before we call it done. Additional rounds beyond that are billed separately.</p>
           </details>
           <details class="faq-item">
-            <summary>What does the platform actually include?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-            <p>Proposals and contracts, invoicing and online payments, time tracking, and a full client CRM, plus a dashboard that ties it all together. See the <a href="#features">Features</a> section above for the full breakdown.</p>
+            <summary>Do I own the code afterward?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+            <p>Yes. You get full source code and documentation at handover. No lock-in, no retainer required to keep using what we built.</p>
           </details>
           <details class="faq-item">
-            <summary>I need something built right now, not later. What do I do?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-            <p>Check out <a href="the-build.html">The Build</a>, our separate fixed-price custom software service: one core tool for your business, live in 4 weeks, $1,999 flat.</p>
+            <summary>Is hosting included?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+            <p>Yes, we deploy and configure hosting as part of the fixed price, so your tool is live at launch, not just handed over as a folder of code.</p>
           </details>
           <details class="faq-item">
-            <summary>Is my data secure?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-            <p>Yes. We use reputable, industry-standard providers to store and process data, and only collect what's needed to run your account and, later, the product itself. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+            <summary>What if The Build isn't the right fit for my business?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+            <p>Happy to talk it through on a free call. If what you need is bigger than one fixed-scope tool, we'll scope a custom project instead of forcing it into a package that doesn't fit.</p>
           </details>
           <details class="faq-item">
             <summary>Do you work with businesses outside your country?<span class="faq-item__icon" aria-hidden="true"></span></summary>
-            <p>Yes, Frontbits is built for startups and small teams anywhere — sign-ups and, at launch, the platform itself are open to businesses across the US, UK, Europe, Australia, and beyond.</p>
+            <p>Yes, most of our clients are remote, across the US, UK, Europe, and Australia. Everything runs async friendly with scheduled calls at times that work for your timezone.</p>
           </details>
         </div>
+      </div>
+    </section>
+
+    <!-- ======= Contact form ======= -->
+    <section class="section section--alt" id="contact-form">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Tell us what you're <em>building.</em></h2>
+          <p>Fill out the form and we'll confirm fit and next steps within one business day.</p>
+        </div>
+
+        <form class="contact-form reveal" action="https://formspree.io/f/xjgqwojl" method="POST">
+          <input type="hidden" name="_subject" value="New project inquiry from frontbits.com">
+          <div class="contact-form__row">
+            <div class="contact-form__field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-project">What do you want built?</label>
+            <select id="cf-project" name="project_type">
+              <option>Client portal</option>
+              <option>Internal dashboard</option>
+              <option>Booking/scheduling tool</option>
+              <option>Workflow automation</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-message">Project details</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg contact-form__submit">Send message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ======= Final CTA ======= -->
+    <section class="cta" id="contact">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <div class="container cta__inner reveal">
+        <span class="eyebrow eyebrow--light">Limited builds each month</span>
+        <h2>Your competitors are already <em>shipping faster with better software</em></h2>
+        <p>
+          Tell us what you want built. If it fits The Build, you'll have a kickoff call booked
+          and a start date locked in the same week.
+        </p>
+        <div class="cta__actions">
+          <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--white btn--lg">Start The Build</button>
+          <a href="mailto:hello@frontbits.com" class="cta__email">or email hello@frontbits.com</a>
+        </div>
+        <ul class="cta__assurance">
+          <li>$1,999 flat, no surprises</li>
+          <li>Live in 4 weeks</li>
+          <li>You own the code</li>
+        </ul>
       </div>
     </section>
 
@@ -359,13 +648,12 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <img src="assets/img/logo-white.svg?v=3" alt="Frontbits" width="148" height="33">
-        <p>An all-in-one business operations platform for startups and small teams.</p>
+        <p>A fixed-price software package for businesses that need one tool built right.</p>
       </div>
       <nav class="footer__col" aria-label="Explore">
         <h4>Explore</h4>
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="the-build.html">The Build</a>
+        <a href="#process">How it works</a>
+        <a href="#work">Work</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="footer__col">
@@ -390,33 +678,28 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://frontbits.com/#frontbits",
-  "name": "Frontbits",
+  "@type": "Service",
+  "@id": "https://frontbits.com/#theservice",
+  "name": "The Build",
   "url": "https://frontbits.com/",
-  "image": "https://frontbits.com/assets/img/og-image.png",
-  "logo": "https://frontbits.com/assets/img/logo.svg",
-  "description": "Frontbits is building an all-in-one business operations platform for startups and small teams: proposals, contracts, invoicing, payments, time tracking, and client CRM. Frontbits also offers The Build, a fixed-price custom software package, for businesses that need something custom right now.",
-  "email": "hello@frontbits.com",
-  "priceRange": "$$",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Frontbits",
+    "url": "https://frontbits.com/",
+    "email": "hello@frontbits.com"
+  },
+  "description": "The Build is Frontbits' fixed-price, fixed-scope custom software package: one core business tool, live in four weeks, $1,999 flat.",
   "areaServed": "Worldwide",
   "serviceType": [
-    "Business operations software",
-    "Client CRM",
-    "Invoicing and payments software",
-    "Custom software development"
+    "Custom software development",
+    "Fixed-price software package",
+    "Internal tools",
+    "Web application development"
   ],
-  "knowsAbout": [
-    "Business operations software",
-    "Client relationship management",
-    "Invoicing and payments",
-    "Custom software development"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "hello@frontbits.com",
-    "availableLanguage": "English"
+  "offers": {
+    "@type": "Offer",
+    "price": "1999",
+    "priceCurrency": "USD"
   }
 }
   </script>
@@ -439,58 +722,58 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is Frontbits?",
+      "name": "What exactly do I get for $1,999?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Frontbits is an all-in-one business operations platform for startups and small teams: proposals, contracts, invoicing, payments, time tracking, and client CRM, all in one place instead of five disconnected tools."
+        "text": "One core workflow or tool, scoped together on a kickoff call, up to 6 screens, one structured round of revisions, hosting and deployment, and full source code plus documentation at handover. That's the entire scope, fixed up front."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Frontbits ready to use today?",
+      "name": "What if my project needs more than one tool or more than 6 screens?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We're in active development. Start for free now and we'll bring your account online as soon as it's ready, at no cost to get started."
+        "text": "That's outside The Build's fixed scope. Tell us what you're building and we'll scope a custom project instead, still fixed price, just sized to what you actually need."
       }
     },
     {
       "@type": "Question",
-      "name": "When will I get access?",
+      "name": "How fast can we start?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We're rolling out access over the coming months. Start for free now and we'll email you as soon as your account is ready."
+        "text": "As soon as we scope the tool together on a kickoff call, usually within a few days of reaching out. From kickoff to launch is a flat 4 weeks, no proposal wait in between."
       }
     },
     {
       "@type": "Question",
-      "name": "How will pricing work?",
+      "name": "What's included in the one round of revisions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Frontbits will launch with three subscription tiers, Starter, Growth, and Scale, priced monthly. Exact pricing is being finalized, and you'll hear about it, and get access, before it's public."
+        "text": "After we build your tool, you get one structured round of feedback to fine-tune anything that's off before we call it done. Additional rounds beyond that are billed separately."
       }
     },
     {
       "@type": "Question",
-      "name": "What does the platform actually include?",
+      "name": "Do I own the code afterward?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Proposals and contracts, invoicing and online payments, time tracking, and a full client CRM, plus a dashboard that ties it all together."
+        "text": "Yes. You get full source code and documentation at handover. No lock-in, no retainer required to keep using what we built."
       }
     },
     {
       "@type": "Question",
-      "name": "I need something built right now, not later. What do I do?",
+      "name": "Is hosting included?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Check out The Build, Frontbits' separate fixed-price custom software service: one core tool for your business, live in 4 weeks, $1,999 flat."
+        "text": "Yes, we deploy and configure hosting as part of the fixed price, so your tool is live at launch, not just handed over as a folder of code."
       }
     },
     {
       "@type": "Question",
-      "name": "Is my data secure?",
+      "name": "What if The Build isn't the right fit for my business?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Frontbits uses reputable, industry-standard providers to store and process data, and only collects what's needed to run your account and, later, the product itself."
+        "text": "Happy to talk it through on a free call. If what you need is bigger than one fixed-scope tool, we'll scope a custom project instead of forcing it into a package that doesn't fit."
       }
     },
     {
@@ -498,7 +781,7 @@
       "name": "Do you work with businesses outside your country?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Frontbits is built for startups and small teams anywhere, sign-ups and, at launch, the platform itself are open to businesses across the US, UK, Europe, Australia, and beyond."
+        "text": "Yes, most of our clients are remote, across the US, UK, Europe, and Australia. Everything runs async friendly with scheduled calls at times that work for your timezone."
       }
     }
   ]

@@ -1066,33 +1066,6 @@ h1 em, h2 em,
 .faq-item__icon::before, .faq-item__icon::after { background: var(--accent); }
 .faq-item p { color: var(--ink-3); font-size: 0.95rem; }
 
-/* ---------- Contact form ---------- */
-
-#contact-form.section--alt, #services.section--alt { background: var(--bg-alt); }
-
-.contact-form__field label {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--ink-3);
-}
-.contact-form__optional { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--ink-3); }
-.contact-form__field input,
-.contact-form__field select,
-.contact-form__field textarea {
-  border-radius: var(--radius-sm);
-  border-color: var(--line-strong);
-  font-size: 0.98rem;
-  color: var(--navy);
-}
-.contact-form__field input:focus,
-.contact-form__field select:focus,
-.contact-form__field textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.14);
-}
-
 /* ---------- CTA: electric gradient band ---------- */
 
 .cta {

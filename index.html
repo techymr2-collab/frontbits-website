@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=40">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=24">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=25">
 </head>
 <body>
 
@@ -270,20 +270,43 @@
         </div>
 
         <!-- Illustrative "chaos" visual -- scattered, overlapping, tilted
-             cards standing in for disconnected spreadsheets/tools. Not a
-             real product, purely decorative, so it's aria-hidden. -->
-        <div class="problem-solution__visual reveal" aria-hidden="true">
-          <div class="chaos-card chaos-card--1">
+             cards standing in for disconnected spreadsheets/tools, each
+             styled to read as a specific tool (mirrors the copy: spreadsheet,
+             chat thread, invoice, task list). Not a real product, purely
+             decorative, so it's aria-hidden. -->
+        <div class="problem-solution__visual problem-solution__visual--chaos reveal" aria-hidden="true">
+          <div class="chaos-card chaos-card--1 chaos-card--sheet">
             <div class="chaos-card__dots"><span></span><span></span><span></span></div>
-            <div class="chaos-card__rows"><span></span><span></span><span></span><span></span></div>
+            <div class="chaos-card__grid">
+              <span></span><span></span><span></span>
+              <span></span><span class="chaos-card__cell--error"></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
           </div>
-          <div class="chaos-card chaos-card--2">
+          <div class="chaos-card chaos-card--2 chaos-card--chat">
             <div class="chaos-card__dots"><span></span><span></span><span></span></div>
-            <div class="chaos-card__rows"><span></span><span></span><span></span></div>
+            <div class="chaos-card__msg">
+              <span class="chaos-card__avatar"></span>
+              <div class="chaos-card__lines"><span></span><span></span></div>
+            </div>
+            <div class="chaos-card__msg">
+              <span class="chaos-card__avatar chaos-card__avatar--muted"></span>
+              <div class="chaos-card__lines"><span></span></div>
+            </div>
           </div>
-          <div class="chaos-card chaos-card--3 chaos-card--chat">
-            <span class="chaos-card__avatar"></span>
-            <div class="chaos-card__lines"><span></span><span></span></div>
+          <div class="chaos-card chaos-card--3 chaos-card--invoice">
+            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
+            <span class="chaos-card__amount">$2,480</span>
+            <div class="chaos-card__rows"><span></span><span></span></div>
+            <span class="chaos-card__flag">Overdue</span>
+          </div>
+          <div class="chaos-card chaos-card--4 chaos-card--tasks">
+            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
+            <div class="chaos-card__checklist">
+              <span class="chaos-card__check chaos-card__check--done"></span>
+              <span class="chaos-card__check"></span>
+              <span class="chaos-card__check"></span>
+            </div>
           </div>
           <span class="chaos-badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>

@@ -694,10 +694,13 @@ h1 em, h2 em,
 .problem-solution__arrow svg { width: 22px; height: 22px; }
 
 .problem-solution__visual { position: relative; min-height: 300px; }
+.problem-solution__visual--chaos { min-height: 360px; }
 
 /* "chaos" visual: scattered, overlapping, tilted cards standing in for
    disconnected spreadsheets/tools -- deliberately messy to contrast
-   with the single aligned mockup on the solution side */
+   with the single aligned mockup on the solution side. Each card reads
+   as a distinct tool (spreadsheet / chat / invoice / tasks), mirroring
+   the copy next to it, rather than generic placeholder bars. */
 .chaos-card {
   position: absolute;
   width: 46%;
@@ -708,8 +711,9 @@ h1 em, h2 em,
   padding: 12px 14px;
 }
 .chaos-card--1 { top: 2%; left: 0; transform: rotate(-7deg); z-index: 3; }
-.chaos-card--2 { top: 24%; left: 48%; width: 44%; transform: rotate(6deg); z-index: 2; }
-.chaos-card--3 { top: 58%; left: 8%; width: 48%; transform: rotate(-3deg); z-index: 4; }
+.chaos-card--2 { top: 20%; left: 50%; width: 42%; transform: rotate(6deg); z-index: 2; }
+.chaos-card--3 { top: 56%; left: 4%; width: 46%; transform: rotate(-4deg); z-index: 4; }
+.chaos-card--4 { top: 75%; left: 48%; width: 40%; transform: rotate(5deg); z-index: 1; }
 
 .chaos-card__dots { display: flex; gap: 4px; margin-bottom: 10px; }
 .chaos-card__dots span { width: 5px; height: 5px; border-radius: 50%; background: var(--line-strong); }
@@ -718,18 +722,72 @@ h1 em, h2 em,
 .chaos-card__rows span { height: 6px; border-radius: 2px; background: var(--line); }
 .chaos-card__rows span:nth-child(even) { width: 70%; }
 
-.chaos-card--chat { display: flex; align-items: flex-start; gap: 10px; }
-.chaos-card__avatar { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--accent-soft); }
+/* spreadsheet card: a small grid of cells, one flagged red to suggest a
+   broken formula -- literal illustration of "spreadsheets breaking down" */
+.chaos-card__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.chaos-card__grid span { height: 13px; border-radius: 2px; background: var(--bg-alt); border: 1px solid var(--line); }
+.chaos-card__cell--error { background: #fbe4e4; border-color: #f0b8b8; }
+
+/* chat card: two scattered messages from different people, standing in
+   for a Slack thread doing a real system's job */
+.chaos-card__msg { display: flex; align-items: flex-start; gap: 9px; }
+.chaos-card__msg + .chaos-card__msg { margin-top: 9px; }
+.chaos-card__avatar { flex: none; width: 20px; height: 20px; border-radius: 50%; background: var(--accent-soft); }
+.chaos-card__avatar--muted { background: var(--bg-alt); border: 1px solid var(--line); }
 .chaos-card__lines { display: grid; gap: 6px; flex: 1; padding-top: 3px; }
 .chaos-card__lines span { height: 6px; border-radius: 2px; background: var(--line); }
 .chaos-card__lines span:last-child { width: 60%; }
 
+/* invoice card: a dollar amount + line items + an overdue flag */
+.chaos-card__amount {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--navy);
+  margin-bottom: 9px;
+}
+.chaos-card__flag {
+  display: inline-block;
+  margin-top: 9px;
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #c23a3a;
+  background: #fbe4e4;
+  border-radius: 3px;
+  padding: 3px 7px;
+}
+
+/* tasks card: a small checklist, one item done -- work half-tracked
+   across yet another disconnected tool */
+.chaos-card__checklist { display: flex; flex-direction: column; gap: 8px; }
+.chaos-card__check { display: flex; align-items: center; gap: 7px; }
+.chaos-card__check::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  border: 1.5px solid var(--line-strong);
+}
+.chaos-card__check::after {
+  content: "";
+  flex: 1;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--line);
+}
+.chaos-card__check--done::before { background: var(--accent); border-color: var(--accent); }
+
 .chaos-badge {
   position: absolute;
-  top: 44%;
-  left: 42%;
-  width: 30px;
-  height: 30px;
+  top: 42%;
+  left: 40%;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: var(--navy);
   color: #fff;
@@ -738,7 +796,7 @@ h1 em, h2 em,
   box-shadow: var(--shadow-lg);
   z-index: 5;
 }
-.chaos-badge svg { width: 14px; height: 14px; }
+.chaos-badge svg { width: 15px; height: 15px; }
 
 /* solution visual: reuses the hero's .mockup component verbatim (same
    illustrative product), kept perfectly straight/centered -- aligned
@@ -1149,6 +1207,7 @@ h1 em, h2 em,
   .problem-solution__row .section__head,
   .problem-solution__row--reverse .section__head { order: 1; }
   .problem-solution__visual { order: 2; min-height: 260px; }
+  .problem-solution__visual--chaos { min-height: 320px; }
 }
 
 @media (max-width: 768px) {

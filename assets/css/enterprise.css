@@ -886,6 +886,18 @@ h1 em, h2 em,
   object-position: top center;
 }
 
+/* selected-work cards use the same illustrative .mockup component as the
+   hero -- swap the fixed-crop photo frame for a centered, unclipped one */
+.case__media--mockup {
+  aspect-ratio: auto;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+.case__media--mockup .mockup { width: 100%; }
+
 .case__num {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -1191,6 +1203,10 @@ h1 em, h2 em,
   box-shadow: var(--shadow-lg);
 }
 .cs-media img { display: block; width: 100%; }
+
+/* case studies use the same illustrative .mockup component as the hero --
+   this variant drops its own border/shadow so the mockup's don't double up */
+.cs-media--mockup { border: none; box-shadow: none; overflow: visible; }
 
 .cs-results {
   display: grid;

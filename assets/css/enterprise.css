@@ -948,6 +948,7 @@ h1 em, h2 em,
   margin-top: 8px;
 }
 .work__cta p { color: var(--navy); font-weight: 600; font-size: 1.35rem; letter-spacing: -0.02em; }
+.work__cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ---------- Offer (The Build): reuses base .price-card component,
    which was already fully theme-driven via CSS vars except for two
@@ -1154,6 +1155,55 @@ h1 em, h2 em,
 .legal__body a { color: var(--accent); }
 .legal__body strong { color: var(--navy); }
 
+/* ---------- Case study pages ---------- */
+
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 22px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.cs-back::before { content: "\2190"; transition: transform 0.2s var(--ease); }
+.cs-back:hover::before { transform: translateX(-3px); }
+
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.cs-tags span { display: inline-flex; align-items: center; gap: 8px; }
+.cs-tags span::before { content: ""; width: 6px; height: 6px; background: var(--accent); flex: none; }
+
+.cs-media {
+  margin: 40px 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.cs-media img { display: block; width: 100%; }
+
+.cs-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 8px 0 36px;
+  padding: 32px 0;
+  border-block: 1px solid var(--line);
+  text-align: center;
+}
+
+.cs-testimonial { margin: 56px 0; }
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1024px) {
@@ -1198,6 +1248,8 @@ h1 em, h2 em,
   .mockup__stats { flex-wrap: wrap; }
   .mockup__stat { flex: 1 1 calc(50% - 4px); }
   .mockup__bar:nth-child(n + 6) { display: none; }
+
+  .cs-results { grid-template-columns: 1fr; gap: 20px; }
   .mockup__icon-btn:first-child { display: none; }
   .mockup__row-sub { display: none; }
   .mockup__float-card { display: none; }

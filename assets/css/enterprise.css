@@ -673,6 +673,249 @@ h1 em, h2 em,
 .mockup__float-title { display: block; font-size: 0.6rem; color: var(--ink-3); font-weight: 600; }
 .mockup__float-amount { display: block; font-size: 0.76rem; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
 
+/* ---------- Work mockups: each case study gets a distinct, real UI
+   pattern (checklist, data table, calendar grid) instead of a relabeled
+   copy of the hero dashboard. Shares the .mockup chrome/appbar shell for
+   family resemblance, then diverges completely below that. ---------- */
+
+.mockup__appbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.mockup__appbar-left { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.mockup__appbar .mockup__workspace { margin-bottom: 0; flex: none; }
+.mockup__appbar-nav { display: flex; align-items: center; gap: 2px; margin-left: 10px; }
+
+.mockup__tab {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--ink-3);
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.mockup__tab--active { background: var(--accent-soft); color: var(--accent); }
+
+/* Onboard: checklist with grouped tasks and a progress bar */
+
+.mockup-onboard { padding: 22px 20px; }
+
+.mockup-onboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.mockup-onboard__person { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.mockup-onboard__avatar {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+.mockup-onboard__person-text { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.mockup-onboard__name { font-size: 0.8rem; font-weight: 700; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mockup-onboard__role { font-size: 0.64rem; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.mockup-onboard__progress-wrap { display: flex; align-items: center; gap: 8px; flex: none; }
+.mockup-onboard__progress-bar { width: 84px; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.mockup-onboard__progress-fill { display: block; height: 100%; width: var(--p, 0%); background: var(--accent); border-radius: 3px; }
+.mockup-onboard__progress-label { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 700; color: var(--navy); white-space: nowrap; }
+
+.mockup-onboard__group { margin-bottom: 14px; }
+.mockup-onboard__group:last-child { margin-bottom: 0; }
+.mockup-onboard__group-title {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+.mockup-onboard__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-top: 1px solid var(--line);
+}
+.mockup-onboard__item:first-child { border-top: none; padding-top: 0; }
+.mockup-onboard__check {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+}
+.mockup-onboard__check svg { width: 9px; height: 9px; }
+.mockup-onboard__check--done { background: var(--accent); border-color: var(--accent); color: #fff; }
+.mockup-onboard__item-label { flex: 1; min-width: 0; font-size: 0.74rem; color: var(--navy); font-weight: 500; }
+.mockup-onboard__item--done .mockup-onboard__item-label { color: var(--ink-3); text-decoration: line-through; }
+.mockup-onboard__item-tag {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 700;
+  color: var(--ink-3);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+/* Approve: filterable request table */
+
+.mockup-approve { padding: 20px; }
+.mockup-approve__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin-bottom: 14px;
+}
+.mockup-approve__tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+
+.mockup-approve__table { width: 100%; border-collapse: collapse; }
+.mockup-approve__table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 0 8px 8px 0;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.mockup-approve__table td {
+  padding: 9px 8px 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.72rem;
+  color: var(--navy);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.mockup-approve__table tr:last-child td { border-bottom: none; }
+.mockup-approve__requester { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.mockup-approve__amount { font-variant-numeric: tabular-nums; font-weight: 700; }
+.mockup-approve__status {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.mockup-approve__status--pending { background: var(--bg-alt); color: var(--ink-3); border: 1px solid var(--line); }
+.mockup-approve__status--approved { background: var(--accent-soft); color: var(--accent); }
+.mockup-approve__status--declined { background: #fdeaea; color: #dc4c4c; }
+
+/* Roster: weekly calendar grid */
+
+.mockup-roster { padding: 20px; }
+.mockup-roster__nav { display: flex; align-items: center; gap: 10px; font-size: 0.72rem; font-weight: 700; color: var(--navy); }
+.mockup-roster__arrow {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-3);
+}
+.mockup-roster__arrow svg { width: 9px; height: 9px; }
+
+.mockup-roster__grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 64px repeat(5, 1fr);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.mockup-roster__cell {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 5px;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.mockup-roster__grid > .mockup-roster__cell:nth-child(6n) { border-right: none; }
+.mockup-roster__grid > .mockup-roster__cell:nth-last-child(-n+6) { border-bottom: none; }
+.mockup-roster__day-head {
+  background: var(--bg-alt);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.mockup-roster__staff-cell {
+  background: var(--bg-alt);
+  justify-content: flex-start;
+  gap: 6px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.mockup-roster__staff-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mockup-roster__shift {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 4px;
+  padding: 5px 2px;
+}
+.mockup-roster__shift--muted { color: var(--navy); background: var(--sky); opacity: 0.6; }
+.mockup-roster__shift--open {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 700;
+  color: var(--ink-3);
+  border: 1px dashed var(--line-strong);
+  border-radius: 4px;
+  padding: 4px 2px;
+}
+
 /* ---------- Problem / Solution: two-column rows with visuals ---------- */
 
 .problem-solution { padding-bottom: 76px; }
@@ -1269,6 +1512,15 @@ h1 em, h2 em,
   .mockup__icon-btn:first-child { display: none; }
   .mockup__row-sub { display: none; }
   .mockup__float-card { display: none; }
+
+  .mockup-onboard__item-tag { display: none; }
+  .mockup-approve__table th:nth-child(2), .mockup-approve__table td:nth-child(2),
+  .mockup-approve__table th:nth-child(4), .mockup-approve__table td:nth-child(4) { display: none; }
+  .mockup-roster__grid { grid-template-columns: 34px repeat(5, 1fr); }
+  .mockup-roster__cell { padding: 6px 2px; min-height: 32px; }
+  .mockup-roster__staff-cell { justify-content: center; }
+  .mockup-roster__staff-name { display: none; }
+  .mockup-roster__shift, .mockup-roster__shift--open { font-size: 0.52rem; padding: 4px 1px; }
 
   .cases { gap: 56px; }
   .case { gap: 22px; }

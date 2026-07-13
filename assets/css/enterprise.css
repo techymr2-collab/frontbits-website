@@ -1368,6 +1368,9 @@ h1 em, h2 em,
 .price-card h3 { color: var(--navy); font-size: 1.3rem; letter-spacing: -0.02em; }
 .price-card__desc { min-height: 0; }
 .price-card__price { color: var(--navy); font-variant-numeric: tabular-nums; }
+/* "Custom quote" is a phrase, not a short numeral like "$999" -- drop the
+   size so it doesn't wrap awkwardly in the same card width */
+.price-card__price--quote { font-size: 1.7rem; }
 
 .price-card ul li::before {
   background: var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230071E3' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 13 4 4L19 7'/%3E%3C/svg%3E") center / 10px no-repeat;

@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=41">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=28">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=29">
 </head>
 <body>
 
@@ -85,89 +85,150 @@
       <div class="container cases">
         <article class="case reveal">
           <div class="case__media case__media--mockup" aria-hidden="true">
-            <div class="mockup">
-  <div class="mockup__chrome">
+            <div class="appshot">
+  <div class="appshot__chrome">
     <span class="mockup__dot mockup__dot--red"></span>
     <span class="mockup__dot mockup__dot--amber"></span>
     <span class="mockup__dot mockup__dot--green"></span>
-    <span class="mockup__url">
+    <span class="appshot__url">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-      app.onboard.io/hires/maria-gomez
+      app.onboard.io/hires
     </span>
-    <span class="mockup__chrome-menu"><span></span><span></span><span></span></span>
   </div>
-  <div class="mockup__appbar">
-    <div class="mockup__appbar-left">
-      <div class="mockup__workspace">
-        <span class="mockup__logo"></span>
-        <span class="mockup__workspace-name">Onboard</span>
+  <div class="appshot__body">
+    <aside class="appshot__sidebar">
+      <div class="appshot__brand">
+        <span class="appshot__brand-mark">O</span>
+        <span class="appshot__brand-name">Onboard</span>
+        <span class="appshot__brand-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9 4-4 4 4"/><path d="m16 15-4 4-4-4"/></svg></span>
       </div>
-      <div class="mockup__appbar-nav">
-        <span class="mockup__tab mockup__tab--active">Overview</span>
-        <span class="mockup__tab">New hires</span>
-      </div>
-    </div>
-    <span class="mockup__avatar mockup__avatar--sm">SW</span>
-  </div>
-  <div class="mockup-onboard">
-    <div class="mockup-onboard__header">
-      <div class="mockup-onboard__person">
-        <span class="mockup-onboard__avatar">MG</span>
-        <div class="mockup-onboard__person-text">
-          <span class="mockup-onboard__name">Maria Gomez</span>
-          <span class="mockup-onboard__role">Product Designer &middot; Starts Jun 24</span>
+      <span class="appshot__navlabel">Main</span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>
+        Overview
+      </span>
+      <span class="appshot__navitem appshot__navitem--active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg>
+        New hires
+        <span class="appshot__navitem-badge">6</span>
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 4V2h6v2"/><path d="m9 12 2 2 4-4"/></svg>
+        Checklists
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        Documents
+      </span>
+      <span class="appshot__navlabel">Manage</span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+        Team
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="8" x2="20" y2="8"/><circle cx="9" cy="8" r="2.4"/><line x1="4" y1="16" x2="20" y2="16"/><circle cx="15" cy="16" r="2.4"/></svg>
+        Settings
+      </span>
+      <div class="appshot__user">
+        <span class="appshot__user-av">SW</span>
+        <div class="appshot__user-text">
+          <span class="appshot__user-name">Sara Wells</span>
+          <span class="appshot__user-role">HR Lead</span>
         </div>
       </div>
-      <div class="mockup-onboard__progress-wrap">
-        <div class="mockup-onboard__progress-bar"><span class="mockup-onboard__progress-fill" style="--p: 60%"></span></div>
-        <span class="mockup-onboard__progress-label">6 / 10</span>
+    </aside>
+    <div class="appshot__main">
+      <div class="appshot__topbar">
+        <div class="appshot__topbar-title">
+          <strong>New hires</strong>
+          <span>3 starting this month</span>
+        </div>
+        <div class="appshot__topbar-actions">
+          <span class="appshot__search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            Search
+          </span>
+          <span class="appshot__iconbtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 6-3 8-3 8h18s-3-2-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="appshot__iconbtn-dot"></span>
+          </span>
+          <span class="appshot__topbar-av">SW</span>
+        </div>
       </div>
-    </div>
-
-    <div class="mockup-onboard__group">
-      <span class="mockup-onboard__group-title">Before day 1</span>
-      <div class="mockup-onboard__item mockup-onboard__item--done">
-        <span class="mockup-onboard__check mockup-onboard__check--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 5 5L20 7"/></svg></span>
-        <span class="mockup-onboard__item-label">Offer letter signed</span>
-        <span class="mockup-onboard__item-tag">HR</span>
-      </div>
-      <div class="mockup-onboard__item mockup-onboard__item--done">
-        <span class="mockup-onboard__check mockup-onboard__check--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 5 5L20 7"/></svg></span>
-        <span class="mockup-onboard__item-label">Equipment ordered</span>
-        <span class="mockup-onboard__item-tag">IT</span>
-      </div>
-    </div>
-
-    <div class="mockup-onboard__group">
-      <span class="mockup-onboard__group-title">Day 1</span>
-      <div class="mockup-onboard__item mockup-onboard__item--done">
-        <span class="mockup-onboard__check mockup-onboard__check--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 5 5L20 7"/></svg></span>
-        <span class="mockup-onboard__item-label">Laptop &amp; accounts set up</span>
-        <span class="mockup-onboard__item-tag">IT</span>
-      </div>
-      <div class="mockup-onboard__item">
-        <span class="mockup-onboard__check"></span>
-        <span class="mockup-onboard__item-label">Welcome meeting with manager</span>
-        <span class="mockup-onboard__item-tag">Manager</span>
-      </div>
-      <div class="mockup-onboard__item">
-        <span class="mockup-onboard__check"></span>
-        <span class="mockup-onboard__item-label">Tour &amp; team intro</span>
-        <span class="mockup-onboard__item-tag">HR</span>
-      </div>
-    </div>
-
-    <div class="mockup-onboard__group">
-      <span class="mockup-onboard__group-title">First week</span>
-      <div class="mockup-onboard__item">
-        <span class="mockup-onboard__check"></span>
-        <span class="mockup-onboard__item-label">Complete compliance training</span>
-        <span class="mockup-onboard__item-tag">HR</span>
-      </div>
-      <div class="mockup-onboard__item">
-        <span class="mockup-onboard__check"></span>
-        <span class="mockup-onboard__item-label">1:1 with manager</span>
-        <span class="mockup-onboard__item-tag">Manager</span>
+      <div class="appshot__content">
+        <div class="appshot__kpis">
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Active hires</span>
+            <span class="appshot__kpi-value">6</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--up">↑ 2 this week</span>
+          </div>
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Avg. ramp</span>
+            <span class="appshot__kpi-value">3 days</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--flat">On target</span>
+          </div>
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Docs signed</span>
+            <span class="appshot__kpi-value">94%</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--up">↑ 6%</span>
+          </div>
+        </div>
+        <div class="appshot__panel">
+          <div class="appshot__panel-head">
+            <span class="appshot__av" style="--c: var(--accent)">MG</span>
+            <div class="appshot-person">
+              <strong>Maria Gomez</strong>
+              <span>Product Designer · Starts Jun 24</span>
+            </div>
+            <div class="appshot__panel-actions">
+              <div class="appshot-progress">
+                <div class="appshot-progress__bar"><span class="appshot-progress__fill" style="--p: 60%"></span></div>
+                <span class="appshot-progress__label">6 / 10</span>
+              </div>
+            </div>
+          </div>
+          <div class="appshot-check">
+            <div class="appshot-check__group">
+              <span class="appshot-check__grouplabel">Before day 1</span>
+              <div class="appshot-check__row appshot-check__row--done">
+                <span class="appshot-check__box appshot-check__box--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 5 5L20 7"/></svg></span>
+                <span class="appshot-check__label">Offer letter signed</span>
+                <span class="appshot-check__tag">HR</span>
+              </div>
+              <div class="appshot-check__row appshot-check__row--done">
+                <span class="appshot-check__box appshot-check__box--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 5 5L20 7"/></svg></span>
+                <span class="appshot-check__label">Laptop &amp; equipment ordered</span>
+                <span class="appshot-check__tag">IT</span>
+              </div>
+            </div>
+            <div class="appshot-check__group">
+              <span class="appshot-check__grouplabel">Day 1</span>
+              <div class="appshot-check__row appshot-check__row--done">
+                <span class="appshot-check__box appshot-check__box--done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 5 5L20 7"/></svg></span>
+                <span class="appshot-check__label">Accounts &amp; access provisioned</span>
+                <span class="appshot-check__tag">IT</span>
+              </div>
+              <div class="appshot-check__row">
+                <span class="appshot-check__box"></span>
+                <span class="appshot-check__label">Welcome meeting with manager</span>
+                <span class="appshot-check__tag">Manager</span>
+              </div>
+              <div class="appshot-check__row">
+                <span class="appshot-check__box"></span>
+                <span class="appshot-check__label">Office tour &amp; team introductions</span>
+                <span class="appshot-check__tag">HR</span>
+              </div>
+            </div>
+            <div class="appshot-check__group">
+              <span class="appshot-check__grouplabel">First week</span>
+              <div class="appshot-check__row">
+                <span class="appshot-check__box"></span>
+                <span class="appshot-check__label">Complete compliance training</span>
+                <span class="appshot-check__tag">HR</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -184,74 +245,152 @@
 
         <article class="case reveal">
           <div class="case__media case__media--mockup" aria-hidden="true">
-            <div class="mockup">
-  <div class="mockup__chrome">
+            <div class="appshot">
+  <div class="appshot__chrome">
     <span class="mockup__dot mockup__dot--red"></span>
     <span class="mockup__dot mockup__dot--amber"></span>
     <span class="mockup__dot mockup__dot--green"></span>
-    <span class="mockup__url">
+    <span class="appshot__url">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
       app.approve.io/requests
     </span>
-    <span class="mockup__chrome-menu"><span></span><span></span><span></span></span>
   </div>
-  <div class="mockup__appbar">
-    <div class="mockup__appbar-left">
-      <div class="mockup__workspace">
-        <span class="mockup__logo"></span>
-        <span class="mockup__workspace-name">Approve</span>
+  <div class="appshot__body">
+    <aside class="appshot__sidebar">
+      <div class="appshot__brand">
+        <span class="appshot__brand-mark">A</span>
+        <span class="appshot__brand-name">Approve</span>
+        <span class="appshot__brand-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9 4-4 4 4"/><path d="m16 15-4 4-4-4"/></svg></span>
       </div>
-      <div class="mockup__appbar-nav">
-        <span class="mockup__tab mockup__tab--active">Requests</span>
-        <span class="mockup__tab">Reports</span>
+      <span class="appshot__navlabel">Main</span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>
+        Overview
+      </span>
+      <span class="appshot__navitem appshot__navitem--active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+        Requests
+        <span class="appshot__navitem-badge">8</span>
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+        Approvals
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M12 20V4"/><path d="M20 20v-6"/></svg>
+        Reports
+      </span>
+      <span class="appshot__navlabel">Manage</span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Locations
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="8" x2="20" y2="8"/><circle cx="9" cy="8" r="2.4"/><line x1="4" y1="16" x2="20" y2="16"/><circle cx="15" cy="16" r="2.4"/></svg>
+        Settings
+      </span>
+      <div class="appshot__user">
+        <span class="appshot__user-av">RT</span>
+        <div class="appshot__user-text">
+          <span class="appshot__user-name">Rob Tran</span>
+          <span class="appshot__user-role">Finance</span>
+        </div>
+      </div>
+    </aside>
+    <div class="appshot__main">
+      <div class="appshot__topbar">
+        <div class="appshot__topbar-title">
+          <strong>Requests</strong>
+          <span>8 awaiting your approval</span>
+        </div>
+        <div class="appshot__topbar-actions">
+          <span class="appshot__search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            Search
+          </span>
+          <span class="appshot__iconbtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 6-3 8-3 8h18s-3-2-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="appshot__iconbtn-dot"></span>
+          </span>
+          <span class="appshot__topbar-av">RT</span>
+        </div>
+      </div>
+      <div class="appshot__content">
+        <div class="appshot__kpis">
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Pending</span>
+            <span class="appshot__kpi-value">8</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--flat">$2,140 total</span>
+          </div>
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Approved · 30d</span>
+            <span class="appshot__kpi-value">142</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--up">↑ 18%</span>
+          </div>
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Avg. time</span>
+            <span class="appshot__kpi-value">4 hrs</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--down">↓ from a week</span>
+          </div>
+        </div>
+        <div class="appshot__panel">
+          <div class="appshot__panel-head">
+            <div class="appshot__tabs">
+              <span class="appshot__tab appshot__tab--active">All · 24</span>
+              <span class="appshot__tab">Pending · 8</span>
+              <span class="appshot__tab">Approved · 14</span>
+            </div>
+            <div class="appshot__panel-actions">
+              <span class="appshot__btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                New request
+              </span>
+            </div>
+          </div>
+          <table class="appshot-table">
+            <thead>
+              <tr>
+                <th>Requester</th>
+                <th class="appshot-table__cat">Category</th>
+                <th class="appshot-table__amt">Amount</th>
+                <th class="appshot-table__date">Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="appshot-table__req"><span class="appshot__av" style="--c: var(--sky)">DT</span>Downtown</div></td>
+                <td class="appshot-table__cat">Supplies</td>
+                <td class="appshot-table__amt">$284.10</td>
+                <td class="appshot-table__date">Jun 21</td>
+                <td><span class="appshot__pill appshot__pill--warn">Pending</span></td>
+              </tr>
+              <tr>
+                <td><div class="appshot-table__req"><span class="appshot__av" style="--c: var(--navy)">RV</span>Riverside</div></td>
+                <td class="appshot-table__cat">Equipment</td>
+                <td class="appshot-table__amt">$1,120.00</td>
+                <td class="appshot-table__date">Jun 19</td>
+                <td><span class="appshot__pill appshot__pill--ok">Approved</span></td>
+              </tr>
+              <tr>
+                <td><div class="appshot-table__req"><span class="appshot__av" style="--c: var(--accent)">UT</span>Uptown</div></td>
+                <td class="appshot-table__cat">Supplies</td>
+                <td class="appshot-table__amt">$96.40</td>
+                <td class="appshot-table__date">Jun 18</td>
+                <td><span class="appshot__pill appshot__pill--ok">Approved</span></td>
+              </tr>
+              <tr>
+                <td><div class="appshot-table__req"><span class="appshot__av" style="--c: #64748b">MT</span>Midtown</div></td>
+                <td class="appshot-table__cat">Travel</td>
+                <td class="appshot-table__amt">$412.75</td>
+                <td class="appshot-table__date">Jun 17</td>
+                <td><span class="appshot__pill appshot__pill--bad">Declined</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-    <span class="mockup__avatar mockup__avatar--sm">RT</span>
-  </div>
-  <div class="mockup-approve">
-    <div class="mockup-approve__header">
-      <div class="mockup-approve__tabs">
-        <span class="mockup__tab mockup__tab--active">All &middot; 24</span>
-        <span class="mockup__tab">Pending &middot; 8</span>
-        <span class="mockup__tab">Approved &middot; 14</span>
-      </div>
-      <span class="mockup__btn">+ New request</span>
-    </div>
-    <table class="mockup-approve__table">
-      <thead>
-        <tr><th>Requester</th><th>Category</th><th>Amount</th><th>Date</th><th>Status</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><div class="mockup-approve__requester"><span class="mockup__row-avatar" style="--c: var(--sky)">DT</span>Downtown</div></td>
-          <td>Supplies</td>
-          <td class="mockup-approve__amount">$284.10</td>
-          <td>Jun 21</td>
-          <td><span class="mockup-approve__status mockup-approve__status--pending">Pending</span></td>
-        </tr>
-        <tr>
-          <td><div class="mockup-approve__requester"><span class="mockup__row-avatar" style="--c: var(--navy)">RV</span>Riverside</div></td>
-          <td>Equipment</td>
-          <td class="mockup-approve__amount">$1,120.00</td>
-          <td>Jun 19</td>
-          <td><span class="mockup-approve__status mockup-approve__status--approved">Approved</span></td>
-        </tr>
-        <tr>
-          <td><div class="mockup-approve__requester"><span class="mockup__row-avatar" style="--c: var(--accent)">UT</span>Uptown</div></td>
-          <td>Supplies</td>
-          <td class="mockup-approve__amount">$96.40</td>
-          <td>Jun 18</td>
-          <td><span class="mockup-approve__status mockup-approve__status--approved">Approved</span></td>
-        </tr>
-        <tr>
-          <td><div class="mockup-approve__requester"><span class="mockup__row-avatar" style="--c: var(--navy)">MT</span>Midtown</div></td>
-          <td>Travel</td>
-          <td class="mockup-approve__amount">$412.75</td>
-          <td>Jun 17</td>
-          <td><span class="mockup-approve__status mockup-approve__status--declined">Declined</span></td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>
           </div>
@@ -266,60 +405,135 @@
 
         <article class="case reveal">
           <div class="case__media case__media--mockup" aria-hidden="true">
-            <div class="mockup">
-  <div class="mockup__chrome">
+            <div class="appshot">
+  <div class="appshot__chrome">
     <span class="mockup__dot mockup__dot--red"></span>
     <span class="mockup__dot mockup__dot--amber"></span>
     <span class="mockup__dot mockup__dot--green"></span>
-    <span class="mockup__url">
+    <span class="appshot__url">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
       app.roster.io/schedule
     </span>
-    <span class="mockup__chrome-menu"><span></span><span></span><span></span></span>
   </div>
-  <div class="mockup__appbar">
-    <div class="mockup__appbar-left">
-      <div class="mockup__workspace">
-        <span class="mockup__logo"></span>
-        <span class="mockup__workspace-name">Roster</span>
+  <div class="appshot__body">
+    <aside class="appshot__sidebar">
+      <div class="appshot__brand">
+        <span class="appshot__brand-mark">R</span>
+        <span class="appshot__brand-name">Roster</span>
+        <span class="appshot__brand-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9 4-4 4 4"/><path d="m16 15-4 4-4-4"/></svg></span>
       </div>
-      <div class="mockup-roster__nav">
-        <span class="mockup-roster__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></span>
-        Week of Jun 22
-        <span class="mockup-roster__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      <span class="appshot__navlabel">Main</span>
+      <span class="appshot__navitem appshot__navitem--active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+        Schedule
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Shifts
+        <span class="appshot__navitem-badge">3</span>
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg>
+        Staff
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Locations
+      </span>
+      <span class="appshot__navlabel">Manage</span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M12 20V4"/><path d="M20 20v-6"/></svg>
+        Reports
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="8" x2="20" y2="8"/><circle cx="9" cy="8" r="2.4"/><line x1="4" y1="16" x2="20" y2="16"/><circle cx="15" cy="16" r="2.4"/></svg>
+        Settings
+      </span>
+      <div class="appshot__user">
+        <span class="appshot__user-av">DP</span>
+        <div class="appshot__user-text">
+          <span class="appshot__user-name">Dana Price</span>
+          <span class="appshot__user-role">Store Manager</span>
+        </div>
       </div>
-    </div>
-    <span class="mockup__avatar mockup__avatar--sm">DP</span>
-  </div>
-  <div class="mockup-roster">
-    <div class="mockup-roster__grid">
-      <div class="mockup-roster__cell mockup-roster__day-head"></div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Mon</div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Tue</div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Wed</div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Thu</div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Fri</div>
+    </aside>
+    <div class="appshot__main">
+      <div class="appshot__topbar">
+        <div class="appshot__topbar-title">
+          <strong>Schedule</strong>
+          <span>Downtown · Week of Jun 22</span>
+        </div>
+        <div class="appshot__topbar-actions">
+          <span class="appshot__search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            Search
+          </span>
+          <span class="appshot__iconbtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 6-3 8-3 8h18s-3-2-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="appshot__iconbtn-dot"></span>
+          </span>
+          <span class="appshot__topbar-av">DP</span>
+        </div>
+      </div>
+      <div class="appshot__content">
+        <div class="appshot__kpis">
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Shifts</span>
+            <span class="appshot__kpi-value">86</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--flat">This week</span>
+          </div>
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Open</span>
+            <span class="appshot__kpi-value">3</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--down">↓ 5 vs last</span>
+          </div>
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Coverage</span>
+            <span class="appshot__kpi-value">97%</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--up">↑ 4%</span>
+          </div>
+        </div>
+        <div class="appshot__panel">
+          <div class="appshot__panel-head">
+            <span class="appshot__panel-title">Week of Jun 22</span>
+            <div class="appshot__panel-actions">
+              <span class="appshot__btn appshot__btn--ghost">Today</span>
+              <span class="appshot__btn">Publish</span>
+            </div>
+          </div>
+          <div class="appshot-cal">
+            <div class="appshot-cal__grid">
+              <div class="appshot-cal__cell appshot-cal__dh"></div>
+              <div class="appshot-cal__cell appshot-cal__dh">Mon</div>
+              <div class="appshot-cal__cell appshot-cal__dh">Tue</div>
+              <div class="appshot-cal__cell appshot-cal__dh">Wed</div>
+              <div class="appshot-cal__cell appshot-cal__dh">Thu</div>
+              <div class="appshot-cal__cell appshot-cal__dh">Fri</div>
 
-      <div class="mockup-roster__cell mockup-roster__staff-cell"><span class="mockup__row-avatar" style="--c: var(--accent)">CB</span><span class="mockup-roster__staff-name">Chloe</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
+              <div class="appshot-cal__cell appshot-cal__staff"><span class="appshot__av" style="--c: var(--accent)">CB</span><span class="appshot-cal__staff-name">Chloe</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
 
-      <div class="mockup-roster__cell mockup-roster__staff-cell"><span class="mockup__row-avatar" style="--c: var(--sky)">ML</span><span class="mockup-roster__staff-name">Marcus</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift--open">Open</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift mockup-roster__shift--muted">2&ndash;10</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift mockup-roster__shift--muted">2&ndash;10</span></div>
-      <div class="mockup-roster__cell"></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift mockup-roster__shift--muted">2&ndash;10</span></div>
+              <div class="appshot-cal__cell appshot-cal__staff"><span class="appshot__av" style="--c: #64748b">ML</span><span class="appshot-cal__staff-name">Marcus</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift--open">Open</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift appshot-cal__shift--alt">2–10</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift appshot-cal__shift--alt">2–10</span></div>
+              <div class="appshot-cal__cell"></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift appshot-cal__shift--alt">2–10</span></div>
 
-      <div class="mockup-roster__cell mockup-roster__staff-cell"><span class="mockup__row-avatar" style="--c: var(--navy)">DP</span><span class="mockup-roster__staff-name">Dana</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">10&ndash;6</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">10&ndash;6</span></div>
-      <div class="mockup-roster__cell"></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">10&ndash;6</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">10&ndash;6</span></div>
+              <div class="appshot-cal__cell appshot-cal__staff"><span class="appshot__av" style="--c: var(--navy)">DP</span><span class="appshot-cal__staff-name">Dana</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">10–6</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">10–6</span></div>
+              <div class="appshot-cal__cell"></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">10–6</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">10–6</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

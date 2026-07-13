@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css?v=41">
-  <link rel="stylesheet" href="../assets/css/enterprise.css?v=28">
+  <link rel="stylesheet" href="../assets/css/enterprise.css?v=29">
 </head>
 <body>
 
@@ -85,60 +85,135 @@
 
     <div class="container container--narrow">
       <div class="cs-media cs-media--mockup reveal" aria-hidden="true">
-        <div class="mockup">
-  <div class="mockup__chrome">
+        <div class="appshot">
+  <div class="appshot__chrome">
     <span class="mockup__dot mockup__dot--red"></span>
     <span class="mockup__dot mockup__dot--amber"></span>
     <span class="mockup__dot mockup__dot--green"></span>
-    <span class="mockup__url">
+    <span class="appshot__url">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
       app.roster.io/schedule
     </span>
-    <span class="mockup__chrome-menu"><span></span><span></span><span></span></span>
   </div>
-  <div class="mockup__appbar">
-    <div class="mockup__appbar-left">
-      <div class="mockup__workspace">
-        <span class="mockup__logo"></span>
-        <span class="mockup__workspace-name">Roster</span>
+  <div class="appshot__body">
+    <aside class="appshot__sidebar">
+      <div class="appshot__brand">
+        <span class="appshot__brand-mark">R</span>
+        <span class="appshot__brand-name">Roster</span>
+        <span class="appshot__brand-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9 4-4 4 4"/><path d="m16 15-4 4-4-4"/></svg></span>
       </div>
-      <div class="mockup-roster__nav">
-        <span class="mockup-roster__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></span>
-        Week of Jun 22
-        <span class="mockup-roster__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      <span class="appshot__navlabel">Main</span>
+      <span class="appshot__navitem appshot__navitem--active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+        Schedule
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Shifts
+        <span class="appshot__navitem-badge">3</span>
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg>
+        Staff
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Locations
+      </span>
+      <span class="appshot__navlabel">Manage</span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M12 20V4"/><path d="M20 20v-6"/></svg>
+        Reports
+      </span>
+      <span class="appshot__navitem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="8" x2="20" y2="8"/><circle cx="9" cy="8" r="2.4"/><line x1="4" y1="16" x2="20" y2="16"/><circle cx="15" cy="16" r="2.4"/></svg>
+        Settings
+      </span>
+      <div class="appshot__user">
+        <span class="appshot__user-av">DP</span>
+        <div class="appshot__user-text">
+          <span class="appshot__user-name">Dana Price</span>
+          <span class="appshot__user-role">Store Manager</span>
+        </div>
       </div>
-    </div>
-    <span class="mockup__avatar mockup__avatar--sm">DP</span>
-  </div>
-  <div class="mockup-roster">
-    <div class="mockup-roster__grid">
-      <div class="mockup-roster__cell mockup-roster__day-head"></div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Mon</div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Tue</div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Wed</div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Thu</div>
-      <div class="mockup-roster__cell mockup-roster__day-head">Fri</div>
+    </aside>
+    <div class="appshot__main">
+      <div class="appshot__topbar">
+        <div class="appshot__topbar-title">
+          <strong>Schedule</strong>
+          <span>Downtown · Week of Jun 22</span>
+        </div>
+        <div class="appshot__topbar-actions">
+          <span class="appshot__search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            Search
+          </span>
+          <span class="appshot__iconbtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 6-3 8-3 8h18s-3-2-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="appshot__iconbtn-dot"></span>
+          </span>
+          <span class="appshot__topbar-av">DP</span>
+        </div>
+      </div>
+      <div class="appshot__content">
+        <div class="appshot__kpis">
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Shifts</span>
+            <span class="appshot__kpi-value">86</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--flat">This week</span>
+          </div>
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Open</span>
+            <span class="appshot__kpi-value">3</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--down">↓ 5 vs last</span>
+          </div>
+          <div class="appshot__kpi">
+            <span class="appshot__kpi-label">Coverage</span>
+            <span class="appshot__kpi-value">97%</span>
+            <span class="appshot__kpi-trend appshot__kpi-trend--up">↑ 4%</span>
+          </div>
+        </div>
+        <div class="appshot__panel">
+          <div class="appshot__panel-head">
+            <span class="appshot__panel-title">Week of Jun 22</span>
+            <div class="appshot__panel-actions">
+              <span class="appshot__btn appshot__btn--ghost">Today</span>
+              <span class="appshot__btn">Publish</span>
+            </div>
+          </div>
+          <div class="appshot-cal">
+            <div class="appshot-cal__grid">
+              <div class="appshot-cal__cell appshot-cal__dh"></div>
+              <div class="appshot-cal__cell appshot-cal__dh">Mon</div>
+              <div class="appshot-cal__cell appshot-cal__dh">Tue</div>
+              <div class="appshot-cal__cell appshot-cal__dh">Wed</div>
+              <div class="appshot-cal__cell appshot-cal__dh">Thu</div>
+              <div class="appshot-cal__cell appshot-cal__dh">Fri</div>
 
-      <div class="mockup-roster__cell mockup-roster__staff-cell"><span class="mockup__row-avatar" style="--c: var(--accent)">CB</span><span class="mockup-roster__staff-name">Chloe</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">9&ndash;5</span></div>
+              <div class="appshot-cal__cell appshot-cal__staff"><span class="appshot__av" style="--c: var(--accent)">CB</span><span class="appshot-cal__staff-name">Chloe</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">9–5</span></div>
 
-      <div class="mockup-roster__cell mockup-roster__staff-cell"><span class="mockup__row-avatar" style="--c: var(--sky)">ML</span><span class="mockup-roster__staff-name">Marcus</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift--open">Open</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift mockup-roster__shift--muted">2&ndash;10</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift mockup-roster__shift--muted">2&ndash;10</span></div>
-      <div class="mockup-roster__cell"></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift mockup-roster__shift--muted">2&ndash;10</span></div>
+              <div class="appshot-cal__cell appshot-cal__staff"><span class="appshot__av" style="--c: #64748b">ML</span><span class="appshot-cal__staff-name">Marcus</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift--open">Open</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift appshot-cal__shift--alt">2–10</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift appshot-cal__shift--alt">2–10</span></div>
+              <div class="appshot-cal__cell"></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift appshot-cal__shift--alt">2–10</span></div>
 
-      <div class="mockup-roster__cell mockup-roster__staff-cell"><span class="mockup__row-avatar" style="--c: var(--navy)">DP</span><span class="mockup-roster__staff-name">Dana</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">10&ndash;6</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">10&ndash;6</span></div>
-      <div class="mockup-roster__cell"></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">10&ndash;6</span></div>
-      <div class="mockup-roster__cell"><span class="mockup-roster__shift">10&ndash;6</span></div>
+              <div class="appshot-cal__cell appshot-cal__staff"><span class="appshot__av" style="--c: var(--navy)">DP</span><span class="appshot-cal__staff-name">Dana</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">10–6</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">10–6</span></div>
+              <div class="appshot-cal__cell"></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">10–6</span></div>
+              <div class="appshot-cal__cell"><span class="appshot-cal__shift">10–6</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

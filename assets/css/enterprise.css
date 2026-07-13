@@ -951,44 +951,9 @@ h1 em, h2 em,
 .appshot__pill--bad { color: var(--bad-fg); background: var(--bad-bg); }
 .appshot__pill--info { color: var(--accent); background: var(--accent-soft); }
 
-/* Onboard: hire checklist inside the panel */
-.appshot-person { display: flex; flex-direction: column; min-width: 0; }
-.appshot-person strong { font-size: 0.76rem; font-weight: 700; }
-.appshot-person span { font-size: 0.6rem; color: var(--ink-3); }
-.appshot-progress { display: flex; align-items: center; gap: 8px; }
-.appshot-progress__bar { width: 92px; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
-.appshot-progress__fill { display: block; height: 100%; width: var(--p, 0%); background: var(--ok-fg); border-radius: 3px; }
-.appshot-progress__label { font-size: 0.64rem; font-weight: 700; color: var(--navy); white-space: nowrap; }
+/* --- Content patterns: one per product, sharing the shell above --- */
 
-.appshot-check { padding: 4px 15px 12px; }
-.appshot-check__group { padding-top: 10px; }
-.appshot-check__grouplabel {
-  display: block;
-  font-size: 0.54rem; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--ink-3); margin-bottom: 1px;
-}
-.appshot-check__row {
-  display: flex; align-items: center; gap: 11px;
-  padding: 8px 0;
-  border-top: 1px solid var(--line);
-}
-.appshot-check__group:first-child .appshot-check__row:first-of-type { border-top: none; }
-.appshot-check__box {
-  flex: none; width: 17px; height: 17px; border-radius: 5px;
-  border: 1.5px solid var(--line-strong);
-  display: flex; align-items: center; justify-content: center; color: transparent;
-}
-.appshot-check__box svg { width: 10px; height: 10px; }
-.appshot-check__box--done { background: var(--ok-fg); border-color: var(--ok-fg); color: #fff; }
-.appshot-check__label { flex: 1; min-width: 0; font-size: 0.74rem; font-weight: 500; }
-.appshot-check__row--done .appshot-check__label { color: var(--ink-3); }
-.appshot-check__tag {
-  flex: none; font-size: 0.56rem; font-weight: 600; color: var(--ink-2);
-  background: var(--bg-alt); border: 1px solid var(--line);
-  border-radius: 6px; padding: 2px 8px; white-space: nowrap;
-}
-
-/* Approve: request table inside the panel */
+/* Base table (used by Stockroom inventory) */
 .appshot-table { width: 100%; border-collapse: collapse; }
 .appshot-table th {
   text-align: left;
@@ -1007,57 +972,65 @@ h1 em, h2 em,
   white-space: nowrap;
 }
 .appshot-table tr:last-child td { border-bottom: none; }
-.appshot-table__req { display: flex; align-items: center; gap: 8px; font-weight: 600; }
-.appshot-table__amt, .appshot-table th.appshot-table__amt { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+.appshot-table__prod { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.appshot-table__sku { font-variant-numeric: tabular-nums; color: var(--ink-3); }
 
-/* Roster: weekly calendar grid inside the panel */
-.appshot-cal { padding: 15px; }
-.appshot-cal__grid {
-  display: grid;
-  grid-template-columns: 74px repeat(5, 1fr);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
-.appshot-cal__cell {
-  border-right: 1px solid var(--line);
+/* Stockroom: inline stock-level bar */
+.appshot-stock { display: inline-flex; align-items: center; gap: 8px; }
+.appshot-stock__track { flex: none; width: 52px; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.appshot-stock__fill { display: block; height: 100%; width: var(--p, 0%); border-radius: 3px; background: var(--ok-fg); }
+.appshot-stock__fill--warn { background: var(--warn-fg); }
+.appshot-stock__fill--bad { background: var(--bad-fg); }
+.appshot-stock__num { font-variant-numeric: tabular-nums; font-weight: 700; }
+
+/* Deskline: support ticket list */
+.appshot-tickets { display: flex; flex-direction: column; }
+.appshot-ticket {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 15px;
   border-bottom: 1px solid var(--line);
-  padding: 7px 5px;
-  min-height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  border-left: 3px solid transparent;
 }
-.appshot-cal__grid > .appshot-cal__cell:nth-child(6n) { border-right: none; }
-.appshot-cal__grid > .appshot-cal__cell:nth-last-child(-n+6) { border-bottom: none; }
-.appshot-cal__dh {
+.appshot-tickets .appshot-ticket:last-child { border-bottom: none; }
+.appshot-ticket--urgent { border-left-color: var(--bad-fg); }
+.appshot-ticket--high { border-left-color: var(--warn-fg); }
+.appshot-ticket--normal { border-left-color: var(--line-strong); }
+.appshot-ticket__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.appshot-ticket__subj { font-size: 0.74rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appshot-ticket__meta { font-size: 0.6rem; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appshot-ticket__sla { flex: none; font-size: 0.6rem; font-weight: 700; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.appshot-ticket__sla--warn { color: var(--warn-fg); }
+.appshot-ticket__sla--bad { color: var(--bad-fg); }
+
+/* Dispatch: field-service kanban board */
+.appshot-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 14px; background: var(--canvas); }
+.appshot-board__col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.appshot-board__colhead { display: flex; align-items: center; gap: 6px; padding: 0 2px 2px; font-size: 0.54rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+.appshot-board__count { color: var(--ink-3); background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 0 6px; font-size: 0.52rem; }
+.appshot-board__card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 9px 10px; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05); display: flex; flex-direction: column; gap: 7px; }
+.appshot-board__cust { font-size: 0.7rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appshot-board__svc { font-size: 0.6rem; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appshot-board__foot { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.appshot-board__time { font-size: 0.58rem; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.appshot-board__assignee { display: flex; align-items: center; gap: 6px; }
+
+/* Slots: bookings day agenda */
+.appshot-day { display: flex; flex-direction: column; padding: 8px 0; }
+.appshot-day__row { display: flex; gap: 12px; padding: 0 15px; }
+.appshot-day__time { flex: none; width: 44px; padding-top: 12px; font-size: 0.58rem; font-weight: 600; color: var(--ink-3); font-variant-numeric: tabular-nums; text-align: right; }
+.appshot-day__slot { flex: 1; min-width: 0; padding: 6px 0; border-top: 1px solid var(--line); }
+.appshot-day__row:first-child .appshot-day__slot { border-top: none; }
+.appshot-day__appt {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 11px;
+  border-radius: 9px;
+  border-left: 3px solid var(--c, var(--accent));
   background: var(--bg-alt);
-  font-size: 0.56rem; font-weight: 700; letter-spacing: 0.04em;
-  text-transform: uppercase; color: var(--ink-3);
 }
-.appshot-cal__staff {
-  background: var(--bg-alt);
-  justify-content: flex-start;
-  gap: 7px;
-  font-size: 0.64rem; font-weight: 600;
-}
-.appshot-cal__staff-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.appshot-cal__shift {
-  width: 100%; text-align: center;
-  font-size: 0.6rem; font-weight: 700;
-  color: var(--accent); background: var(--accent-soft);
-  border-radius: 6px; padding: 6px 2px;
-  font-variant-numeric: tabular-nums;
-}
-.appshot-cal__shift--alt { color: var(--ink-2); background: #eceef2; }
-.appshot-cal__shift--open {
-  width: 100%; text-align: center;
-  font-size: 0.56rem; font-weight: 700;
-  color: var(--warn-fg); background: var(--warn-bg);
-  border: 1px dashed currentColor;
-  border-radius: 6px; padding: 5px 2px;
-}
+.appshot-day__appt-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.appshot-day__appt-name { font-size: 0.72rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appshot-day__appt-svc { font-size: 0.6rem; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.appshot-day__empty { padding: 9px 0; font-size: 0.62rem; color: var(--ink-3); }
 
 /* ---------- Problem / Solution: two-column rows with visuals ---------- */
 
@@ -1662,13 +1635,9 @@ h1 em, h2 em,
 
   .appshot__sidebar { display: none; }
   .appshot__search { display: none; }
-  .appshot-check__tag { display: none; }
-  .appshot-table__cat, .appshot-table__date { display: none; }
-  .appshot-cal__grid { grid-template-columns: 34px repeat(5, 1fr); }
-  .appshot-cal__cell { padding: 6px 2px; min-height: 34px; }
-  .appshot-cal__staff { justify-content: center; }
-  .appshot-cal__staff-name { display: none; }
-  .appshot-cal__shift, .appshot-cal__shift--open { font-size: 0.52rem; padding: 5px 1px; }
+  .appshot-table__sku, .appshot-table__loc { display: none; }
+  .appshot-board { grid-template-columns: 1fr; }
+  .appshot-day__time { width: 40px; }
 
   .cases { gap: 56px; }
   .case { gap: 22px; }

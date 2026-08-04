@@ -1333,6 +1333,41 @@ h1 em, h2 em,
 .work__cta p { color: var(--navy); font-weight: 600; font-size: 1.35rem; letter-spacing: -0.02em; }
 .work__cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
+/* ---------- Industries ---------- */
+
+.industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+.industry-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.95rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.industry-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+.industry-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.industry-card__icon svg { width: 20px; height: 20px; }
+
 /* ---------- Offer (The Build): reuses base .price-card component,
    which was already fully theme-driven via CSS vars except for two
    spots with a literal old-purple #635BFF baked in (not a variable,
@@ -1623,6 +1658,8 @@ h1 em, h2 em,
   .case:nth-child(even) .case__media { order: 0; }
   .cases { gap: 72px; }
 
+  .industries__grid { grid-template-columns: repeat(2, 1fr); }
+
   .offer__inner { grid-template-columns: 1fr; gap: 44px; }
   .offer-card-wrap { max-width: 460px; justify-self: start; }
 
@@ -1666,6 +1703,7 @@ h1 em, h2 em,
 
   .cases { gap: 56px; }
   .case { gap: 22px; }
+  .industries__grid { grid-template-columns: 1fr; }
   .case__body h3 { font-size: 1.4rem; }
   .work__cta { flex-direction: column; align-items: flex-start; }
 

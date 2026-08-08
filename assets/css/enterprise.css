@@ -312,6 +312,9 @@ h1 em, h2 em,
   box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
+/* the hero frames a real product screenshot rather than the coded
+   sub-elements the problem/solution section still builds out of */
+.mockup > img { display: block; width: 100%; height: auto; }
 
 .mockup__chrome {
   display: flex;

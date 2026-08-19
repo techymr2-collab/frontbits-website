@@ -320,9 +320,6 @@ h1 em, h2 em,
   box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
-/* the hero frames a real product screenshot rather than the coded
-   sub-elements the problem/solution section still builds out of */
-.mockup > img { display: block; width: 100%; height: auto; }
 
 .mockup__chrome {
   display: flex;
@@ -1876,4 +1873,30 @@ h1 em, h2 em,
   .stats__inner .stat:nth-child(even) { border: 1px solid var(--line); }
   .cs-results { gap: 14px; }
   .cs-results > div { padding: 24px 20px 22px; }
+}
+
+/* ---------- Hero mockup: angled in 3D ----------
+   The perspective() function is applied on .mockup itself rather than as a
+   `perspective` property on an ancestor, because the two elements above it
+   are already spoken for: .hero__mockup carries the .reveal entrance and
+   .mockup-float runs the idle float, both of which animate transform and
+   would overwrite a rotation set at their level. */
+.hero__mockup .mockup {
+  transform: perspective(1900px) rotateY(-14deg) rotateX(5deg) rotateZ(1deg);
+  box-shadow: -18px 34px 68px rgba(15, 23, 42, 0.18);
+}
+
+@media (max-width: 1024px) {
+  /* the tilt eats horizontal room that the stacked layout needs, and the
+     angle stops reading as depth once the shot is near full-bleed */
+  .hero__mockup .mockup {
+    transform: perspective(2200px) rotateY(-8deg) rotateX(3deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__mockup .mockup {
+    transform: none;
+    box-shadow: var(--shadow-lg);
+  }
 }

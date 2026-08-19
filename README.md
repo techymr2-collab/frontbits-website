@@ -24,7 +24,13 @@ python3 -m http.server 4173
 
 ## Deploy
 
-Upload the folder as-is to any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages, cPanel).
+Hosted on **Netlify**, deployed from this repo. There is no build step — `netlify.toml`
+sets `publish = "."`, so the repo root is served as-is, and also defines the asset
+cache-control and security headers.
+
+Nothing about the site is Netlify-specific, so the folder can be dropped on any static
+host (Cloudflare Pages, GitHub Pages, cPanel) if that ever changes. If you do move it,
+update the host named in the sub-processor list in `privacy-policy.html`.
 
 ## Contact / CTA
 

@@ -1900,3 +1900,93 @@ h1 em, h2 em,
     box-shadow: var(--shadow-lg);
   }
 }
+
+/* ---------- Fit / not-a-fit qualifier ---------- */
+
+.fit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.fit-col {
+  padding: 34px 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow-card);
+}
+.fit-col h3 {
+  font-size: 1.08rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.fit-col ul { list-style: none; display: grid; gap: 16px; margin: 0; padding: 0; }
+.fit-col li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.fit-col li svg { flex: none; width: 17px; height: 17px; margin-top: 3px; }
+/* the column headings carry the meaning; colour only reinforces it */
+.fit-col--yes li svg { color: var(--accent); }
+.fit-col--no li svg { color: var(--ink-3); }
+
+/* ---------- Generic three-up info cards (handover, security, scoping) ---------- */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.info-card {
+  padding: 32px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.info-card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.info-card h3 {
+  font-size: 1.08rem;
+  letter-spacing: -0.02em;
+  margin: 20px 0 10px;
+}
+.info-card p {
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: var(--ink-3);
+  margin: 0;
+}
+
+/* the honest caveat under the security cards, set apart from the claims above it */
+.security__note {
+  margin-top: 28px;
+  padding: 22px 26px;
+  border-left: 3px solid var(--line-strong);
+  background: var(--bg-alt);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: var(--ink-3);
+  max-width: 820px;
+}
+
+@media (max-width: 1024px) {
+  .info-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .fit-grid { grid-template-columns: 1fr; }
+  .fit-col { padding: 28px 24px; }
+  .info-card { padding: 26px 24px; }
+}

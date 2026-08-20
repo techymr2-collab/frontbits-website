@@ -1990,3 +1990,53 @@ h1 em, h2 em,
   .fit-col { padding: 28px 24px; }
   .info-card { padding: 26px 24px; }
 }
+
+/* ---------- Powered by: technology strip directly under the hero ----------
+   Deliberately not a full .section -- at 110px padding it would read as a
+   headline block competing with the hero. A tinted band separates it from
+   the white hero above and the white problem/solution section below. */
+
+.powered {
+  padding: 34px 0;
+  background: var(--bg-alt);
+  border-block: 1px solid var(--line);
+}
+.powered__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px 52px;
+  flex-wrap: wrap;
+}
+.powered__label {
+  margin: 0;
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.powered__logos {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 46px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+/* uniform optical height; the three marks have near-identical aspect ratios,
+   so a shared height keeps their widths naturally balanced */
+.powered__logos img {
+  display: block;
+  height: 26px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .powered { padding: 26px 0; }
+  .powered__inner { gap: 16px; }
+  .powered__logos { gap: 30px; }
+  .powered__logos img { height: 21px; }
+}

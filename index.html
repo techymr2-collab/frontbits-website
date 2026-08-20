@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=41">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=36">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=38">
 </head>
 <body>
 
@@ -97,13 +97,143 @@
           </div>
         </div>
 
-        <!-- Real product shot: the SiteFlow portfolio dashboard we built for a
-             general contractor, the same screenshot used on its case study page. -->
-        <div class="hero__mockup reveal">
+        <!-- Illustrative dashboard mockup -- not a real client product, purely
+             decorative to signal "software," so it's aria-hidden and carries
+             no meaningful text for assistive tech. -->
+        <div class="hero__mockup reveal" aria-hidden="true">
           <div class="mockup-float">
             <div class="mockup">
-              <img src="assets/img/shots/siteflow.jpg" width="1400" height="1050"
-                   alt="SiteFlow, a construction portfolio dashboard built by Frontbits, showing five active projects with progress, budget, and crew size">
+              <div class="mockup__chrome">
+                <span class="mockup__dot mockup__dot--red"></span>
+                <span class="mockup__dot mockup__dot--amber"></span>
+                <span class="mockup__dot mockup__dot--green"></span>
+                <span class="mockup__url">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                  app.workspace.io
+                </span>
+                <span class="mockup__chrome-menu"><span></span><span></span><span></span></span>
+              </div>
+              <div class="mockup__body">
+                <aside class="mockup__sidebar">
+                  <div class="mockup__workspace">
+                    <span class="mockup__logo"></span>
+                    <span class="mockup__workspace-name">Workspace</span>
+                  </div>
+                  <nav class="mockup__nav">
+                    <span class="mockup__nav-item mockup__nav-item--active">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>
+                      Dashboard
+                    </span>
+                    <span class="mockup__nav-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M12 20V4"/><path d="M20 20v-6"/></svg>
+                      Analytics
+                    </span>
+                    <span class="mockup__nav-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>
+                      Projects
+                    </span>
+                    <span class="mockup__nav-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg>
+                      Team
+                    </span>
+                    <span class="mockup__nav-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><circle cx="9" cy="7" r="2"/><path d="M4 14h16"/><circle cx="16" cy="14" r="2"/><path d="M4 21h16"/><circle cx="10" cy="21" r="2"/></svg>
+                      Settings
+                    </span>
+                  </nav>
+                  <div class="mockup__sidebar-footer">
+                    <span class="mockup__avatar">JD</span>
+                    <span class="mockup__sidebar-user">You</span>
+                  </div>
+                </aside>
+                <div class="mockup__main">
+                  <div class="mockup__topbar">
+                    <span class="mockup__title">Overview</span>
+                    <div class="mockup__topbar-actions">
+                      <span class="mockup__icon-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                      </span>
+                      <span class="mockup__icon-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 6-3 8-3 8h18s-3-2-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+                        <span class="mockup__icon-dot"></span>
+                      </span>
+                      <span class="mockup__avatar mockup__avatar--sm">JD</span>
+                    </div>
+                  </div>
+                  <div class="mockup__stats">
+                    <div class="mockup__stat">
+                      <span class="mockup__stat-label">Revenue</span>
+                      <span class="mockup__stat-value">$8,420</span>
+                      <span class="mockup__stat-trend mockup__stat-trend--up">▲ 12%</span>
+                    </div>
+                    <div class="mockup__stat">
+                      <span class="mockup__stat-label">Active</span>
+                      <span class="mockup__stat-value">32.5h</span>
+                      <span class="mockup__stat-trend mockup__stat-trend--up">▲ 4%</span>
+                    </div>
+                    <div class="mockup__stat">
+                      <span class="mockup__stat-label">Uptime</span>
+                      <span class="mockup__stat-value">96%</span>
+                      <span class="mockup__stat-trend mockup__stat-trend--down">▼ 1%</span>
+                    </div>
+                  </div>
+                  <div class="mockup__chart-card">
+                    <div class="mockup__chart-legend">
+                      <span><span class="mockup__legend-dot"></span>This week</span>
+                      <span><span class="mockup__legend-dot mockup__legend-dot--muted"></span>Last week</span>
+                    </div>
+                    <div class="mockup__chart">
+                      <span class="mockup__bar" style="--h: 42%"></span>
+                      <span class="mockup__bar" style="--h: 66%"></span>
+                      <span class="mockup__bar" style="--h: 48%"></span>
+                      <span class="mockup__bar" style="--h: 82%"></span>
+                      <span class="mockup__bar" style="--h: 58%"></span>
+                      <span class="mockup__bar" style="--h: 72%"></span>
+                      <span class="mockup__bar" style="--h: 52%"></span>
+                    </div>
+                  </div>
+                  <div class="mockup__rows">
+                    <div class="mockup__row">
+                      <span class="mockup__row-avatar" style="--c: var(--accent)">AC</span>
+                      <div class="mockup__row-text">
+                        <span class="mockup__row-name">Acme Co.</span>
+                        <span class="mockup__row-sub">Invoice #204</span>
+                      </div>
+                      <span class="mockup__row-amount">$1,240</span>
+                      <span class="mockup__row-tag">Paid</span>
+                    </div>
+                    <div class="mockup__row">
+                      <span class="mockup__row-avatar" style="--c: var(--sky)">PL</span>
+                      <div class="mockup__row-text">
+                        <span class="mockup__row-name">Pace Logistics</span>
+                        <span class="mockup__row-sub">Proposal #018</span>
+                      </div>
+                      <span class="mockup__row-amount">$3,600</span>
+                      <span class="mockup__row-tag mockup__row-tag--muted">Pending</span>
+                    </div>
+                    <div class="mockup__row">
+                      <span class="mockup__row-avatar" style="--c: var(--navy)">RF</span>
+                      <div class="mockup__row-text">
+                        <span class="mockup__row-name">Routeflow</span>
+                        <span class="mockup__row-sub">Invoice #203</span>
+                      </div>
+                      <span class="mockup__row-amount">$980</span>
+                      <span class="mockup__row-tag">Paid</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating notification card, purely decorative, adds depth -->
+            <div class="mockup__float-card">
+              <span class="mockup__float-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 5 5L20 7"/></svg>
+              </span>
+              <div>
+                <span class="mockup__float-title">Payment received</span>
+                <span class="mockup__float-amount">+$1,240</span>
+              </div>
             </div>
           </div>
         </div>

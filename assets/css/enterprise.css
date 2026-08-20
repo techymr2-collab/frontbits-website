@@ -9,17 +9,21 @@
    ========================================================================== */
 
 :root {
-  --navy: #1a1a1a;
-  --navy-2: #262626;
-  --ink: #1a1a1a;
-  --ink-2: #52525b;
-  --ink-3: #71717a;
-  --line: #e4e4e7;
-  --line-strong: #d4d4d8;
+  /* Ink and hairlines carry a slight blue cast (slate, not neutral zinc) --
+     the "professional blue/grey" the Trust & Authority direction is built on.
+     It keeps greys reading as deliberate next to the brand blue instead of
+     as flat browser grey. */
+  --navy: #0f172a;
+  --navy-2: #1e293b;
+  --ink: #0f172a;
+  --ink-2: #475569;
+  --ink-3: #64748b;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
   --bg: #ffffff;
-  --bg-alt: #f7f7f8;
-  --dark: #1a1a1a;
-  --dark-2: #262626;
+  --bg-alt: #f8fafc;
+  --dark: #0f172a;
+  --dark-2: #1e293b;
   --accent: #0071e3;
   --accent-dark: #0060c0;
   --accent-soft: #e8f2fd;
@@ -35,8 +39,12 @@
   --primary-soft: #e8f2fd;
   --font-mono: var(--font-sans);
   --font-serif: var(--font-sans);
-  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 24px 56px rgba(0, 0, 0, 0.12);
+  /* one elevation scale, applied consistently by surface role, so cards and
+     modals no longer carry ad-hoc one-off shadow values */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 10px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 28px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 24px 56px rgba(15, 23, 42, 0.12);
 }
 
 body {
@@ -312,9 +320,6 @@ h1 em, h2 em,
   box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
-/* the hero frames a real product screenshot rather than the coded
-   sub-elements the problem/solution section still builds out of */
-.mockup > img { display: block; width: 100%; height: auto; }
 
 .mockup__chrome {
   display: flex;
@@ -1730,4 +1735,168 @@ h1 em, h2 em,
     padding: 8px 0;
   }
   .nav__links a:not(.btn):hover { color: var(--accent); }
+}
+
+/* ==========================================================================
+   Trust & Authority refresh
+   A visual-layer pass over the existing structure: no sections, markup or
+   copy moved. The thesis of this direction is that proof carries the page,
+   so anything that *is* proof -- headline metrics, case-study results, the
+   outcome on each work card -- is promoted from quiet text to a deliberate
+   surface, and everything else settles into a consistent elevation scale.
+   Appended last so it supersedes the earlier skin; rules that have mobile
+   counterparts re-declare them in the media query at the foot of this block.
+   ========================================================================== */
+
+/* ---------- Headline metrics: ruled strip -> metric cards ---------- */
+
+.stats { background: var(--bg-alt); }
+.stats__inner {
+  gap: 20px;
+  padding: 72px 0;
+  text-align: left;
+}
+.stat {
+  position: relative;
+  /* the old strip drew dividers between cells; cards carry their own edges */
+  border-left: 0;
+  padding: 32px 26px 30px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+/* short accent rule reads as a data marker without adding another colour */
+.stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 3px;
+  background: var(--accent);
+}
+.stat__num { display: block; font-size: clamp(2.1rem, 3.2vw, 2.75rem); }
+.stat__label { margin-top: 10px; }
+
+/* ---------- Case-study results: same metric-card treatment ---------- */
+
+.cs-results {
+  border-block: 0;
+  padding: 0;
+  gap: 16px;
+  margin: 12px 0 40px;
+  text-align: left;
+}
+.cs-results > div {
+  position: relative;
+  padding: 28px 24px 26px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.cs-results > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 3px;
+  background: var(--accent);
+}
+.cs-results .stat__num { display: block; font-size: clamp(1.9rem, 2.8vw, 2.4rem); }
+
+/* ---------- The outcome on each work card, promoted to a proof chip ---------- */
+
+.case__metric {
+  background: var(--accent-soft);
+  border-color: rgba(0, 113, 227, 0.24);
+  color: var(--accent-dark);
+}
+.case__metric::before { border-radius: 2px; }
+
+/* ---------- Case-study tags read as credential badges ---------- */
+
+.cs-tags span {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 15px;
+}
+
+/* ---------- One elevation scale across every raised surface ---------- */
+
+.testimonial,
+.industry-card { box-shadow: var(--shadow-card); }
+.testimonial:hover,
+.industry-card:hover { box-shadow: var(--shadow-md); }
+
+/* the primary button carried a saturated blue glow; Trust & Authority wants
+   weight rather than candy, so the lift comes from a neutral shadow */
+.btn--primary { box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(0, 113, 227, 0.18); }
+.btn--primary:hover { box-shadow: 0 2px 4px rgba(15, 23, 42, 0.1), 0 8px 20px rgba(0, 113, 227, 0.24); }
+
+/* ---------- Section heads: eyebrow gains a marker rule ---------- */
+
+.section__head .eyebrow,
+.legal-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.section__head .eyebrow::before,
+.legal-hero .eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  flex: none;
+}
+/* on case-study pages the eyebrow trails the "Back to work" link on the same
+   line, where a leading rule visually welds the two into one control */
+.cs-back + .eyebrow::before { display: none; }
+.cs-back + .eyebrow { margin-left: 10px; }
+
+@media (max-width: 1024px) {
+  .stats__inner { padding: 56px 0; }
+}
+
+@media (max-width: 768px) {
+  .stats__inner { gap: 14px; padding: 44px 0; }
+  .stat { padding: 26px 22px 24px; }
+  /* style.css still trims edges here to build the old two-up ruled strip,
+     at a specificity that outranks the plain .stat card rule above */
+  .stats__inner .stat,
+  .stats__inner .stat:nth-child(-n + 2),
+  .stats__inner .stat:nth-child(even) { border: 1px solid var(--line); }
+  .cs-results { gap: 14px; }
+  .cs-results > div { padding: 24px 20px 22px; }
+}
+
+/* ---------- Hero mockup: angled in 3D ----------
+   The perspective() function is applied on .mockup itself rather than as a
+   `perspective` property on an ancestor, because the two elements above it
+   are already spoken for: .hero__mockup carries the .reveal entrance and
+   .mockup-float runs the idle float, both of which animate transform and
+   would overwrite a rotation set at their level. */
+.hero__mockup .mockup {
+  transform: perspective(1900px) rotateY(-14deg) rotateX(5deg) rotateZ(1deg);
+  box-shadow: -18px 34px 68px rgba(15, 23, 42, 0.18);
+}
+
+@media (max-width: 1024px) {
+  /* the tilt eats horizontal room that the stacked layout needs, and the
+     angle stops reading as depth once the shot is near full-bleed */
+  .hero__mockup .mockup {
+    transform: perspective(2200px) rotateY(-8deg) rotateX(3deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__mockup .mockup {
+    transform: none;
+    box-shadow: var(--shadow-lg);
+  }
 }

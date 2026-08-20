@@ -2004,8 +2004,10 @@ h1 em, h2 em,
 .powered__inner {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px 52px;
   flex-wrap: wrap;
+  text-align: center;
 }
 .powered__label {
   margin: 0;
@@ -2021,6 +2023,7 @@ h1 em, h2 em,
   list-style: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 46px;
   flex-wrap: wrap;
   margin: 0;

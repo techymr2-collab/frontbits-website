@@ -2043,3 +2043,74 @@ h1 em, h2 em,
   .powered__logos { gap: 30px; }
   .powered__logos img { height: 21px; }
 }
+
+/* ==========================================================================
+   Monochrome text
+   Brand blue is now reserved for non-text UI -- button fills, icons, accent
+   bars, chip backgrounds. No reading text renders in it.
+
+   Collected in one block, reusing each original selector verbatim, rather
+   than edited in place across two stylesheets: same specificity, later
+   position, so these win the cascade and the whole change reverts by
+   deleting this block. Decorative mockup interiors (.mockup__*) are left
+   alone -- those are illustrative product screenshots, not site text.
+   ========================================================================== */
+
+/* headings: the emphasised word now matches the heading around it */
+h1 em, h2 em,
+.hero__title em {
+  color: var(--navy);
+  -webkit-text-fill-color: var(--navy);
+}
+.section--dark h2 em, .cta h2 em {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
+
+/* section labels */
+.eyebrow,
+.hero__eyebrow { color: var(--ink-3); }
+.eyebrow--light { color: rgba(255, 255, 255, 0.7); }
+
+/* work and case-study meta; the metric chip keeps its blue fill, text only */
+.case__num { color: var(--ink-3); }
+.case__metric { color: var(--navy); }
+.cs-back { color: var(--ink-2); }
+
+/* links rely on their arrow, and its hover motion, as the affordance */
+.applelink { color: var(--navy); }
+
+/* dark process band; the time pill keeps its tinted fill, text only */
+.process-step__num { color: rgba(255, 255, 255, 0.55); }
+.process-step__time { color: rgba(255, 255, 255, 0.78); }
+
+/* footer and booking confirmation */
+.footer__col h4 { color: #fff; }
+.confirm__step-num { color: var(--ink-3); }
+
+/* white button on the dark CTA band */
+.btn--white { color: var(--navy); }
+
+/* -- second pass: text the var()-based sweep above missed, because these
+      set literal hex or inherit rather than referencing the accent vars -- */
+
+/* inline links in body copy. Colour was doing the work of marking them as
+   links; with it gone they take a permanent underline instead, so they stay
+   distinguishable from the prose around them. */
+.pricing__note a,
+.legal__body a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--line-strong);
+}
+.pricing__note a:hover,
+.legal__body a:hover { text-decoration-color: var(--navy); }
+
+/* star ratings render as text glyphs, not icons */
+.testimonial__stars { color: var(--navy); }
+
+/* dark CTA band: tinted blues on the gradient */
+.cta__email { color: rgba(255, 255, 255, 0.72); }
+.cta__assurance li { color: rgba(255, 255, 255, 0.72); }
+.cta__assurance li::before { color: rgba(255, 255, 255, 0.55); }

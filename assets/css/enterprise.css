@@ -2114,3 +2114,111 @@ h1 em, h2 em,
 .cta__email { color: rgba(255, 255, 255, 0.72); }
 .cta__assurance li { color: rgba(255, 255, 255, 0.72); }
 .cta__assurance li::before { color: rgba(255, 255, 255, 0.55); }
+
+/* ==========================================================================
+   Offer: full-width inclusions, no card
+   A pricing card is a comparison device; with a single offer there is
+   nothing to compare, so the card is gone. Prominence comes from the price
+   figure's scale and generous space rather than from a boxed container --
+   which also keeps this section from reading as one more bordered card grid
+   alongside handover, security, and scoping.
+   ========================================================================== */
+
+/* white, against the tinted stats band directly above it */
+.offer {
+  background: var(--bg);
+  border-block: 1px solid var(--line);
+}
+
+.section__head--center {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+  text-align: center;
+}
+.section__head--center p { text-align: center; }
+/* the eyebrow's marker rule reads as a hanging dash once centred */
+.section__head--center .eyebrow::before { display: none; }
+
+.offer__price { text-align: center; }
+.offer__badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  border: 1px solid rgba(0, 113, 227, 0.22);
+  border-radius: 999px;
+  padding: 7px 15px;
+  margin-bottom: 22px;
+}
+.offer__figure {
+  margin: 0;
+  font-size: clamp(2.7rem, 5.4vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+.offer__figure-note {
+  margin: 14px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* inclusions: a plain checklist, deliberately unboxed */
+.offer__includes {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 44px;
+  max-width: 960px;
+  margin: 48px auto;
+  padding: 40px 0;
+  border-block: 1px solid var(--line);
+}
+.offer__includes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.offer__includes li svg {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  margin-top: 3px;
+  color: var(--accent);
+}
+
+.offer__cta { text-align: center; }
+.offer__cta .pricing__note {
+  max-width: 620px;
+  margin: 22px auto 0;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .offer__includes { grid-template-columns: repeat(2, 1fr); gap: 18px 36px; max-width: 720px; }
+}
+
+@media (max-width: 768px) {
+  .section__head--center { margin-bottom: 36px; }
+  .offer__includes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 36px auto;
+    padding: 32px 0;
+  }
+}

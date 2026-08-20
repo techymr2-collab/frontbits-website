@@ -2222,3 +2222,35 @@ h1 em, h2 em,
     padding: 32px 0;
   }
 }
+
+/* ==========================================================================
+   Hero mockup: multi-colour data
+   The illustrative hero dashboard read as monochrome blue -- chart bars,
+   both "Paid" tags, and two of three avatars all shared the brand accent or
+   its lighter sibling --sky. Diversified with hues already vetted for this
+   site (the appshot--stockroom/dispatch/deskline/slots per-product accents
+   defined above), plus the green/red already used for stat trends and the
+   floating payment card. Brand blue is kept, deliberately, on the workspace
+   logo mark and the active nav item -- both read as "this product's own
+   brand", the same role blue plays for Frontbits itself.
+
+   Scoped to .hero__mockup only: the smaller mockup reused in the
+   Problem/Solution section shares these base classes and keeps its plainer,
+   all-blue chart -- this request was specifically about the hero image.
+   ========================================================================== */
+
+.hero__mockup .mockup__bar:nth-child(4n + 1) { background: var(--accent); opacity: 0.85; }
+.hero__mockup .mockup__bar:nth-child(4n + 2) { background: #0d9488; opacity: 0.85; }
+.hero__mockup .mockup__bar:nth-child(4n + 3) { background: #7c3aed; opacity: 0.85; }
+.hero__mockup .mockup__bar:nth-child(4n)     { background: #d97706; opacity: 0.85; }
+
+/* "Paid" reads as success green, matching the payment-received card below
+   it and the up-trend arrows above; "Pending" keeps its existing grey */
+.mockup__row-tag--paid { color: #16a34a; background: #e6f7ec; }
+
+/* the legend's "last week" swatch now reads as genuinely muted (grey)
+   rather than as a second, paler blue next to the "this week" swatch */
+.hero__mockup .mockup__legend-dot--muted { background: var(--line-strong); opacity: 1; }
+
+/* a notification badge is conventionally red, not brand blue */
+.hero__mockup .mockup__icon-dot { background: #ef4444; }

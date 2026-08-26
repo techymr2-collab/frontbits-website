@@ -2254,3 +2254,132 @@ h1 em, h2 em,
 
 /* a notification badge is conventionally red, not brand blue */
 .hero__mockup .mockup__icon-dot { background: #ef4444; }
+
+/* ==========================================================================
+   Section-repetition pass
+   Half the sections on this page had converged on the same module: heading,
+   then a row of equal-width bordered/shadowed cards with a pastel icon
+   circle. Repeated across Industries, Handover, Security, and Scoping-call
+   back to back, that rhythm reads as templated regardless of colour or
+   type choices. This block breaks each of those into a distinct shape.
+   ========================================================================== */
+
+/* ---------- Industries: card grid -> plain pill list ----------
+   Eight one-line labels never needed a bordered card with an icon; a
+   wrapped chip row says the same thing in a fraction of the height and
+   reuses the dot-marker chip already established by .cs-tags on the
+   case-study pages, rather than inventing another one-off component. */
+.industries__pills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+.industries__pills li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.industries__pills li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+
+/* ---------- Process: drop the card chrome, keep the numbering ----------
+   Three bordered boxes in a row on the dark panel repeated the same shape
+   as the icon-card sections below it. The "/ 01" numbering is a good
+   device on its own; it doesn't need a box around it too. A top rule
+   plus generous top padding reads as a step marker without becoming
+   another card. */
+.process__grid { gap: 36px; }
+.process-step {
+  background: none;
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0;
+  padding: 28px 0 0;
+}
+.process-step:hover {
+  transform: none;
+  border-top-color: rgba(41, 151, 255, 0.6);
+  background: none;
+}
+
+/* ---------- Scoping call: plain divided columns, no cards, no icons ----------
+   A third instance of the icon-card grid in a row would have made the
+   repetition worse, not better; a vertical-rule editorial layout is
+   deliberately closer to the FAQ's plain-text register. */
+.plain-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.plain-cols > div {
+  padding: 0 32px;
+  border-left: 1px solid var(--line);
+}
+.plain-cols > div:first-child { border-left: none; padding-left: 0; }
+.plain-cols > div:last-child { padding-right: 0; }
+.plain-cols h3 {
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.plain-cols p {
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: var(--ink-3);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .plain-cols { grid-template-columns: 1fr; gap: 28px; }
+  .plain-cols > div {
+    padding: 0 0 0 20px;
+    border-left: 1px solid var(--line);
+  }
+  .plain-cols > div:first-child { padding-left: 20px; border-left: 1px solid var(--line); }
+}
+
+/* ---------- Stats: card grid -> plain ruled strip, again ----------
+   Four bordered, shadowed metric cards repeated the same shape as the
+   icon-card sections around them. Numbers this large read as important
+   from their size alone; reverted to a plain divided strip, closer to
+   how this section read before it was card-ified in the redesign pass. */
+.stats__inner { gap: 0; padding: 56px 0; text-align: center; }
+.stat {
+  position: static;
+  padding: 0 32px;
+  background: none;
+  border: none;
+  border-left: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+.stat:first-child { border-left: none; }
+.stat::before { display: none; }
+
+@media (max-width: 768px) {
+  .stats__inner { gap: 0; padding: 0; }
+  .stat {
+    padding: 30px 12px;
+    border-left: none;
+    border-top: 1px solid var(--line);
+  }
+  .stats__inner .stat:nth-child(-n + 2) { border-top: none; }
+  .stats__inner .stat:nth-child(even) { border-left: 1px solid var(--line); }
+}

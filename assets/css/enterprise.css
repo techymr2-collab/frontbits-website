@@ -1085,46 +1085,52 @@ h1 em, h2 em,
   box-shadow: var(--shadow-md);
   padding: 12px 14px;
 }
-.chaos-card--1 { top: 2%; left: 0; transform: rotate(-7deg); z-index: 3; }
-.chaos-card--2 { top: 20%; left: 50%; width: 42%; transform: rotate(6deg); z-index: 2; }
-.chaos-card--3 { top: 56%; left: 4%; width: 46%; transform: rotate(-4deg); z-index: 4; }
-.chaos-card--4 { top: 75%; left: 48%; width: 40%; transform: rotate(5deg); z-index: 1; }
-
-.chaos-card__dots { display: flex; gap: 4px; margin-bottom: 10px; }
-.chaos-card__dots span { width: 5px; height: 5px; border-radius: 50%; background: var(--line-strong); }
+.chaos-card--1 { top: 3%;  left: 0;   width: 48%; transform: rotate(-6deg); z-index: 2; }
+.chaos-card--2 { top: 30%; left: 47%; width: 45%; transform: rotate(5deg);  z-index: 1; }
+/* the mismatched one sits lowest and largest, so the eye lands on it last */
+.chaos-card--3 { top: 62%; left: 6%;  width: 52%; transform: rotate(-3deg); z-index: 4; }
 
 .chaos-card__rows { display: grid; gap: 6px; }
 .chaos-card__rows span { height: 6px; border-radius: 2px; background: var(--line); }
 .chaos-card__rows span:nth-child(even) { width: 70%; }
 
-/* spreadsheet card: a small grid of cells, one flagged red to suggest a
-   broken formula -- literal illustration of "spreadsheets breaking down" */
-.chaos-card__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
-.chaos-card__grid span { height: 13px; border-radius: 2px; background: var(--bg-alt); border: 1px solid var(--line); }
-.chaos-card__cell--error { background: #fbe4e4; border-color: #f0b8b8; }
-
-/* chat card: two scattered messages from different people, standing in
-   for a Slack thread doing a real system's job */
-.chaos-card__msg { display: flex; align-items: flex-start; gap: 9px; }
-.chaos-card__msg + .chaos-card__msg { margin-top: 9px; }
-.chaos-card__avatar { flex: none; width: 20px; height: 20px; border-radius: 50%; background: var(--accent-soft); }
-.chaos-card__avatar--muted { background: var(--bg-alt); border: 1px solid var(--line); }
-.chaos-card__lines { display: grid; gap: 6px; flex: 1; padding-top: 3px; }
-.chaos-card__lines span { height: 6px; border-radius: 2px; background: var(--line); }
-.chaos-card__lines span:last-child { width: 60%; }
-
-/* invoice card: a dollar amount + line items + an overdue flag */
-.chaos-card__amount {
+/* Each card is the same customer record as one tool holds it. The figures
+   agree on two cards and not the third, which is the whole point of the
+   visual: the mismatch is the message, so it is the only red on screen. */
+.chaos-card__app {
   display: block;
   font-family: var(--font-mono);
+  font-size: 0.55rem;
   font-weight: 700;
-  font-size: 0.86rem;
-  color: var(--navy);
-  margin-bottom: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 10px;
 }
+.chaos-card__record {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.chaos-card__client {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+.chaos-card__value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+.chaos-card__value--mismatch { color: #dc2626; }
+.chaos-card__rows { margin-top: 11px; }
 .chaos-card__flag {
   display: inline-block;
-  margin-top: 9px;
+  margin-top: 10px;
   font-family: var(--font-mono);
   font-size: 0.54rem;
   font-weight: 700;
@@ -1135,27 +1141,6 @@ h1 em, h2 em,
   border-radius: 3px;
   padding: 3px 7px;
 }
-
-/* tasks card: a small checklist, one item done -- work half-tracked
-   across yet another disconnected tool */
-.chaos-card__checklist { display: flex; flex-direction: column; gap: 8px; }
-.chaos-card__check { display: flex; align-items: center; gap: 7px; }
-.chaos-card__check::before {
-  content: "";
-  flex: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
-  border: 1.5px solid var(--line-strong);
-}
-.chaos-card__check::after {
-  content: "";
-  flex: 1;
-  height: 6px;
-  border-radius: 2px;
-  background: var(--line);
-}
-.chaos-card__check--done::before { background: var(--accent); border-color: var(--accent); }
 
 .chaos-badge {
   position: absolute;

@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=41">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=53">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=55">
 </head>
 <body>
 
@@ -306,47 +306,38 @@
           </ul>
         </div>
 
-        <!-- Illustrative "chaos" visual -- scattered, overlapping, tilted
-             cards standing in for disconnected spreadsheets/tools, each
-             styled to read as a specific tool (mirrors the copy: spreadsheet,
-             chat thread, invoice, task list). Not a real product, purely
-             decorative, so it's aria-hidden. -->
+        <!-- Illustrative "chaos" visual: the same customer record as it exists
+             in three disconnected tools, with one figure that no longer agrees.
+             Dramatises the copy beside it ("the same details, typed in three
+             times... they stop matching") rather than showing generic tool
+             shapes. Not real data; decorative, so aria-hidden. -->
         <div class="problem-solution__visual problem-solution__visual--chaos reveal" aria-hidden="true">
-          <div class="chaos-card chaos-card--1 chaos-card--sheet">
-            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
-            <div class="chaos-card__grid">
-              <span></span><span></span><span></span>
-              <span></span><span class="chaos-card__cell--error"></span><span></span>
-              <span></span><span></span><span></span>
+          <div class="chaos-card chaos-card--1">
+            <span class="chaos-card__app">Spreadsheet</span>
+            <div class="chaos-card__record">
+              <span class="chaos-card__client">Acme Co.</span>
+              <span class="chaos-card__value">$2,480</span>
             </div>
-          </div>
-          <div class="chaos-card chaos-card--2 chaos-card--chat">
-            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
-            <div class="chaos-card__msg">
-              <span class="chaos-card__avatar"></span>
-              <div class="chaos-card__lines"><span></span><span></span></div>
-            </div>
-            <div class="chaos-card__msg">
-              <span class="chaos-card__avatar chaos-card__avatar--muted"></span>
-              <div class="chaos-card__lines"><span></span></div>
-            </div>
-          </div>
-          <div class="chaos-card chaos-card--3 chaos-card--invoice">
-            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
-            <span class="chaos-card__amount">$2,480</span>
             <div class="chaos-card__rows"><span></span><span></span></div>
-            <span class="chaos-card__flag">Overdue</span>
           </div>
-          <div class="chaos-card chaos-card--4 chaos-card--tasks">
-            <div class="chaos-card__dots"><span></span><span></span><span></span></div>
-            <div class="chaos-card__checklist">
-              <span class="chaos-card__check chaos-card__check--done"></span>
-              <span class="chaos-card__check"></span>
-              <span class="chaos-card__check"></span>
+          <div class="chaos-card chaos-card--2">
+            <span class="chaos-card__app">CRM</span>
+            <div class="chaos-card__record">
+              <span class="chaos-card__client">Acme Co.</span>
+              <span class="chaos-card__value">$2,480</span>
             </div>
+            <div class="chaos-card__rows"><span></span></div>
+          </div>
+          <div class="chaos-card chaos-card--3">
+            <span class="chaos-card__app">Invoice</span>
+            <div class="chaos-card__record">
+              <span class="chaos-card__client">Acme Co.</span>
+              <span class="chaos-card__value chaos-card__value--mismatch">$2,840</span>
+            </div>
+            <span class="chaos-card__flag">Doesn&rsquo;t match</span>
           </div>
           <span class="chaos-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14"/><path d="M5 15h14"/><path d="M18 5 6 19"/></svg>
           </span>
         </div>
       </div>

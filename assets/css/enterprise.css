@@ -2509,3 +2509,32 @@ h1 em, h2 em,
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* ---------- Problem section: symptoms carry a title and a detail line ----------
+   The list previously restated the paragraph above it almost verbatim, so it
+   was three rows of vertical space adding no information. Each item now leads
+   with a recognisable symptom and explains it underneath.
+
+   Applied via a modifier rather than to .problem-solution__points directly:
+   the Solution half shares that class but keeps its single-line promises, and
+   top-aligning icons there would look wrong against one line of text. */
+
+.problem-solution__points--detailed li {
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  font-size: 0.93rem;
+  font-weight: 400;
+  line-height: 1.58;
+  color: var(--ink-3);
+}
+.problem-solution__points--detailed .problem-solution__point-icon { margin-top: 2px; }
+.problem-solution__point-text { display: block; }
+.problem-solution__point-text strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--navy);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}

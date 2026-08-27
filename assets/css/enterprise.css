@@ -1697,6 +1697,9 @@ h1 em, h2 em,
   .mockup__stats { flex-wrap: wrap; }
   .mockup__stat { flex: 1 1 calc(50% - 4px); }
   .mockup__bar:nth-child(n + 6) { display: none; }
+  /* the axis has to drop the same trailing days, or the ticks stop lining
+     up with the bars they label */
+  .mockup__chart-axis span:nth-child(n + 6) { display: none; }
 
   .cs-results { grid-template-columns: 1fr; gap: 20px; }
   .mockup__icon-btn:first-child { display: none; }
@@ -2223,10 +2226,18 @@ h1 em, h2 em,
    all-blue chart -- this request was specifically about the hero image.
    ========================================================================== */
 
-.hero__mockup .mockup__bar:nth-child(4n + 1) { background: var(--accent); opacity: 0.85; }
-.hero__mockup .mockup__bar:nth-child(4n + 2) { background: #0d9488; opacity: 0.85; }
-.hero__mockup .mockup__bar:nth-child(4n + 3) { background: #7c3aed; opacity: 0.85; }
-.hero__mockup .mockup__bar:nth-child(4n)     { background: #d97706; opacity: 0.85; }
+/* Bars are stacked by revenue source, so the colours mean something and
+   match the legend. Segments come from a hard-stop gradient rather than
+   child elements, keeping one node per bar. */
+.hero__mockup .mockup__bar {
+  opacity: 1;
+  background: linear-gradient(
+    to top,
+    var(--accent) 0 var(--s1),
+    #0d9488 var(--s1) var(--s2),
+    #7c3aed var(--s2) 100%
+  );
+}
 
 /* "Paid" reads as success green, matching the payment-received card below
    it and the up-trend arrows above; "Pending" keeps its existing grey */
@@ -2234,7 +2245,7 @@ h1 em, h2 em,
 
 /* the legend's "last week" swatch now reads as genuinely muted (grey)
    rather than as a second, paler blue next to the "this week" swatch */
-.hero__mockup .mockup__legend-dot--muted { background: var(--line-strong); opacity: 1; }
+.hero__mockup .mockup__legend-dot { background: var(--c, var(--accent)); opacity: 1; }
 
 /* a notification badge is conventionally red, not brand blue */
 .hero__mockup .mockup__icon-dot { background: #ef4444; }
@@ -2441,4 +2452,60 @@ h1 em, h2 em,
 @media (prefers-reduced-motion: reduce) {
   .bento__tile img { transition: none; }
   .bento__tile:hover img { transform: none; }
+}
+
+/* ---------- Hero mockup: chart framing and KPI sparklines ----------
+   Scoped to .hero__mockup: the Problem/Solution section reuses .mockup__stat
+   and .mockup__bar but has no chart head, axis or sparklines, and keeps its
+   plainer treatment. */
+
+.hero__mockup .mockup__chart-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.hero__mockup .mockup__chart-title {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+.hero__mockup .mockup__chart { margin-bottom: 6px; }
+
+/* day ticks align with the bars: same flex/gap/padding as the chart above */
+.hero__mockup .mockup__chart-axis {
+  display: flex;
+  gap: 5px;
+  padding: 0 10px;
+  margin-bottom: 14px;
+}
+.hero__mockup .mockup__chart-axis span {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+
+/* a KPI card with a trend arrow but no trend line reads as a placeholder */
+.hero__mockup .mockup__spark {
+  display: block;
+  margin-top: 5px;
+  height: 15px;
+}
+.hero__mockup .mockup__spark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+.hero__mockup .mockup__spark polyline {
+  fill: none;
+  stroke: var(--c, var(--accent));
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }

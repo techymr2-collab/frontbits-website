@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=41">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=50">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=52">
 </head>
 <body>
 
@@ -165,31 +165,47 @@
                       <span class="mockup__stat-label">Revenue</span>
                       <span class="mockup__stat-value">$8,420</span>
                       <span class="mockup__stat-trend mockup__stat-trend--up">▲ 12%</span>
+                      <span class="mockup__spark" style="--c: var(--accent)">
+                        <svg viewBox="0 0 64 20" preserveAspectRatio="none"><polyline points="0,16 9,14 18,15 27,10 36,11 45,6 54,5 64,2" vector-effect="non-scaling-stroke"/></svg>
+                      </span>
                     </div>
                     <div class="mockup__stat">
                       <span class="mockup__stat-label">Active</span>
                       <span class="mockup__stat-value">32.5h</span>
                       <span class="mockup__stat-trend mockup__stat-trend--up">▲ 4%</span>
+                      <span class="mockup__spark" style="--c: #0d9488">
+                        <svg viewBox="0 0 64 20" preserveAspectRatio="none"><polyline points="0,13 9,12 18,14 27,9 36,10 45,8 54,6 64,5" vector-effect="non-scaling-stroke"/></svg>
+                      </span>
                     </div>
                     <div class="mockup__stat">
                       <span class="mockup__stat-label">Uptime</span>
                       <span class="mockup__stat-value">96%</span>
                       <span class="mockup__stat-trend mockup__stat-trend--down">▼ 1%</span>
+                      <span class="mockup__spark" style="--c: #7c3aed">
+                        <svg viewBox="0 0 64 20" preserveAspectRatio="none"><polyline points="0,6 9,5 18,7 27,6 36,8 45,7 54,11 64,9" vector-effect="non-scaling-stroke"/></svg>
+                      </span>
                     </div>
                   </div>
                   <div class="mockup__chart-card">
-                    <div class="mockup__chart-legend">
-                      <span><span class="mockup__legend-dot"></span>This week</span>
-                      <span><span class="mockup__legend-dot mockup__legend-dot--muted"></span>Last week</span>
+                    <div class="mockup__chart-head">
+                      <span class="mockup__chart-title">Revenue by source</span>
+                      <div class="mockup__chart-legend">
+                        <span><span class="mockup__legend-dot" style="--c: var(--accent)"></span>Invoices</span>
+                        <span><span class="mockup__legend-dot" style="--c: #0d9488"></span>Retainers</span>
+                        <span><span class="mockup__legend-dot" style="--c: #7c3aed"></span>One-off</span>
+                      </div>
                     </div>
                     <div class="mockup__chart">
-                      <span class="mockup__bar" style="--h: 42%"></span>
-                      <span class="mockup__bar" style="--h: 66%"></span>
-                      <span class="mockup__bar" style="--h: 48%"></span>
-                      <span class="mockup__bar" style="--h: 82%"></span>
-                      <span class="mockup__bar" style="--h: 58%"></span>
-                      <span class="mockup__bar" style="--h: 72%"></span>
-                      <span class="mockup__bar" style="--h: 52%"></span>
+                      <span class="mockup__bar" style="--h: 42%; --s1: 55%; --s2: 82%"></span>
+                      <span class="mockup__bar" style="--h: 66%; --s1: 48%; --s2: 78%"></span>
+                      <span class="mockup__bar" style="--h: 48%; --s1: 60%; --s2: 85%"></span>
+                      <span class="mockup__bar" style="--h: 82%; --s1: 44%; --s2: 72%"></span>
+                      <span class="mockup__bar" style="--h: 58%; --s1: 52%; --s2: 80%"></span>
+                      <span class="mockup__bar" style="--h: 72%; --s1: 46%; --s2: 76%"></span>
+                      <span class="mockup__bar" style="--h: 52%; --s1: 58%; --s2: 88%"></span>
+                    </div>
+                    <div class="mockup__chart-axis">
+                      <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
                     </div>
                   </div>
                   <div class="mockup__rows">

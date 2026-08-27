@@ -1838,25 +1838,11 @@ h1 em, h2 em,
 .btn--primary { box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(0, 113, 227, 0.18); }
 .btn--primary:hover { box-shadow: 0 2px 4px rgba(15, 23, 42, 0.1), 0 8px 20px rgba(0, 113, 227, 0.24); }
 
-/* ---------- Section heads: eyebrow gains a marker rule ---------- */
-
-.section__head .eyebrow,
-.legal-hero .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.section__head .eyebrow::before,
-.legal-hero .eyebrow::before {
-  content: "";
-  width: 22px;
-  height: 2px;
-  background: currentColor;
-  flex: none;
-}
-/* on case-study pages the eyebrow trails the "Back to work" link on the same
-   line, where a leading rule visually welds the two into one control */
-.cs-back + .eyebrow::before { display: none; }
+/* ---------- Case-study head spacing ----------
+   The eyebrow trails the "Back to work" link on the same line, so it needs
+   a gap of its own. (This previously sat alongside a decorative marker rule
+   before each eyebrow; the marker has been removed sitewide, but the
+   spacing is still doing real work.) */
 .cs-back + .eyebrow { margin-left: 10px; }
 
 @media (max-width: 1024px) {
@@ -2138,8 +2124,6 @@ h1 em, h2 em,
   text-align: center;
 }
 .section__head--center p { text-align: center; }
-/* the eyebrow's marker rule reads as a hanging dash once centred */
-.section__head--center .eyebrow::before { display: none; }
 
 .offer__price { text-align: center; }
 .offer__badge {

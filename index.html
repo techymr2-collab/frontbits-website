@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=41">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=47">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=49">
 </head>
 <body>
 
@@ -565,20 +565,56 @@
         <div class="section__head reveal">
           <span class="eyebrow">Industries</span>
           <h2>Built for how <em>your</em> industry actually runs</h2>
-          <p>Whatever business you're running, we scope one tool around your workflow instead of forcing you into someone else's template.</p>
+          <p>Whatever business you&rsquo;re running, we scope one tool around your workflow instead of forcing you into someone else&rsquo;s template.</p>
         </div>
 
-        <ul class="industries__pills reveal">
-          <li>Construction</li>
-          <li>Legal</li>
-          <li>Healthcare &amp; Dental</li>
-          <li>Logistics</li>
-          <li>Professional Services</li>
-          <li>Real Estate</li>
-          <li>Manufacturing</li>
-          <li>Retail &amp; E-commerce</li>
+        <!-- Photography is illustrative of each sector, not of a specific
+             client engagement; the industry name carries the meaning, so the
+             images are alt="" rather than described twice. -->
+        <ul class="bento reveal">
+          <li class="bento__tile bento__tile--construction">
+            <img src="assets/img/industries/construction.jpg" alt="" loading="lazy" decoding="async">
+            <span class="bento__label">
+              <span class="bento__name">Construction</span>
+              <span class="bento__desc">Portfolio and site tracking</span>
+            </span>
+          </li>
+          <li class="bento__tile bento__tile--legal">
+            <img src="assets/img/industries/legal.jpg" alt="" loading="lazy" decoding="async">
+            <span class="bento__label">
+              <span class="bento__name">Legal</span>
+              <span class="bento__desc">Matters, deadlines, billing</span>
+            </span>
+          </li>
+          <li class="bento__tile bento__tile--dental">
+            <img src="assets/img/industries/dental.jpg" alt="" loading="lazy" decoding="async">
+            <span class="bento__label">
+              <span class="bento__name">Healthcare &amp; Dental</span>
+              <span class="bento__desc">Scheduling and patient records</span>
+            </span>
+          </li>
+          <li class="bento__tile bento__tile--realestate">
+            <img src="assets/img/industries/realestate.jpg" alt="" loading="lazy" decoding="async">
+            <span class="bento__label">
+              <span class="bento__name">Real Estate</span>
+              <span class="bento__desc">Pipeline, listings, commissions</span>
+            </span>
+          </li>
+          <li class="bento__tile bento__tile--architecture">
+            <img src="assets/img/industries/architecture.jpg" alt="" loading="lazy" decoding="async">
+            <span class="bento__label">
+              <span class="bento__name">Architecture</span>
+              <span class="bento__desc">Projects, resourcing, approvals</span>
+            </span>
+          </li>
+          <li class="bento__tile bento__tile--hospitality">
+            <img src="assets/img/industries/hospitality.jpg" alt="" loading="lazy" decoding="async">
+            <span class="bento__label">
+              <span class="bento__name">Hospitality</span>
+              <span class="bento__desc">Front desk and housekeeping</span>
+            </span>
+          </li>
         </ul>
-        </div>
       </div>
     </section>
 

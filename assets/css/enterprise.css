@@ -2264,40 +2264,6 @@ h1 em, h2 em,
    type choices. This block breaks each of those into a distinct shape.
    ========================================================================== */
 
-/* ---------- Industries: card grid -> plain pill list ----------
-   Eight one-line labels never needed a bordered card with an icon; a
-   wrapped chip row says the same thing in a fraction of the height and
-   reuses the dot-marker chip already established by .cs-tags on the
-   case-study pages, rather than inventing another one-off component. */
-.industries__pills {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-}
-.industries__pills li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--bg);
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--navy);
-}
-.industries__pills li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex: none;
-}
-
 /* ---------- Process: drop the card chrome, keep the numbering ----------
    Three bordered boxes in a row on the dark panel repeated the same shape
    as the icon-card sections below it. The "/ 01" numbering is a good
@@ -2382,4 +2348,113 @@ h1 em, h2 em,
   }
   .stats__inner .stat:nth-child(-n + 2) { border-top: none; }
   .stats__inner .stat:nth-child(even) { border-left: 1px solid var(--line); }
+}
+
+/* ---------- Industries: asymmetric bento grid ----------
+   Six sectors we've actually shipped for, as full-bleed photography with
+   the label overlaid. Placement is driven by each photo's own orientation
+   rather than an arbitrary pattern: the two portrait shots (the crane and
+   the hotel reception) take the full-height tiles at each end, and the four
+   landscapes fill the middle, so nothing is cropped against its grain. */
+
+.bento {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 236px;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.bento__tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  isolation: isolate;
+}
+.bento__tile img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* scrim: several of these photos are very bright (the dental surgery and
+   the architectural model especially), so the label needs a real gradient
+   under it rather than relying on the image being dark enough */
+.bento__tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.88) 0%,
+    rgba(15, 23, 42, 0.6) 15%,
+    rgba(15, 23, 42, 0.2) 38%,
+    rgba(15, 23, 42, 0) 64%
+  );
+}
+.bento__label {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 22px 24px 20px;
+}
+/* the scrim handles most of it, but these sit over photographs whose
+   brightness varies (the dental surgery is near-white); a soft shadow makes
+   legibility independent of what's behind any given label */
+.bento__name,
+.bento__desc { text-shadow: 0 1px 4px rgba(15, 23, 42, 0.6); }
+.bento__name {
+  display: block;
+  color: #fff;
+  font-size: 1.14rem;
+  font-weight: 700;
+  letter-spacing: -0.022em;
+}
+.bento__desc {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.74);
+}
+.bento__tile:hover img { transform: scale(1.05); }
+
+/* the two portraits run full height at the outer edges */
+.bento__tile--construction { grid-column: 1;          grid-row: 1 / span 2; }
+.bento__tile--legal        { grid-column: 2 / span 2; grid-row: 1; }
+.bento__tile--dental       { grid-column: 4;          grid-row: 1; }
+.bento__tile--realestate   { grid-column: 2;          grid-row: 2; }
+.bento__tile--architecture { grid-column: 3 / span 2; grid-row: 2; }
+.bento__tile--hospitality  { grid-column: 5;          grid-row: 1 / span 2; }
+
+@media (max-width: 1024px) {
+  .bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+  /* reset desktop placement so tiles flow in source order */
+  .bento__tile--construction,
+  .bento__tile--legal,
+  .bento__tile--dental,
+  .bento__tile--realestate,
+  .bento__tile--architecture,
+  .bento__tile--hospitality { grid-column: auto; grid-row: auto; }
+  /* keep one accent of asymmetry rather than a flat 2x3 of equal boxes */
+  .bento__tile--construction { grid-row: span 2; }
+}
+
+@media (max-width: 768px) {
+  .bento { grid-template-columns: 1fr; grid-auto-rows: 200px; gap: 12px; }
+  .bento__tile--construction { grid-row: auto; }
+  .bento__label { padding: 18px 20px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento__tile img { transition: none; }
+  .bento__tile:hover img { transform: none; }
 }

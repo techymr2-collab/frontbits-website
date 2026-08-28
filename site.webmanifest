@@ -1,13 +1,13 @@
 {
   "name": "Frontbits",
   "short_name": "Frontbits",
-  "description": "Custom software studio building bespoke internal tools, SaaS products, and web apps for businesses.",
+  "description": "Frontbits builds one core dashboard tool for your business, scoped and quoted for your project.",
   "icons": [
     { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
   ],
-  "theme_color": "#635BFF",
-  "background_color": "#14121f",
+  "theme_color": "#1F1F1F",
+  "background_color": "#ffffff",
   "display": "standalone",
   "start_url": "/"
 }

@@ -3,9 +3,10 @@
    Loaded after style.css, replacing the previous Stripe-inspired enterprise
    skin. Pure sans-serif (Inter everywhere, no serif/mono accents), neutral
    charcoal ink and hairlines, moderate rounded corners, soft floating-card
-   shadows, airy spacing. Frontbits blue (#0071E3, matching the logo mark)
-   is the only brand color — used purely as an accent, never as a base ink
-   or background tone.
+   shadows, airy spacing. Brand palette comes from the four shapes in the
+   logo mark: blue #3399F2 leads as the single UI accent, with coral, green
+   and amber as a supporting set. Headings are Darker Grotesque; body copy
+   stays Inter.
    ========================================================================== */
 
 :root {
@@ -24,21 +25,30 @@
   --bg-alt: #f8fafc;
   --dark: #0f172a;
   --dark-2: #1e293b;
-  --accent: #0071e3;
-  --accent-dark: #0060c0;
-  --accent-soft: #e8f2fd;
-  --cyan: #06b6d4;
-  --sky: #2997ff;
+  /* Brand palette, taken from the four shapes in the logo mark. Blue leads
+     as the single UI accent; coral / green / amber are the supporting set,
+     used where data or state needs to be told apart. They replace the
+     ad-hoc teal/violet/amber picked before the rebrand. */
+  --accent: #3399f2;
+  --accent-dark: #1f7fd4;
+  --accent-soft: #e4f1fd;
+  --brand-coral: #f24d4d;
+  --brand-green: #33cc66;
+  --brand-amber: #f2b326;
+  --brand-ink: #1f1f1f;
+  --cyan: #33cc66;
+  --sky: #66b5f6;
   --radius: 14px;
   --radius-lg: 18px;
   --radius-sm: 10px;
   --radius-btn: 12px;
   /* redefine brand vars so base style.css rules follow the new accent */
-  --primary: #0071e3;
-  --primary-dark: #0060c0;
-  --primary-soft: #e8f2fd;
+  --primary: #3399f2;
+  --primary-dark: #1f7fd4;
+  --primary-soft: #e4f1fd;
   --font-mono: var(--font-sans);
   --font-serif: var(--font-sans);
+  --font-display: "Darker Grotesque", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   /* one elevation scale, applied consistently by surface role, so cards and
      modals no longer carry ad-hoc one-off shadow values */
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
@@ -1401,7 +1411,7 @@ h1 em, h2 em,
 .price-card__price--quote { font-size: 1.7rem; }
 
 .price-card ul li::before {
-  background: var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230071E3' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 13 4 4L19 7'/%3E%3C/svg%3E") center / 10px no-repeat;
+  background: var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233399F2' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 13 4 4L19 7'/%3E%3C/svg%3E") center / 10px no-repeat;
 }
 
 .pricing__note a { color: var(--accent); }
@@ -1498,7 +1508,7 @@ h1 em, h2 em,
 /* ---------- CTA: electric gradient band ---------- */
 
 .cta {
-  background: linear-gradient(108deg, #071f3b 0%, #0d3468 42%, #0060c0 82%, #0071e3 100%);
+  background: linear-gradient(108deg, #10243a 0%, #16436f 42%, #1f7fd4 82%, #3399f2 100%);
   padding: 130px 0;
 }
 .cta__glow {
@@ -2522,4 +2532,45 @@ h1 em, h2 em,
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.015em;
+}
+
+/* ==========================================================================
+   Rebrand: new logo mark, four-colour palette, Darker Grotesque headings
+   ========================================================================== */
+
+/* Darker Grotesque is a condensed display face: at a given px size it reads
+   noticeably smaller and lighter than Inter, so headings take more weight
+   and a size bump, and tighter tracking suits its narrower forms. Body copy
+   stays Inter, which is built for reading at small sizes. */
+h1, h2, h3,
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(2.9rem, 6vw, 4.4rem); line-height: 1.02; }
+h2 { font-size: clamp(2.5rem, 5.2vw, 3.9rem); line-height: 1.04; }
+.hero--enterprise .hero__title {
+  font-size: clamp(2.7rem, 3.7vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+}
+.section__head h2 { margin-bottom: 4px; }
+
+/* the mockups render product UI, not brand voice; they stay on Inter so they
+   keep reading as software rather than as more headline */
+.mockup h3, .mockup__title,
+.chaos-card__client { font-family: var(--font-sans); }
+
+/* ---- supporting palette applied where hues were previously ad-hoc ---- */
+
+/* hero chart: stacked by revenue source, now in brand colours */
+.hero__mockup .mockup__bar {
+  background: linear-gradient(
+    to top,
+    var(--accent) 0 var(--s1),
+    var(--brand-green) var(--s1) var(--s2),
+    var(--brand-amber) var(--s2) 100%
+  );
 }

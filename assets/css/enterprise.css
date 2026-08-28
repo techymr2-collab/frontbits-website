@@ -5,8 +5,7 @@
    charcoal ink and hairlines, moderate rounded corners, soft floating-card
    shadows, airy spacing. Brand palette comes from the four shapes in the
    logo mark: blue #3399F2 leads as the single UI accent, with coral, green
-   and amber as a supporting set. Headings are Darker Grotesque; body copy
-   stays Inter.
+   and amber as a supporting set. Inter throughout, headings included.
    ========================================================================== */
 
 :root {
@@ -48,7 +47,9 @@
   --primary-soft: #e4f1fd;
   --font-mono: var(--font-sans);
   --font-serif: var(--font-sans);
-  --font-display: "Darker Grotesque", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  /* aliased to the body face, like mono and serif above: the display face is
+     reverted, and nothing should reintroduce a second family by accident */
+  --font-display: var(--font-sans);
   /* one elevation scale, applied consistently by surface role, so cards and
      modals no longer carry ad-hoc one-off shadow values */
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
@@ -81,18 +82,15 @@ h1, h2, h3 {
 h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
 h2 { font-size: clamp(2.1rem, 4.4vw, 3.2rem); }
 
-/* Emphasised words inside a heading. font-family must inherit: this rule
-   used to pin them to Inter, back when headings were Inter too and the
-   contrast was colour alone. With headings on Darker Grotesque, pinning
-   left the emphasised words in a wider face with a much larger x-height,
-   so they read visibly bigger and heavier at an identical font-size. */
+/* Emphasised words inside a heading. They differ from the heading only by
+   colour, so every typographic property is inherited rather than restated:
+   style.css gives them a serif italic at -0.01em tracking, which read as a
+   different, wider size than the heading around them. */
 h1 em, h2 em,
 .hero__title em {
   font-family: inherit;
   font-style: normal;
   font-weight: inherit;
-  /* style.css sets -0.01em here; without this the emphasised words keep
-     looser tracking than the heading they sit inside and read wider */
   letter-spacing: inherit;
   color: var(--accent);
   -webkit-text-fill-color: var(--accent);
@@ -2545,34 +2543,12 @@ h1 em, h2 em,
 }
 
 /* ==========================================================================
-   Rebrand: new logo mark, four-colour palette, Darker Grotesque headings
+   Rebrand: new logo mark, four-colour palette
+   The heading face briefly moved to Darker Grotesque and has been reverted;
+   headings are back on Inter, so the weight, tracking and line-height that
+   were tuned for a condensed display face are gone with it, along with the
+   exception that had to hold the product mockups on Inter.
    ========================================================================== */
-
-/* Darker Grotesque is a condensed display face: at a given px size it reads
-   noticeably smaller and lighter than Inter, so headings take more weight
-   and a size bump, and tighter tracking suits its narrower forms. Body copy
-   stays Inter, which is built for reading at small sizes. */
-h1, h2, h3,
-.hero__title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  /* 1.08 was set for Inter. Darker Grotesque carries more internal leading,
-     so the same value opens a visible gap between heading lines. */
-  line-height: 0.98;
-}
-.hero--enterprise .hero__title {
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  /* needs the .hero--enterprise prefix to outrank the base rule's 1.04 */
-  line-height: 0.95;
-}
-.section__head h2 { margin-bottom: 4px; }
-
-/* the mockups render product UI, not brand voice; they stay on Inter so they
-   keep reading as software rather than as more headline */
-.mockup h3, .mockup__title,
-.chaos-card__client { font-family: var(--font-sans); }
 
 /* ---- supporting palette applied where hues were previously ad-hoc ---- */
 

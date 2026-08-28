@@ -81,12 +81,19 @@ h1, h2, h3 {
 h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
 h2 { font-size: clamp(2.1rem, 4.4vw, 3.2rem); }
 
-/* single accent word: bold sans in electric blue */
+/* Emphasised words inside a heading. font-family must inherit: this rule
+   used to pin them to Inter, back when headings were Inter too and the
+   contrast was colour alone. With headings on Darker Grotesque, pinning
+   left the emphasised words in a wider face with a much larger x-height,
+   so they read visibly bigger and heavier at an identical font-size. */
 h1 em, h2 em,
 .hero__title em {
-  font-family: var(--font-sans);
+  font-family: inherit;
   font-style: normal;
   font-weight: inherit;
+  /* style.css sets -0.01em here; without this the emphasised words keep
+     looser tracking than the heading they sit inside and read wider */
+  letter-spacing: inherit;
   color: var(--accent);
   -webkit-text-fill-color: var(--accent);
   background: none;

@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=41">
-  <link rel="stylesheet" href="assets/css/enterprise.css?v=65">
+  <link rel="stylesheet" href="assets/css/enterprise.css?v=67">
 </head>
 <body>
 
@@ -349,60 +349,54 @@
       </div>
 
       <div class="container problem-solution__row problem-solution__row--reverse">
-        <!-- Illustrative dashboard mockup -- the same "clean, single tool"
-             visual used in the hero, reused here to say "this is what
-             The Build gives you." Not a real client product. -->
-        <div class="problem-solution__visual reveal" aria-hidden="true">
-          <div class="mockup">
-            <div class="mockup__chrome">
-              <span class="mockup__dot"></span>
-              <span class="mockup__dot"></span>
-              <span class="mockup__dot"></span>
-              <span class="mockup__url">app.workspace.io</span>
+        <!-- Answers the chaos visual above rather than showing a second
+             generic dashboard: same client, same record, and the figure the
+             three tools disagreed on ($2,480) now stated once, with the
+             former sources listed as agreeing inputs. Illustrative, not a
+             real client product, so it stays aria-hidden. -->
+        <div class="problem-solution__visual problem-solution__visual--solution reveal" aria-hidden="true">
+          <div class="record-card">
+            <div class="record-card__chrome">
+              <span class="record-card__dot"></span>
+              <span class="record-card__dot"></span>
+              <span class="record-card__dot"></span>
+              <span class="record-card__url">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                app.workspace.io
+              </span>
             </div>
-            <div class="mockup__body">
-              <aside class="mockup__sidebar">
-                <span class="mockup__logo"></span>
-                <nav class="mockup__nav">
-                  <span class="mockup__nav-item mockup__nav-item--active"><span class="mockup__nav-dot"></span>Dashboard</span>
-                  <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Analytics</span>
-                  <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Projects</span>
-                  <span class="mockup__nav-item"><span class="mockup__nav-dot"></span>Team</span>
-                </nav>
-              </aside>
-              <div class="mockup__main">
-                <div class="mockup__topbar">
-                  <span class="mockup__title">Overview</span>
-                  <span class="mockup__btn">+ New</span>
+
+            <div class="record-card__body">
+              <div class="record-card__head">
+                <span class="record-card__client">Acme Co.</span>
+                <span class="record-card__sync">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+                  In sync
+                </span>
+              </div>
+
+              <span class="record-card__label">Outstanding</span>
+              <span class="record-card__value">$2,480</span>
+
+              <div class="record-card__sources">
+                <span class="record-card__source">Spreadsheet</span>
+                <span class="record-card__source">CRM</span>
+                <span class="record-card__source">Invoice</span>
+                <span class="record-card__sources-note">one record</span>
+              </div>
+
+              <div class="record-card__facts">
+                <div class="record-card__fact">
+                  <span class="record-card__fact-key">Hours logged</span>
+                  <span class="record-card__fact-val">32.5 h</span>
                 </div>
-                <div class="mockup__stats">
-                  <div class="mockup__stat">
-                    <span class="mockup__stat-label">Revenue</span>
-                    <span class="mockup__stat-value">$8,420</span>
-                  </div>
-                  <div class="mockup__stat">
-                    <span class="mockup__stat-label">Active</span>
-                    <span class="mockup__stat-value">32.5h</span>
-                  </div>
+                <div class="record-card__fact">
+                  <span class="record-card__fact-key">Invoice #204</span>
+                  <span class="record-card__fact-val">Sent</span>
                 </div>
-                <div class="mockup__chart">
-                  <span class="mockup__bar" style="--h: 42%"></span>
-                  <span class="mockup__bar" style="--h: 66%"></span>
-                  <span class="mockup__bar" style="--h: 48%"></span>
-                  <span class="mockup__bar" style="--h: 82%"></span>
-                  <span class="mockup__bar" style="--h: 58%"></span>
-                </div>
-                <div class="mockup__rows">
-                  <div class="mockup__row">
-                    <span class="mockup__row-dot"></span>
-                    <span class="mockup__row-line"></span>
-                    <span class="mockup__row-tag">Active</span>
-                  </div>
-                  <div class="mockup__row">
-                    <span class="mockup__row-dot"></span>
-                    <span class="mockup__row-line"></span>
-                    <span class="mockup__row-tag">Active</span>
-                  </div>
+                <div class="record-card__fact">
+                  <span class="record-card__fact-key">Last updated</span>
+                  <span class="record-card__fact-val">2 min ago</span>
                 </div>
               </div>
             </div>

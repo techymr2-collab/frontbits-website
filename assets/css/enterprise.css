@@ -395,14 +395,6 @@ h1 em, h2 em,
   white-space: nowrap;
 }
 .mockup__nav-item--active { background: var(--accent-soft); color: var(--accent); }
-.mockup__nav-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.7;
-  flex: none;
-}
 
 .mockup__main { flex: 1; min-width: 0; padding: 18px; }
 
@@ -413,16 +405,6 @@ h1 em, h2 em,
   margin-bottom: 16px;
 }
 .mockup__title { font-size: 0.9rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
-.mockup__btn {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 700;
-  color: #fff;
-  background: var(--accent);
-  border-radius: var(--radius-sm);
-  padding: 6px 11px;
-  white-space: nowrap;
-}
 
 .mockup__stats {
   display: flex;
@@ -485,20 +467,6 @@ h1 em, h2 em,
   border-top: 1px solid var(--line);
 }
 .mockup__row:first-child { border-top: none; padding-top: 0; }
-.mockup__row-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex: none;
-}
-.mockup__row-dot--muted { background: var(--line-strong); }
-.mockup__row-line {
-  flex: 1;
-  height: 6px;
-  border-radius: 3px;
-  background: var(--line);
-}
 .mockup__row-tag {
   flex: none;
   font-family: var(--font-mono);
@@ -1176,12 +1144,161 @@ h1 em, h2 em,
 }
 .chaos-badge svg { width: 15px; height: 15px; }
 
-/* solution visual: reuses the hero's .mockup component verbatim (same
-   illustrative product), kept perfectly straight/centered -- aligned
-   and calm, the deliberate visual opposite of the tilted chaos cards */
-.problem-solution__visual .mockup {
-  max-width: 420px;
+/* Solution visual: one straight, centred card -- the deliberate opposite of
+   the three tilted chaos cards, and the answer to them. It used to be the
+   hero's .mockup repeated verbatim, which made three near-identical product
+   shots on one page and left the argument the chaos cards open unanswered.
+   Every value here is content, not a grey placeholder bar. */
+.problem-solution__visual--solution { display: flex; align-items: center; }
+
+.record-card {
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.record-card__chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--line);
+}
+.record-card__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+.record-card__url {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+.record-card__url svg { width: 11px; height: 11px; flex: none; }
+
+.record-card__body { padding: 20px 22px 22px; }
+
+.record-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.record-card__client {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.015em;
+}
+
+/* Green, and the visual answer to the chaos card's red "Doesn't match"
+   flag: same pill shape and mono type, opposite verdict. */
+.record-card__sync {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  /* darker than the brand green: at this size on the tinted chip, #33cc66
+     and its near neighbours land under 4:1 */
+  color: #187a3c;
+  background: #e3f7ea;
+  border-radius: 3px;
+  padding: 3px 7px;
+}
+.record-card__sync svg { width: 9px; height: 9px; flex: none; }
+
+.record-card__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 4px;
+}
+/* The figure the three tools disagreed on, now stated once. */
+.record-card__value {
+  display: block;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The three former sources, now listed as agreeing inputs to one record. */
+.record-card__sources {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.record-card__source {
+  font-family: var(--font-mono);
+  font-size: 0.53rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 3px 6px;
+}
+.record-card__sources-note {
+  font-size: 0.72rem;
+  color: var(--ink-3);
+}
+.record-card__sources-note::before {
+  content: "\2192";
+  margin-right: 5px;
+  color: var(--line-strong);
+}
+
+.record-card__facts {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.record-card__fact {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+.record-card__fact:last-child { border-bottom: none; padding-bottom: 0; }
+.record-card__fact-key {
+  font-size: 0.8rem;
+  color: var(--ink-3);
+}
+.record-card__fact-val {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
 }
 
 .problem-solution__points {

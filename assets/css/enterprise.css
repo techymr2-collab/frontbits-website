@@ -198,7 +198,10 @@ h1 em, h2 em,
 }
 .nav.is-scrolled { border-bottom-color: var(--line); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03); }
 .nav__inner { height: 64px; }
-.nav__logo img { height: 22px; }
+/* The new lockup pairs a full-height mark with a comparatively small
+   wordmark, so at the old 22px the letterforms rendered with very fine
+   stems. 30px gives them enough size to hold weight in a 64px bar. */
+.nav__logo img { height: 30px; }
 .nav__links { gap: 32px; }
 .nav__links a:not(.btn) {
   font-size: 0.9rem;

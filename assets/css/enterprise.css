@@ -200,8 +200,8 @@ h1 em, h2 em,
 .nav__inner { height: 64px; }
 /* The new lockup pairs a full-height mark with a comparatively small
    wordmark, so at the old 22px the letterforms rendered with very fine
-   stems. 30px gives them enough size to hold weight in a 64px bar. */
-.nav__logo img { height: 30px; }
+   stems. 28px gives them enough size to hold weight in a 64px bar. */
+.nav__logo img { height: 28px; }
 .nav__links { gap: 32px; }
 .nav__links a:not(.btn) {
   font-size: 0.9rem;

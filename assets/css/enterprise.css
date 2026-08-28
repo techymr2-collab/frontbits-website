@@ -2554,10 +2554,15 @@ h1, h2, h3,
   font-family: var(--font-display);
   font-weight: 800;
   letter-spacing: -0.02em;
+  /* 1.08 was set for Inter. Darker Grotesque carries more internal leading,
+     so the same value opens a visible gap between heading lines. */
+  line-height: 0.98;
 }
 .hero--enterprise .hero__title {
   font-weight: 800;
   letter-spacing: -0.025em;
+  /* needs the .hero--enterprise prefix to outrank the base rule's 1.04 */
+  line-height: 0.95;
 }
 .section__head h2 { margin-bottom: 4px; }
 

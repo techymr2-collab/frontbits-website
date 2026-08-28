@@ -102,6 +102,15 @@
   const animateCount = (el) => {
     const target = parseInt(el.dataset.count, 10);
     const suffix = el.dataset.suffix || "";
+
+    // Counting up to 1 has no intermediate values to show: it holds on "0"
+    // for the first third of the duration and then snaps, which reads as a
+    // glitch rather than a count. Small targets just render.
+    if (target < 2) {
+      el.textContent = target + suffix;
+      return;
+    }
+
     const duration = 1400;
     const start = performance.now();
 

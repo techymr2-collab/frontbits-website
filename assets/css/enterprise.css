@@ -2283,17 +2283,29 @@ h1 em, h2 em,
 }
 
 /* inclusions: a plain checklist, deliberately unboxed */
-.offer__includes {
-  list-style: none;
+/* Two columns, in and out. A fixed price is only credible next to a stated
+   boundary, so the exclusions get equal structural weight rather than being
+   buried in a footnote -- but muted colour, so the included list still leads. */
+.offer__scope {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px 44px;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px 64px;
   max-width: 960px;
   margin: 48px auto;
   padding: 40px 0;
   border-block: 1px solid var(--line);
+  text-align: left;
 }
-.offer__includes li {
+.offer__scope-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 18px;
+}
+.offer__scope-list { list-style: none; display: grid; gap: 14px; }
+.offer__scope-list li {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -2301,12 +2313,21 @@ h1 em, h2 em,
   line-height: 1.55;
   color: var(--ink-2);
 }
-.offer__includes li svg {
+.offer__scope-list li svg {
   flex: none;
   width: 17px;
   height: 17px;
   margin-top: 3px;
-  color: var(--accent);
+}
+.offer__scope-list--in li svg { color: var(--accent); }
+/* the exclusions read as information, not as a warning: grey, not red */
+.offer__scope-list--out li { color: var(--ink-3); }
+.offer__scope-list--out li svg { color: var(--line-strong); }
+.offer__scope-note {
+  margin-top: 18px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-3);
 }
 
 .offer__cta { text-align: center; }
@@ -2317,14 +2338,14 @@ h1 em, h2 em,
 }
 
 @media (max-width: 1024px) {
-  .offer__includes { grid-template-columns: repeat(2, 1fr); gap: 18px 36px; max-width: 720px; }
+  .offer__scope { gap: 36px 44px; max-width: 720px; }
 }
 
 @media (max-width: 768px) {
   .section__head--center { margin-bottom: 36px; }
-  .offer__includes {
+  .offer__scope {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 32px;
     margin: 36px auto;
     padding: 32px 0;
   }

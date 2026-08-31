@@ -2320,9 +2320,11 @@ h1 em, h2 em,
   margin-top: 3px;
 }
 .offer__scope-list--in li svg { color: var(--accent); }
-/* the exclusions read as information, not as a warning: grey, not red */
+/* the second column adds cost rather than being refused, so its marker is a
+   plus, and it carries meaning now -- too faint to read would be wrong. Still
+   quieter than the accent ticks, so the included list keeps the lead. */
 .offer__scope-list--out li { color: var(--ink-3); }
-.offer__scope-list--out li svg { color: var(--line-strong); }
+.offer__scope-list--out li svg { color: var(--ink-3); }
 .offer__scope-note {
   margin-top: 18px;
   font-size: 0.88rem;

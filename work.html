@@ -14,7 +14,7 @@
 
   <!-- Primary SEO -->
   <title>Selected Work | Frontbits</title>
-  <meta name="description" content="Real internal software Frontbits has designed and built: a construction portfolio dashboard, a law firm practice dashboard, a dental front-desk scheduling tool, an architecture studio operations dashboard, a boutique hotel front-desk system, and a real estate brokerage dashboard.">
+  <meta name="description" content="Six custom dashboards Frontbits designed and built, for construction, legal, dental, architecture, hospitality, and real estate businesses.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#1F1F1F">
   <link rel="canonical" href="https://frontbits.com/work.html">
@@ -31,7 +31,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://frontbits.com/work.html">
   <meta property="og:title" content="Selected Work | Frontbits">
-  <meta property="og:description" content="Real internal software Frontbits has designed and built: a construction portfolio dashboard, a law firm practice dashboard, a dental front-desk scheduling tool, an architecture studio operations dashboard, a boutique hotel front-desk system, and a real estate brokerage dashboard.">
+  <meta property="og:description" content="Six custom dashboards Frontbits designed and built, for construction, legal, dental, architecture, hospitality, and real estate businesses.">
   <meta property="og:image" content="https://frontbits.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -42,6 +42,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=41">
   <link rel="stylesheet" href="assets/css/enterprise.css?v=70">
+
+  <!-- Structured data: this page is a collection of the six case studies,
+       each of which carries its own Article schema. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://frontbits.com/work.html",
+    "name": "Selected Work",
+    "description": "Six custom dashboards Frontbits designed and built, for construction, legal, dental, architecture, hospitality, and real estate businesses.",
+    "url": "https://frontbits.com/work.html",
+    "isPartOf": { "@type": "WebSite", "@id": "https://frontbits.com/#website" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": 6,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://frontbits.com/work/siteflow.html", "name": "SiteFlow" },
+        { "@type": "ListItem", "position": 2, "url": "https://frontbits.com/work/sterling-vance.html", "name": "Sterling & Vance" },
+        { "@type": "ListItem", "position": 3, "url": "https://frontbits.com/work/northgate-dental.html", "name": "Northgate Dental" },
+        { "@type": "ListItem", "position": 4, "url": "https://frontbits.com/work/meridian-rowe.html", "name": "Meridian Rowe" },
+        { "@type": "ListItem", "position": 5, "url": "https://frontbits.com/work/marlowe.html", "name": "The Marlowe" },
+        { "@type": "ListItem", "position": 6, "url": "https://frontbits.com/work/estate-os.html", "name": "EstateOS" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://frontbits.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://frontbits.com/work.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -85,7 +121,7 @@
       <div class="container cases">
         <article class="case reveal">
           <div class="case__media" aria-hidden="true">
-            <img src="assets/img/shots/siteflow.jpg" alt="SiteFlow portfolio overview showing five active construction projects with progress, budget, and crew size" loading="lazy">
+            <img src="assets/img/shots/siteflow.jpg" alt="SiteFlow portfolio overview showing five active construction projects with progress, budget, and crew size" loading="lazy" width="1400" height="1050">
           </div>
           <div class="case__body">
             <p class="case__num">/ 01 &middot; SiteFlow</p>
@@ -98,7 +134,7 @@
 
         <article class="case reveal">
           <div class="case__media" aria-hidden="true">
-            <img src="assets/img/shots/sterling-vance.jpg" alt="Sterling &amp; Vance firm dashboard showing active matters, upcoming deadlines, team workload, and revenue" loading="lazy">
+            <img src="assets/img/shots/sterling-vance.jpg" alt="Sterling &amp; Vance firm dashboard showing active matters, upcoming deadlines, team workload, and revenue" loading="lazy" width="1400" height="1050">
           </div>
           <div class="case__body">
             <p class="case__num">/ 02 &middot; Sterling &amp; Vance</p>
@@ -111,7 +147,7 @@
 
         <article class="case reveal">
           <div class="case__media" aria-hidden="true">
-            <img src="assets/img/shots/northgate-dental.jpg" alt="Northgate Dental front-desk dashboard showing today's schedule, waiting room, and chair utilization" loading="lazy">
+            <img src="assets/img/shots/northgate-dental.jpg" alt="Northgate Dental front-desk dashboard showing today's schedule, waiting room, and chair utilization" loading="lazy" width="1400" height="1050">
           </div>
           <div class="case__body">
             <p class="case__num">/ 03 &middot; Northgate Dental</p>
@@ -124,7 +160,7 @@
 
         <article class="case reveal">
           <div class="case__media" aria-hidden="true">
-            <img src="assets/img/shots/meridian-rowe.jpg" alt="Meridian Rowe studio dashboard showing hours this week, active projects, upcoming milestones, and a weekly timesheet" loading="lazy">
+            <img src="assets/img/shots/meridian-rowe.jpg" alt="Meridian Rowe studio dashboard showing hours this week, active projects, upcoming milestones, and a weekly timesheet" loading="lazy" width="1400" height="1050">
           </div>
           <div class="case__body">
             <p class="case__num">/ 04 &middot; Meridian Rowe</p>
@@ -137,7 +173,7 @@
 
         <article class="case reveal">
           <div class="case__media" aria-hidden="true">
-            <img src="assets/img/shots/marlowe.jpg" alt="The Marlowe front-desk dashboard showing tonight's occupancy, ADR, RevPAR, today's arrivals, and rooms needing attention" loading="lazy">
+            <img src="assets/img/shots/marlowe.jpg" alt="The Marlowe front-desk dashboard showing tonight's occupancy, ADR, RevPAR, today's arrivals, and rooms needing attention" loading="lazy" width="1400" height="1050">
           </div>
           <div class="case__body">
             <p class="case__num">/ 05 &middot; The Marlowe</p>
@@ -150,7 +186,7 @@
 
         <article class="case reveal">
           <div class="case__media" aria-hidden="true">
-            <img src="assets/img/shots/estate-os.jpg" alt="EstateOS brokerage dashboard showing pipeline value, closed quarter-to-date, agent performance, and a needs-attention feed" loading="lazy">
+            <img src="assets/img/shots/estate-os.jpg" alt="EstateOS brokerage dashboard showing pipeline value, closed quarter-to-date, agent performance, and a needs-attention feed" loading="lazy" width="1400" height="1050">
           </div>
           <div class="case__body">
             <p class="case__num">/ 06 &middot; EstateOS</p>

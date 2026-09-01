@@ -2745,3 +2745,22 @@ h1 em, h2 em,
 
 .cta__assurance li { color: var(--ink-3); }
 .cta__assurance li::before { color: var(--accent); }
+
+/* Each bento tile links to its industry page. The anchor wraps only the
+   industry name so the link has a real accessible name, and a stretched
+   pseudo-element makes the whole tile clickable without nesting the label
+   markup inside the anchor. */
+.bento__link {
+  color: inherit;
+  text-decoration: none;
+}
+.bento__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+.bento__tile:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}

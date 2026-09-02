@@ -2764,3 +2764,91 @@ h1 em, h2 em,
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
+
+/* ==========================================================================
+   Blog
+   Posts reuse .legal-hero and .legal__body, the same prose shell the case
+   studies and industry pages use, so only the listing and the two small
+   metadata rows below are new.
+   ========================================================================== */
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* A plain ruled list rather than a grid of cards: five items do not need a
+   grid, and rules keep the titles doing the work. */
+.post-list { list-style: none; margin: 0 0 8px; padding: 0; }
+.post-list li { border-bottom: 1px solid var(--line); }
+.post-list li:first-child { border-top: 1px solid var(--line); }
+
+.post-card {
+  display: block;
+  padding: 30px 0;
+  text-decoration: none;
+  color: inherit;
+}
+.post-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.post-card__title {
+  margin: 12px 0 10px;
+  font-size: 1.45rem;
+  line-height: 1.25;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+.post-card__excerpt {
+  margin: 0;
+  color: var(--ink-2);
+  line-height: 1.7;
+  max-width: 62ch;
+}
+/* the arrow carries the hover, since headings on this site never take the
+   accent colour */
+.post-card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.post-card__more::after {
+  content: "\2192";
+  transition: transform 0.2s var(--ease);
+}
+.post-card:hover .post-card__more::after { transform: translateX(4px); }
+.post-card:hover .post-card__title { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line-strong); }
+.post-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.post-related {
+  margin-top: 44px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.post-related h2 { margin-top: 0; }
+.post-related ul { margin: 0; padding-left: 22px; }
+
+@media (max-width: 768px) {
+  .post-card { padding: 24px 0; }
+  .post-card__title { font-size: 1.25rem; }
+}

@@ -13,11 +13,12 @@
   <!-- End Cal.com embed -->
 
   <!-- Primary SEO -->
-  <title>SiteFlow: Construction Project Management Tool | Frontbits Case Study</title>
-  <meta name="description" content="How Frontbits built a portfolio dashboard, task boards, crew workload view, and reporting for a general contractor running five concurrent projects.">
+  <title>Blog: Custom Dashboards and Internal Tools | Frontbits</title>
+  <meta name="description" content="Practical writing on custom dashboards and internal tools: build versus buy, what they cost, how to scope one, and why they get abandoned.">
+  <meta name="author" content="Frontbits">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#1F1F1F">
-  <link rel="canonical" href="https://frontbits.com/work/siteflow.html">
+  <link rel="canonical" href="https://frontbits.com/blog/index.html">
 
   <!-- Icons -->
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg?v=4">
@@ -26,41 +27,41 @@
   <link rel="manifest" href="../site.webmanifest">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Frontbits">
   <meta property="og:locale" content="en_US">
-  <meta property="og:url" content="https://frontbits.com/work/siteflow.html">
-  <meta property="og:title" content="SiteFlow: Construction Project Management Tool | Frontbits Case Study">
-  <meta property="og:description" content="One portfolio view of every active job, a task board per project, crew workload, and portfolio-wide reporting for a general contractor.">
+  <meta property="og:url" content="https://frontbits.com/blog/index.html">
+  <meta property="og:title" content="Blog: Custom Dashboards and Internal Tools | Frontbits">
+  <meta property="og:description" content="Practical writing on custom dashboards and internal tools: build versus buy, what they cost, how to scope one, and why they get abandoned.">
   <meta property="og:image" content="https://frontbits.com/assets/img/og-image.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=41">
-  <link rel="stylesheet" href="../assets/css/enterprise.css?v=72">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog: Custom Dashboards and Internal Tools | Frontbits">
+  <meta name="twitter:description" content="Practical writing on custom dashboards and internal tools: build versus buy, what they cost, how to scope one, and why they get abandoned.">
+  <meta name="twitter:image" content="https://frontbits.com/assets/img/og-image.png">
 
-  <!-- Structured data: the case study itself, plus its place in the site
-       hierarchy so search results can show a Home > Work > ... trail. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "SiteFlow: Portfolio visibility for a busy general contractor",
-    "description": "How Frontbits built a portfolio dashboard, task boards, crew workload view, and reporting for a general contractor running five concurrent projects.",
-    "image": "https://frontbits.com/assets/img/shots/siteflow.jpg",
-    "url": "https://frontbits.com/work/siteflow.html",
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://frontbits.com/work/siteflow.html" },
-    "author": { "@type": "Organization", "name": "Frontbits", "url": "https://frontbits.com/" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Frontbits",
-      "url": "https://frontbits.com/",
-      "logo": { "@type": "ImageObject", "url": "https://frontbits.com/assets/img/icon-512.png", "width": 512, "height": 512 }
-    },
-    "about": "General contractor",
-    "keywords": "General contractor, Project management tool",
-    "isPartOf": { "@type": "CollectionPage", "@id": "https://frontbits.com/work.html", "name": "Selected Work" }
+    "@type": "Blog",
+    "@id": "https://frontbits.com/blog/",
+    "name": "The Frontbits Blog",
+    "description": "Practical writing on custom dashboards and internal tools: build versus buy, what they cost, how to scope one, and why they get abandoned.",
+    "url": "https://frontbits.com/blog/index.html",
+    "publisher": { "@id": "https://frontbits.com/#frontbits" },
+    "inLanguage": "en",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": 5,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://frontbits.com/blog/outgrown-spreadsheets.html", "name": "Six signs your business has outgrown spreadsheets" },
+        { "@type": "ListItem", "position": 2, "url": "https://frontbits.com/blog/custom-dashboard-vs-off-the-shelf.html", "name": "Custom dashboard vs off-the-shelf software: how to actually decide" },
+        { "@type": "ListItem", "position": 3, "url": "https://frontbits.com/blog/what-custom-dashboards-cost.html", "name": "What a custom dashboard costs, and what moves the number" },
+        { "@type": "ListItem", "position": 4, "url": "https://frontbits.com/blog/first-dashboard-scope.html", "name": "What to put in your first business dashboard" },
+        { "@type": "ListItem", "position": 5, "url": "https://frontbits.com/blog/why-internal-tools-fail.html", "name": "Why internal tools get abandoned, and how to avoid it" }
+      ]
+    }
   }
   </script>
   <script type="application/ld+json">
@@ -69,11 +70,16 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://frontbits.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://frontbits.com/work.html" },
-      { "@type": "ListItem", "position": 3, "name": "SiteFlow", "item": "https://frontbits.com/work/siteflow.html" }
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://frontbits.com/blog/index.html" }
     ]
   }
   </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=41">
+  <link rel="stylesheet" href="../assets/css/enterprise.css?v=72">
 </head>
 <body>
 
@@ -87,7 +93,7 @@
         <a href="../index.html#process">How it works</a>
         <a href="../index.html#work">Work</a>
         <a href="../index.html#industries">Industries</a>
-        <a href="../blog/index.html">Blog</a>
+        <a href="index.html">Blog</a>
         <a href="../index.html#faq">FAQ</a>
         <div class="nav__mobile-actions">
           <button type="button" data-cal-link="frontbits/call" data-cal-namespace="call" class="btn btn--primary btn--lg nav__cta-mobile">Get started</button>
@@ -105,58 +111,77 @@
 
   <main id="top">
 
-    <!-- ======= Case study header ======= -->
     <section class="section legal-hero">
       <div class="container container--narrow">
-        <a href="../work.html" class="cs-back reveal">Back to work</a>
-        <span class="eyebrow reveal">Case study</span>
-        <h1 class="reveal">SiteFlow</h1>
-        <p class="legal__updated reveal">Portfolio visibility for a busy general contractor</p>
-        <div class="cs-tags reveal">
-          <span>General contractor</span>
-          <span>Project management tool</span>
-          <span>1 week, kickoff to launch</span>
-        </div>
+        <span class="eyebrow reveal">Blog</span>
+        <h1 class="reveal">Notes on building internal tools</h1>
+        <p class="legal__updated reveal">What we have learned scoping and shipping custom dashboards for small businesses. No thought leadership, just the things that decide whether a build is worth doing.</p>
       </div>
     </section>
 
     <div class="container container--narrow">
-      <div class="cs-media reveal" aria-hidden="true">
-        <img src="../assets/img/shots/siteflow.jpg" alt="SiteFlow portfolio overview showing five active construction projects with progress, budget, and crew size" loading="lazy" width="1400" height="1050">
-      </div>
-
-      <article class="legal__body reveal">
-        <h2>The challenge</h2>
-        <p>Ashford Builders was running five concurrent projects at once, spanning an apartment renovation, a school, a retail plaza, a bridge repair, and a utility substation upgrade, with no single view of any of it. Budgets lived in one spreadsheet, crew schedules in another, and task status was whatever the site superintendent remembered to text the office.</p>
-        <p>By the time a budget was actually behind or a trade was double-booked across two sites, it usually surfaced as a problem on the job, not a warning on a dashboard.</p>
-
-        <h2>The approach</h2>
-        <p>We built SiteFlow: one portfolio view of every active project, a task board per job, a workload view showing exactly who's booked on what each day, and a reporting view rolling budgets and overdue tasks up across the whole portfolio.</p>
-        <ul>
-          <li>A portfolio overview showing progress, budget, and crew size for every active job at a glance</li>
-          <li>A kanban task board per project, so trade-specific work moves from backlog to done without a phone call</li>
-          <li>A weekly workload view showing crew utilization by trade, catching double-bookings before they become overtime</li>
-          <li>Portfolio-wide reporting: budget committed, on-time rate, and a live list of overdue and at-risk tasks</li>
-        </ul>
-
-        <h2>The result</h2>
-        <p>Leadership can now see which of the five active projects is at risk before it's late, not after, and the office builds crew schedules against real availability instead of memory. Overdue tasks get caught days earlier, and budget conversations happen with real numbers instead of a spreadsheet someone forgot to update.</p>
-
-        <div class="cs-results">
-          <div>
-            <span class="stat__num">5</span>
-            <span class="stat__label">Concurrent projects tracked in one system</span>
-          </div>
-          <div>
-            <span class="stat__num">60%</span>
-            <span class="stat__label">On-time completion rate across the portfolio</span>
-          </div>
-          <div>
-            <span class="stat__num">1</span>
-            <span class="stat__label">Week, kickoff to launch</span>
-          </div>
-        </div>
-      </article>
+      <ul class="post-list reveal">
+          <li>
+            <a class="post-card" href="outgrown-spreadsheets.html">
+              <span class="post-card__meta">
+                <time datetime="2026-08-31">31 August 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>4 min read</span>
+              </span>
+              <h2 class="post-card__title">Six signs your business has outgrown spreadsheets</h2>
+              <p class="post-card__excerpt">A spreadsheet does not fail loudly. It degrades, and the business absorbs the cost as somebody's second job. Here are the six symptoms worth taking seriously.</p>
+              <span class="post-card__more">Read the article</span>
+            </a>
+          </li>
+          <li>
+            <a class="post-card" href="custom-dashboard-vs-off-the-shelf.html">
+              <span class="post-card__meta">
+                <time datetime="2026-08-31">31 August 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>4 min read</span>
+              </span>
+              <h2 class="post-card__title">Custom dashboard vs off-the-shelf software: how to actually decide</h2>
+              <p class="post-card__excerpt">Off-the-shelf wins more often than a studio like ours likes to admit. Here is the honest version of the decision, including the cases where you should not build.</p>
+              <span class="post-card__more">Read the article</span>
+            </a>
+          </li>
+          <li>
+            <a class="post-card" href="what-custom-dashboards-cost.html">
+              <span class="post-card__meta">
+                <time datetime="2026-08-31">31 August 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>4 min read</span>
+              </span>
+              <h2 class="post-card__title">What a custom dashboard costs, and what moves the number</h2>
+              <p class="post-card__excerpt">Nobody publishes a price for custom software, for reasons that are half legitimate. Here is what actually moves the number, and how to compare quotes that look nothing alike.</p>
+              <span class="post-card__more">Read the article</span>
+            </a>
+          </li>
+          <li>
+            <a class="post-card" href="first-dashboard-scope.html">
+              <span class="post-card__meta">
+                <time datetime="2026-08-31">31 August 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>4 min read</span>
+              </span>
+              <h2 class="post-card__title">What to put in your first business dashboard</h2>
+              <p class="post-card__excerpt">Most first builds fail by being too big, not too small. A method for deciding what goes in version one, and what to deliberately leave out.</p>
+              <span class="post-card__more">Read the article</span>
+            </a>
+          </li>
+          <li>
+            <a class="post-card" href="why-internal-tools-fail.html">
+              <span class="post-card__meta">
+                <time datetime="2026-08-31">31 August 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>4 min read</span>
+              </span>
+              <h2 class="post-card__title">Why internal tools get abandoned, and how to avoid it</h2>
+              <p class="post-card__excerpt">The tool works. Nobody uses it. That failure is almost never technical, and it is predictable enough to design against before a line of code is written.</p>
+              <span class="post-card__more">Read the article</span>
+            </a>
+          </li>
+      </ul>
     </div>
 
     <!-- ======= Final CTA ======= -->
@@ -195,7 +220,7 @@
         <a href="../index.html#process">How it works</a>
         <a href="../index.html#work">Work</a>
         <a href="../index.html#industries">Industries</a>
-        <a href="../blog/index.html">Blog</a>
+        <a href="index.html">Blog</a>
         <a href="../index.html#faq">FAQ</a>
       </nav>
       <div class="footer__col">
@@ -216,6 +241,9 @@
     </div>
   </footer>
 
+  <!-- Motion (motion.dev) — self-hosted animation library -->
+  <script src="../assets/js/motion.min.js?v=1"></script>
+  <script src="../assets/js/main.js?v=17"></script>
   <!-- Motion (motion.dev) — self-hosted animation library -->
   <script src="../assets/js/motion.min.js?v=1"></script>
   <script src="../assets/js/main.js?v=17"></script>

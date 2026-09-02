@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-labelledby="t d">
+  <title id="t">Connections grow faster than modules</title>
+  <desc id="d">Two node diagrams side by side. Four modules produce six connections between them. Six modules produce fifteen. The build roughly doubles rather than growing by half.</desc>
+  <style>
+    .lbl { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 19px; fill: #475569; }
+    .cap { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #64748b; letter-spacing: 1.6px; text-transform: uppercase; }
+    .num { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #0f172a; }
+    .sm  { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; fill: #64748b; }
+    .nvy { fill: #0f172a; }
+  </style>
+  <rect width="1200" height="600" fill="#ffffff"/>
+  <line x1="600" y1="120" x2="600" y2="500" stroke="#e2e8f0"/>
+  <text x="320" y="96" class="cap" text-anchor="middle">A first build</text>
+  <text x="880" y="96" class="cap" text-anchor="middle">Two more modules</text>
+
+  <line x1="320" y1="182" x2="438" y2="300" stroke="#3399f2" stroke-width="1.6" opacity="0.5"/>
+  <line x1="320" y1="182" x2="320" y2="418" stroke="#3399f2" stroke-width="1.6" opacity="0.5"/>
+  <line x1="320" y1="182" x2="202" y2="300" stroke="#3399f2" stroke-width="1.6" opacity="0.5"/>
+  <line x1="438" y1="300" x2="320" y2="418" stroke="#3399f2" stroke-width="1.6" opacity="0.5"/>
+  <line x1="438" y1="300" x2="202" y2="300" stroke="#3399f2" stroke-width="1.6" opacity="0.5"/>
+  <line x1="320" y1="418" x2="202" y2="300" stroke="#3399f2" stroke-width="1.6" opacity="0.5"/>
+  <circle cx="320" cy="182" r="17" fill="#ffffff" stroke="#3399f2" stroke-width="3"/>
+  <circle cx="438" cy="300" r="17" fill="#ffffff" stroke="#3399f2" stroke-width="3"/>
+  <circle cx="320" cy="418" r="17" fill="#ffffff" stroke="#3399f2" stroke-width="3"/>
+  <circle cx="202" cy="300" r="17" fill="#ffffff" stroke="#3399f2" stroke-width="3"/>
+  <line x1="880" y1="182" x2="982" y2="241" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="880" y1="182" x2="982" y2="359" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="880" y1="182" x2="880" y2="418" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="880" y1="182" x2="778" y2="359" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="880" y1="182" x2="778" y2="241" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="982" y1="241" x2="982" y2="359" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="982" y1="241" x2="880" y2="418" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="982" y1="241" x2="778" y2="359" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="982" y1="241" x2="778" y2="241" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="982" y1="359" x2="880" y2="418" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="982" y1="359" x2="778" y2="359" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="982" y1="359" x2="778" y2="241" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="880" y1="418" x2="778" y2="359" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="880" y1="418" x2="778" y2="241" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <line x1="778" y1="359" x2="778" y2="241" stroke="#f24d4d" stroke-width="1.6" opacity="0.5"/>
+  <circle cx="880" cy="182" r="17" fill="#ffffff" stroke="#f24d4d" stroke-width="3"/>
+  <circle cx="982" cy="241" r="17" fill="#ffffff" stroke="#f24d4d" stroke-width="3"/>
+  <circle cx="982" cy="359" r="17" fill="#ffffff" stroke="#f24d4d" stroke-width="3"/>
+  <circle cx="880" cy="418" r="17" fill="#ffffff" stroke="#f24d4d" stroke-width="3"/>
+  <circle cx="778" cy="359" r="17" fill="#ffffff" stroke="#f24d4d" stroke-width="3"/>
+  <circle cx="778" cy="241" r="17" fill="#ffffff" stroke="#f24d4d" stroke-width="3"/>
+  <text x="320" y="486" class="num" text-anchor="middle">4 modules</text>
+  <text x="320" y="518" class="lbl" text-anchor="middle" style="fill:#3399f2">6 connections to build and test</text>
+  <text x="880" y="486" class="num" text-anchor="middle">6 modules</text>
+  <text x="880" y="518" class="lbl" text-anchor="middle" style="fill:#f24d4d">15 connections to build and test</text>
+</svg>
